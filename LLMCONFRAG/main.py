@@ -46,13 +46,7 @@ if __name__ == '__main__':
                 # Query engines
                 with gr.Accordion("🗄️ Query Engines"):                    
                     
-                    # Selecting one or more query engines to answer
-                    # questions of users
-                    gr.Markdown("Existing Query Engines")
-                    folders_name = get_folders()
-                    selected_query_engines = gr.CheckboxGroup(folders_name, label="Select Query Engine", interactive=True)
-
-                    # Create new query engines
+                    # Create new query engine
                     gr.Markdown("Create a New Query Engine")
                     path_documents_folder = gr.Textbox(label='Path to documents directory:', placeholder='Enter Path')
                     type_documents_folder = gr.Radio(different_folder_kinds,
@@ -61,13 +55,20 @@ if __name__ == '__main__':
                                                      interactive=True)
                     button_create_new_Query_engine = gr.Button(value="Create")
 
+                    # Selecting one or more query engines to answer
+                    # questions of users
+                    gr.Markdown("Existing Query Engines")
+                    folders_name = get_folders()
+                    selected_query_engines = gr.CheckboxGroup(folders_name, label="Select Query Engine", interactive=True)
+
 
             with gr.Column(scale=3):
                 # Area to show user questions and AI responses
                 chat_interface = gr.Chatbot(type='messages')
 
                 # User input text box
-                user_message = gr.Textbox(placeholder='Message LLMConfRag', label='')
+                user_message = gr.Textbox(placeholder='Message LLMConfRag', 
+                                          label='', submit_btn=True)
 
 
                 # Send current user message and previous user messages and AI asnwers
