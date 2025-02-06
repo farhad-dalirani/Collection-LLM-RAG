@@ -36,26 +36,29 @@ if __name__ == '__main__':
                     # Chosing the llm for AI model
                     llm_names = [ name + ' (Local)' for name in config_data['LLMs']['local']]
                     llm_names.extend([ name for name in config_data['LLMs']['API']])
-                    llm_radio = gr.Radio(llm_names, label='Large Language Model:')
+                    llm_radio = gr.Radio(llm_names, label='Large Language Model:', value=llm_names[0])
                     
                     # Chosing the embedding model for AI model
-                    llm_names = [ name + ' (Local)' for name in config_data['Embedding']['local']]
-                    llm_names.extend([ name for name in config_data['Embedding']['API']])
-                    emb_radio = gr.Radio(llm_names, label='Embedding Model:')
+                    emb_names = [ name + ' (Local)' for name in config_data['Embedding']['local']]
+                    emb_names.extend([ name for name in config_data['Embedding']['API']])
+                    emb_radio = gr.Radio(emb_names, label='Embedding Model:', value=emb_names[0])
+
+                    temperature_slider = gr.Slider(minimum=0.0, maximum=1.0, value=0.0, label="LLM Temperature") 
 
             with gr.Column(scale=3):
                 # Area to show user questions and AI responses
                 chat_interface = gr.Chatbot(type='messages')
 
                 # User input text box
-                user_message = gr.Textbox(placeholder="Message LLMConfRag")
+                user_message = gr.Textbox(placeholder='Message LLMConfRag', label='')
 
 
                 # Send current user message and previous user messages and AI asnwers
                 # the ai to get a new asnwer
                 user_message.submit(respond, 
                                     [user_message, chat_interface], [user_message, chat_interface])
-
+                
+                
 
 
     app.launch()
