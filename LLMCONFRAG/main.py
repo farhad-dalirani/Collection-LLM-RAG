@@ -1,6 +1,7 @@
 import gradio as gr
 import time 
 import random
+import json 
 
 def respond(message, chat_history):
         bot_message = random.choice(["How are you?", "Today is a great day", "I'm very hungry"])
@@ -12,6 +13,9 @@ def respond(message, chat_history):
 
 if __name__ == '__main__':
     
+    with open('./LLMCONFRAG/config.json', 'r') as file:
+        config_data = json.load(file)         
+
     # Web based GUI
     with gr.Blocks() as app:
         
@@ -22,13 +26,22 @@ if __name__ == '__main__':
                 
                 # Selecting one or more query engines to answer
                 # questions of users
-                with gr.Accordion("📦 Select Query Engine"):
+                with gr.Accordion("🗄️ Select Query Engine"):
                     gr.Markdown("lorem ipsum")
 
                 # Settings related to choosing hyper parameters related
                 # to llms, embeding models, etc
                 with gr.Accordion("⚙️ Settings"):
-                    gr.Markdown("lorem ipsum")
+
+                    # Chosing the llm for AI model
+                    llm_names = [ name + ' (Local)' for name in config_data['LLMs']['local']]
+                    llm_names.extend([ name for name in config_data['LLMs']['API']])
+                    llm_radio = gr.Radio(llm_names, label='Large Language Model:')
+                    
+                    # Chosing the embedding model for AI model
+                    llm_names = [ name + ' (Local)' for name in config_data['Embedding']['local']]
+                    llm_names.extend([ name for name in config_data['Embedding']['API']])
+                    emb_radio = gr.Radio(llm_names, label='Embedding Model:')
 
             with gr.Column(scale=3):
                 # Area to show user questions and AI responses
