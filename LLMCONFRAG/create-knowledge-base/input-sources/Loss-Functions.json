@@ -4,200 +4,200 @@
   "data": 
   [
     {
-      "name": "Mean Squared Error Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Mean_squared_error"
+      "Name": "Mean Squared Error Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Mean_squared_error"
     },
     {
-      "name": "MSELoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html"
+      "Name": "MSELoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html"
     },
     {
-      "name": "Mean Squared Error (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/MeanSquaredError"
+      "Name": "Mean Squared Error (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/MeanSquaredError"
     },
     {
-      "name": "Mean Absolute Error Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Mean_absolute_error"
+      "Name": "Mean Absolute Error Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Mean_absolute_error"
     },
     {
-      "name": "L1Loss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.L1Loss.html"
+      "Name": "L1Loss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.L1Loss.html"
     },
     {
-      "name": "Mean Absolute Error (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/MeanAbsoluteError"
+      "Name": "Mean Absolute Error (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/MeanAbsoluteError"
     },
     {
-      "name": "Mean Absolute Percentage Error (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/MeanAbsolutePercentageError"
+      "Name": "Mean Absolute Percentage Error (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/MeanAbsolutePercentageError"
     },
     {
-      "name": "Mean Squared Logarithmic Error (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/MeanSquaredLogarithmicError"
+      "Name": "Mean Squared Logarithmic Error (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/MeanSquaredLogarithmicError"
     },
     {
-      "name": "Huber Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Huber_loss"
+      "Name": "Huber Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Huber_loss"
     },
     {
-      "name": "Huber Loss (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/Huber"
+      "Name": "Huber Loss (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/Huber"
     },
     {
-      "name": "LogCosh Loss (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/LogCoshLoss"
+      "Name": "LogCosh Loss (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/LogCoshLoss"
     },
     {
-      "name": "Categorical Crossentropy Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Cross_entropy"
+      "Name": "Categorical Crossentropy Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Cross_entropy"
     },
     {
-      "name": "CategoricalCrossentropy (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/CategoricalCrossentropy"
+      "Name": "CategoricalCrossentropy (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/CategoricalCrossentropy"
     },
     {
-      "name": "Sparse Categorical Crossentropy (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/SparseCategoricalCrossentropy"
+      "Name": "Sparse Categorical Crossentropy (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/SparseCategoricalCrossentropy"
     },
     {
-      "name": "CrossEntropyLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html"
+      "Name": "CrossEntropyLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html"
     },
     {
-      "name": "Binary Crossentropy Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Cross_entropy"
+      "Name": "Binary Crossentropy Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Cross_entropy"
     },
     {
-      "name": "BinaryCrossentropy (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/BinaryCrossentropy"
+      "Name": "BinaryCrossentropy (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/BinaryCrossentropy"
     },
     {
-      "name": "BCEWithLogitsLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html"
+      "Name": "BCEWithLogitsLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html"
     },
     {
-      "name": "Kullback-Leibler Divergence Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"
+      "Name": "Kullback-Leibler Divergence Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"
     },
     {
-      "name": "KLDivergence (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/KLDivergence"
+      "Name": "KLDivergence (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/KLDivergence"
     },
     {
-      "name": "KLDivLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.KLDivLoss.html"
+      "Name": "KLDivLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.KLDivLoss.html"
     },
     {
-      "name": "Poisson Loss (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/Poisson"
+      "Name": "Poisson Loss (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/Poisson"
     },
     {
-      "name": "PoissonNLLLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.PoissonNLLLoss.html"
+      "Name": "PoissonNLLLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.PoissonNLLLoss.html"
     },
     {
-      "name": "Cosine Similarity Loss (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/CosineSimilarity"
+      "Name": "Cosine Similarity Loss (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/CosineSimilarity"
     },
     {
-      "name": "CosineEmbeddingLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.CosineEmbeddingLoss.html"
+      "Name": "CosineEmbeddingLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.CosineEmbeddingLoss.html"
     },
     {
-      "name": "CTCLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.CTCLoss.html"
+      "Name": "CTCLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.CTCLoss.html"
     },
     {
-      "name": "CTCLoss (TensorFlow)",
-      "link": "https://www.tensorflow.org/api_docs/python/tf/nn/ctc_loss"
+      "Name": "CTCLoss (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/nn/ctc_loss"
     },
     {
-      "name": "Hinge Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Hinge_loss"
+      "Name": "Hinge Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Hinge_loss"
     },
     {
-      "name": "HingeEmbeddingLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.HingeEmbeddingLoss.html"
+      "Name": "HingeEmbeddingLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.HingeEmbeddingLoss.html"
     },
     {
-      "name": "Margin Ranking Loss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.MarginRankingLoss.html"
+      "Name": "Margin Ranking Loss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.MarginRankingLoss.html"
     },
     {
-      "name": "MultiLabelMarginLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.MultiLabelMarginLoss.html"
+      "Name": "MultiLabelMarginLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.MultiLabelMarginLoss.html"
     },
     {
-      "name": "MultiLabelSoftMarginLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.MultiLabelSoftMarginLoss.html"
+      "Name": "MultiLabelSoftMarginLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.MultiLabelSoftMarginLoss.html"
     },
     {
-      "name": "Dice Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient"
+      "Name": "Dice Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient"
     },
     {
-      "name": "SigmoidDiceLoss (TensorFlow Addons)",
-      "link": "https://www.tensorflow.org/addons/api_docs/python/tfa/losses/SigmoidDiceLoss"
+      "Name": "SigmoidDiceLoss (TensorFlow Addons)",
+      "Link": "https://www.tensorflow.org/addons/api_docs/python/tfa/losses/SigmoidDiceLoss"
     },
     {
-      "name": "Jaccard Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Jaccard_index"
+      "Name": "Jaccard Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Jaccard_index"
     },
     {
-      "name": "JaccardLoss (TensorFlow Addons)",
-      "link": "https://www.tensorflow.org/addons/api_docs/python/tfa/losses/JaccardLoss"
+      "Name": "JaccardLoss (TensorFlow Addons)",
+      "Link": "https://www.tensorflow.org/addons/api_docs/python/tfa/losses/JaccardLoss"
     },
     {
-      "name": "Tversky Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Tversky_index"
+      "Name": "Tversky Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Tversky_index"
     },
     {
-      "name": "TverskyLoss (TensorFlow Addons)",
-      "link": "https://www.tensorflow.org/addons/api_docs/python/tfa/losses/TverskyLoss"
+      "Name": "TverskyLoss (TensorFlow Addons)",
+      "Link": "https://www.tensorflow.org/addons/api_docs/python/tfa/losses/TverskyLoss"
     },
     {
-      "name": "Sigmoid Focal Cross-Entropy (TensorFlow Addons)",
-      "link": "https://www.tensorflow.org/addons/api_docs/python/tfa/losses/SigmoidFocalCrossEntropy"
+      "Name": "Sigmoid Focal Cross-Entropy (TensorFlow Addons)",
+      "Link": "https://www.tensorflow.org/addons/api_docs/python/tfa/losses/SigmoidFocalCrossEntropy"
     },
     {
-      "name": "Contrastive Loss (TensorFlow Addons)",
-      "link": "https://www.tensorflow.org/addons/api_docs/python/tfa/losses/ContrastiveLoss"
+      "Name": "Contrastive Loss (TensorFlow Addons)",
+      "Link": "https://www.tensorflow.org/addons/api_docs/python/tfa/losses/ContrastiveLoss"
     },
     {
-      "name": "Triplet Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Triplet_loss"
+      "Name": "Triplet Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Triplet_loss"
     },
     {
-      "name": "TripletMarginLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.TripletMarginLoss.html"
+      "Name": "TripletMarginLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.TripletMarginLoss.html"
     },
     {
-      "name": "SmoothL1Loss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.SmoothL1Loss.html"
+      "Name": "SmoothL1Loss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.SmoothL1Loss.html"
     },
     {
-      "name": "SoftMarginLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.SoftMarginLoss.html"
+      "Name": "SoftMarginLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.SoftMarginLoss.html"
     },
     {
-      "name": "MultiMarginLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.MultiMarginLoss.html"
+      "Name": "MultiMarginLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.MultiMarginLoss.html"
     },
     {
-      "name": "Wasserstein Loss (TensorFlow GAN)",
-      "link": "https://www.tensorflow.org/gan/api_docs/python/tfg/gan_losses/wasserstein_loss"
+      "Name": "Wasserstein Loss (TensorFlow GAN)",
+      "Link": "https://www.tensorflow.org/gan/api_docs/python/tfg/gan_losses/wasserstein_loss"
     },
     {
-      "name": "Least Squares GAN Loss (TensorFlow GAN)",
-      "link": "https://www.tensorflow.org/gan/api_docs/python/tfg/gan_losses/least_squares_loss"
+      "Name": "Least Squares GAN Loss (TensorFlow GAN)",
+      "Link": "https://www.tensorflow.org/gan/api_docs/python/tfg/gan_losses/least_squares_loss"
     },
     {
-      "name": "Quantile Loss (Wikipedia)",
-      "link": "https://en.wikipedia.org/wiki/Quantile_regression"
+      "Name": "Quantile Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Quantile_regression"
     },
     {
-      "name": "NLLLoss (PyTorch)",
-      "link": "https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html"
+      "Name": "NLLLoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html"
     }
   ]
 }
