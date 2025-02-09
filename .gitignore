@@ -1,3 +1,7 @@
-sources/CVPR24/*
 test.py
 todo.txt
+sources
+.venv
+LLMCONFRAG/__pycache__
+LLMCONFRAG/pdf.py
+/doc_download

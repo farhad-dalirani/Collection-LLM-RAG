@@ -43,11 +43,11 @@ def scrape_articles(json_file, output_file):
             scraped_data.append(article)
     
     with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(scraped_data, f, indent=4, ensure_ascii=False)
+        json.dump({"description": data["description"], "data": scraped_data}, f, indent=4, ensure_ascii=False)
     
     print(f"Scraping completed. Data saved to {output_file}")
 
 
 if __name__ == '__main__':
     # Example usage:
-    scrape_articles("LLMCONFRAG/create-knowledge-base/input-sources/test.json", "LLMCONFRAG/create-knowledge-base/output-processed-sources/test.json")
+    scrape_articles("LLMCONFRAG/createKnowledgeBase/input-sources/test.json", "LLMCONFRAG/createKnowledgeBase/output-processed-sources/test.json")
