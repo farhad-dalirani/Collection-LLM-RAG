@@ -2,6 +2,9 @@ import json
 import requests
 from bs4 import BeautifulSoup
 import re
+import requests
+from bs4 import BeautifulSoup
+import re
 
 def extract_text_from_url(url):
     try:
@@ -11,24 +14,56 @@ def extract_text_from_url(url):
             return None
         
         soup = BeautifulSoup(response.text, "html.parser")
-        
+
         # Remove unwanted elements
         for tag in soup(["script", "style", "header", "footer", "nav", "aside"]):
             tag.decompose()
+
+        # Extract all relevant elements in the order they appear
+        content = []
+        for element in soup.find_all(["p", "pre", "code"]):  
+            if element.name == "p":
+                content.append(element.get_text(strip=False))
+            elif element.name in ["pre", "code"]:
+                content.append(f"\n```\n{element.get_text(strip=False)}\n```\n")  # Preserve code block formatting
+
+        # Join extracted content while preserving order
+        full_content = "\n\n".join(content)
+
+        # Normalize spaces to avoid unwanted formatting issues
+        full_content = re.sub(r'\s+', ' ', full_content).strip()
         
-        # Extract the main content
-        paragraphs = soup.find_all("p")
-        text_content = "\n\n".join(p.get_text(strip=False) for p in paragraphs)
-        
-        # Normalize spaces to ensure no word concatenation happens
-        text_content = re.sub(r'\s+', ' ', text_content).strip()  # Replace multiple spaces with a single space
-        
-        return text_content
+        return full_content
     except requests.RequestException as e:
         print(f"Error fetching {url}: {e}")
         return None
 
 def scrape_articles(json_file, output_file):
+    """
+    Scrapes article content from URLs provided in a JSON file and saves the results to an output file.
+
+    Args:
+        json_file (str): Path to the input JSON file containing article names and URLs.
+        output_file (str): Path to the output JSON file where scraped content will be saved.
+
+    The function reads the input JSON file, extracts article names and URLs, scrapes the content from each URL,
+    and saves the updated data (including the scraped content) into the output JSON file.
+
+    The expected format of the input JSON:
+    {
+        "description": "Some description",
+        "data": [
+            {"Name": "Article 1", "Link": "https://example.com/article1"},
+            {"Name": "Article 2", "Link": "https://example.com/article2"},
+            ...
+        ]
+    }
+
+    The output JSON will retain the original structure but include the scraped "Content" for each article.
+
+    Prints messages to indicate scraping progress and completion.
+    """
+      
     with open(json_file, "r", encoding="utf-8") as f:
         data = json.load(f)
     scraped_data = []
@@ -45,7 +80,7 @@ def scrape_articles(json_file, output_file):
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump({"description": data["description"], "data": scraped_data}, f, indent=4, ensure_ascii=False)
     
-    print(f"Scraping completed. Data saved to {output_file}")
+    print(f">   Scraping completed. Data saved to {output_file}")
 
 
 if __name__ == '__main__':
