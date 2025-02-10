@@ -61,11 +61,17 @@ def scrape_articles(json_file, output_file):
 
     The output JSON will retain the original structure but include the scraped "Content" for each article.
 
-    Prints messages to indicate scraping progress and completion.
+    Prints messages to indicate scraping progress and completion, and then return the path of output file.
     """
-      
-    with open(json_file, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    
+    try:
+        with open(json_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        raise FileNotFoundError("The file was not found.")
+    except json.JSONDecodeError:
+        raise ValueError("Invalid JSON format.")
+    
     scraped_data = []
     for article in data["data"]:
         name = article.get("Name", "")
@@ -82,6 +88,7 @@ def scrape_articles(json_file, output_file):
     
     print(f">   Scraping completed. Data saved to {output_file}")
 
+    return output_file
 
 if __name__ == '__main__':
     # Example usage:
