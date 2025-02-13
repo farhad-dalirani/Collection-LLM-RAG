@@ -79,12 +79,25 @@ def create_new_query_engine(user_models, path_json_file, type_json, output_path=
 
     # Run the transformation pipeline.
     nodes = pipeline.run(documents=documents, show_progress=True);
-    print()
-    print( len( nodes ) )
-    print()
-    print(nodes[0])
-    print()
-    print(nodes[1])
+
+    # Add detail of created vector store to list of vector stores
+    file_path = "./query-engines/query_engines_list.json"
+    if not os.path.exists(file_path):
+        with open(file_path, 'w') as file:
+            json.dump([], file)
+    vec_store_desc=[]
+    with open(file_path, 'r') as file:
+        vec_store_desc = json.load(file)
+        new_entry = {
+                    "description": data['description'],
+                    "embedding_name": user_models.embedding_name
+                }
+        vec_store_desc.append(new_entry)
+    with open(file_path, 'w') as file:
+            json.dump(vec_store_desc, file)
+    
+    print('>    Nodes were created.')
+
 
 if __name__ == '__main__':
     # Example usage:
