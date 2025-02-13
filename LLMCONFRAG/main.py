@@ -4,7 +4,7 @@ import random
 import json 
 from createKnowledgeBase.create_query_engines import create_new_query_engine
 
-from utils import get_folders
+from utils import get_query_engines_name
 from user import User
 
 def respond(message, chat_history):
@@ -99,17 +99,20 @@ if __name__ == '__main__':
                     path_documents_json_file.change(
                             fn=toggle_button, inputs=path_documents_json_file, outputs=button_create_new_Query_engine
                         )
-                    
-                    # Call function for creating new query engine if the button pressed
-                    button_create_new_Query_engine.click(new_query_engine, inputs=[user_models, path_documents_json_file, type_documents_folder], outputs=None)
-                    
 
                     # Selecting one or more query engines to answer
                     # questions of users
                     gr.Markdown("Existing Query Engines")
-                    folders_name = get_folders()
-                    selected_query_engines = gr.CheckboxGroup(folders_name, label="Select Query Engine", interactive=True)
+                    query_engines_name = get_query_engines_name()
+                    selected_query_engines = gr.CheckboxGroup(query_engines_name, label="Select Query Engine", interactive=True)
 
+                    # Call function for creating new query engine if the button pressed
+                    button_create_new_Query_engine.click(
+                        new_query_engine,
+                        inputs=[user_models, path_documents_json_file, type_documents_folder], 
+                        outputs=None
+                        ).then(lambda: gr.CheckboxGroup(choices=get_query_engines_name()), outputs=selected_query_engines)
+                    
 
             with gr.Column(scale=3):
                 # Area to show user questions and AI responses
@@ -126,8 +129,6 @@ if __name__ == '__main__':
                                     [user_message, chat_interface], 
                                     [user_message, chat_interface])
                 
-                
-
-
+    
     app.launch()
     

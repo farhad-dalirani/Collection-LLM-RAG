@@ -89,6 +89,7 @@ def create_new_query_engine(user_models, path_json_file, type_json, output_path=
     with open(file_path, 'r') as file:
         vec_store_desc = json.load(file)
         new_entry = {
+                    "name": file_name_no_exten,
                     "description": data['description'],
                     "embedding_name": user_models.embedding_name
                 }

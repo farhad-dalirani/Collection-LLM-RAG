@@ -1,11 +1,26 @@
 import os
+import json
 
 
-def get_folders():
+def get_query_engines_detail():
     """
-    Function to list only folders inside 'query-engines'
+    Function to get existing query engines detail like name, description, 
+    embedding model that used
     """
-    base_path = "./query-engines"
-    if not os.path.exists(base_path):
-        return ["No folders found"]
-    return [folder for folder in os.listdir(base_path) if os.path.isdir(os.path.join(base_path, folder))]
+    file_path = "./query-engines/query_engines_list.json"
+    if not os.path.exists(file_path):
+        return []
+    vec_store_desc=[]
+    with open(file_path, 'r') as file:
+        vec_store_desc = json.load(file)
+
+    return vec_store_desc
+
+
+def get_query_engines_name():
+    """
+    Function to list name of existing query engines
+    """
+    vec_store_desc=get_query_engines_detail()
+   
+    return [vs_i['name'] for vs_i in vec_store_desc]
