@@ -1,5 +1,5 @@
 {
-    "LLMs": {"local": ["Ollama llama3.1 8B"], "API": ["OpenAI GPT-4o mini", "OpenAI GPT-4o"]},
-    "Embedding": {"local": ["Ollama nomic-embed-text"], "API": []},   
+    "LLMs": {"local": [], "API": ["OpenAI GPT-4o mini", "OpenAI GPT-4o"]},
+    "Embedding": {"local": [], "API": ["OpenAI text-embedding-3-small"]},   
     "QueryEngine-creation-input-type": ["Webpages", "PDFs"]
 }
