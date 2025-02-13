@@ -5,6 +5,6 @@ sources
 LLMCONFRAG/__pycache__
 LLMCONFRAG/pdf.py
 /doc_download
-LLMCONFRAG/createKnowledgeBase/input-sources/test.json
-LLMCONFRAG/createKnowledgeBase/__pycache__/
+LLMCONFRAG/KnowledgeBase/input-sources/test.json
+LLMCONFRAG/knowledgeBase/__pycache__
 .gradio
