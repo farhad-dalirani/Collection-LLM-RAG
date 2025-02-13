@@ -12,7 +12,7 @@ from knowledgeBase.text_extraction_webpages import scrape_articles
 from utils import get_query_engines_detail
 
 
-def create_new_query_engine(user_models, path_json_file, type_json, output_path='LLMCONFRAG/createKnowledgeBase/output-processed-sources'):
+def create_new_query_engine(user_models, path_json_file, type_json, output_path='LLMCONFRAG/knowledgeBase/output-processed-sources'):
     """
     """
     

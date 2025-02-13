@@ -7,7 +7,7 @@ from llama_index.core.memory import ChatMemoryBuffer
 from knowledgeBase.query_engines import load_query_engine
 
 
-class User:
+class UserAgent:
     def __init__(self, llm_name, embedding_name, openAI_api, query_engines_details=[], temperature=0):
         
         self.llm_name = llm_name

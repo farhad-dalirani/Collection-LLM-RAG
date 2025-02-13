@@ -1,11 +1,9 @@
 import gradio as gr
-import time 
-import random
 import json 
 from knowledgeBase.query_engines import create_new_query_engine, get_query_engines_detail
 
 from utils import get_query_engines_name
-from user import User
+from user_agent import UserAgent
 
 def interact_with_agent(message, chat_history, user_models):
     ai_answer = user_models.agent.chat(message)
@@ -53,7 +51,7 @@ if __name__ == '__main__':
         
         # Each user has its own models and settings
         user_models = gr.State(
-            User(
+            UserAgent(
                 llm_name=llm_names[0], 
                 embedding_name=emb_names[0], 
                 query_engines_details=get_query_engines_detail(), 
