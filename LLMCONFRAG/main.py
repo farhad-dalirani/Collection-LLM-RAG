@@ -10,6 +10,20 @@ def interact_with_agent(message, chat_history, user_models):
     bot_message = ai_answer.response
     message_sources = ai_answer.sources
 
+    # Collect article names and links
+    references = []
+    for tool_output in ai_answer.sources:
+        for node in tool_output.raw_output.source_nodes:
+            name = node.node.metadata.get('Name')
+            link = node.node.metadata.get('Link')
+            if name and link:
+                references.append(f"[{name}]({link})")
+
+    # Format the references
+    if references:
+        references_text = "Here are some articles you might find helpful:\n" + "\n".join(references)
+        bot_message += "\n\n" + references_text
+    
     chat_history.append({"role": "user", "content": message})
     chat_history.append({"role": "assistant", "content": bot_message})
     return "", chat_history

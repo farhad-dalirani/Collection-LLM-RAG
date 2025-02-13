@@ -46,7 +46,7 @@ class UserAgent:
         # Load query engines from file    
         qs_list = []
         for qs_detail_i in query_engines_details:
-            qs_i = load_query_engine(qs_detail_i['name'], embed_model=self.model_embd)
+            qs_i = load_query_engine(qs_detail_i['name'], llm_model=self.model_llm, embed_model=self.model_embd)
             if qs_i is None:
                 print('>    Could not load the query engine.')
             else:
