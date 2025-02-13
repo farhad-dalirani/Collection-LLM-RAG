@@ -2,17 +2,19 @@ import gradio as gr
 import time 
 import random
 import json 
-from createKnowledgeBase.create_query_engines import create_new_query_engine
+from knowledgeBase.query_engines import create_new_query_engine, get_query_engines_detail
 
 from utils import get_query_engines_name
 from user import User
 
-def respond(message, chat_history):
-        bot_message = random.choice(["How are you?", "Today is a great day", "I'm very hungry"])
-        chat_history.append({"role": "user", "content": message})
-        chat_history.append({"role": "assistant", "content": bot_message})
-        time.sleep(2)
-        return "", chat_history
+def interact_with_agent(message, chat_history, user_models):
+    ai_answer = user_models.agent.chat(message)
+    bot_message = ai_answer.response
+    message_sources = ai_answer.sources
+
+    chat_history.append({"role": "user", "content": message})
+    chat_history.append({"role": "assistant", "content": bot_message})
+    return "", chat_history
 
 def toggle_button(text):
     """Function to check if textbox has input and update button interactiveness"""
@@ -32,26 +34,31 @@ def change_models_api(open_ai_api_textbox, user_models):
         user_models.set_api(open_ai_api_textbox)
 
 def new_query_engine(user_models, path_json_file, type_json):
+    """Creates a new query engine"""
     create_new_query_engine(user_models, path_json_file, type_json)
+
 
 if __name__ == '__main__':
     
+    # Loading setting configurations
     with open('./LLMCONFRAG/program_init_config.json', 'r') as file:
         config_data = json.load(file)         
-
     llm_names = [ name + ' (Local)' for name in config_data['LLMs']['local']]
     llm_names.extend([ name for name in config_data['LLMs']['API']])
-    
     emb_names = [ name + ' (Local)' for name in config_data['Embedding']['local']]
     emb_names.extend([ name for name in config_data['Embedding']['API']])
-    
-
 
     # Web based GUI
     with gr.Blocks() as app:
         
-        # Each user has its own models
-        user_models = gr.State(User(llm_name=llm_names[0], embedding_name=emb_names[0], openAI_api=""))
+        # Each user has its own models and settings
+        user_models = gr.State(
+            User(
+                llm_name=llm_names[0], 
+                embedding_name=emb_names[0], 
+                query_engines_details=get_query_engines_detail(), 
+                openAI_api="")
+            )
         
         with gr.Row():
 
@@ -82,8 +89,7 @@ if __name__ == '__main__':
                         change_models_api, 
                         inputs=[open_ai_api_textbox, user_models])
 
-                    
-
+                
                 # Query engines
                 with gr.Accordion("🗄️ Query Engines"):                    
                     
@@ -103,8 +109,7 @@ if __name__ == '__main__':
                     # Selecting one or more query engines to answer
                     # questions of users
                     gr.Markdown("Existing Query Engines")
-                    query_engines_name = get_query_engines_name()
-                    selected_query_engines = gr.CheckboxGroup(query_engines_name, label="Select Query Engine", interactive=True)
+                    selected_query_engines = gr.CheckboxGroup(get_query_engines_name(), value=get_query_engines_name(), label="Select Query Engine", interactive=True)
 
                     # Call function for creating new query engine if the button pressed
                     button_create_new_Query_engine.click(
@@ -114,6 +119,7 @@ if __name__ == '__main__':
                         ).then(lambda: gr.CheckboxGroup(choices=get_query_engines_name()), outputs=selected_query_engines)
                     
 
+            # Second column, Chat area
             with gr.Column(scale=3):
                 # Area to show user questions and AI responses
                 chat_interface = gr.Chatbot(type='messages')
@@ -125,9 +131,9 @@ if __name__ == '__main__':
 
                 # Send current user message and previous user messages and AI asnwers
                 # the ai to get a new asnwer
-                user_message.submit(respond, 
-                                    [user_message, chat_interface], 
-                                    [user_message, chat_interface])
+                user_message.submit(interact_with_agent, 
+                                    inputs=[user_message, chat_interface, user_models], 
+                                    outputs=[user_message, chat_interface])
                 
     
     app.launch()

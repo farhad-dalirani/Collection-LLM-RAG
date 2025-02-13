@@ -1,0 +1,750 @@
+{
+  "description": "This is a curated repository containing comprehensive metadata for a wide range of datasets—from classic machine learning collections datasets to extensive resources on modern deep learning. This specifically serves as a dedicated index for dataset-related information.",
+  
+  "data": [
+    {
+      "Name": "Iris Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Iris"
+    },
+    {
+      "Name": "Wine Quality Dataset (Red)",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Wine+Quality"
+    },
+    {
+      "Name": "Wine Quality Dataset (White)",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Wine+Quality"
+    },
+    {
+      "Name": "Breast Cancer Wisconsin (Diagnostic) Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)"
+    },
+    {
+      "Name": "Adult Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Adult"
+    },
+    {
+      "Name": "Pima Indians Diabetes Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes"
+    },
+    {
+      "Name": "Heart Disease Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Heart+Disease"
+    },
+    {
+      "Name": "Glass Identification Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Glass+Identification"
+    },
+    {
+      "Name": "Car Evaluation Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Car+Evaluation"
+    },
+    {
+      "Name": "Blood Transfusion Service Center Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Blood+Transfusion+Service+Center"
+    },
+    {
+      "Name": "Contraceptive Method Choice Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Contraceptive+Method+Choice"
+    },
+    {
+      "Name": "Haberman's Survival Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Haberman%27s+Survival"
+    },
+    {
+      "Name": "Seeds Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Seeds"
+    },
+    {
+      "Name": "Boston Housing Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Housing"
+    },
+    {
+      "Name": "Concrete Compressive Strength Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength"
+    },
+    {
+      "Name": "Energy Efficiency Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Energy+efficiency"
+    },
+    {
+      "Name": "Air Quality Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Air+Quality"
+    },
+    {
+      "Name": "Forest Fires Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Forest+Fires"
+    },
+    {
+      "Name": "Abalone Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Abalone"
+    },
+    {
+      "Name": "MAGIC Gamma Telescope Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/MAGIC+Gamma+Telescope"
+    },
+    {
+      "Name": "Page Blocks Classification Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Page+Blocks+Classification"
+    },
+    {
+      "Name": "Libras Movement Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Libras+Movement"
+    },
+    {
+      "Name": "Sonar Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Connectionist+Bench+(Sonar,+Mines+vs.+Rocks)"
+    },
+    {
+      "Name": "Ionosphere Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Ionosphere"
+    },
+    {
+      "Name": "Optical Recognition of Handwritten Digits Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Optical+Recognition+of+Handwritten+Digits"
+    },
+    {
+      "Name": "Pen-Based Recognition of Handwritten Digits Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Pen-Based+Recognition+of+Handwritten+Digits"
+    },
+    {
+      "Name": "Statlog (Shuttle) Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Statlog+(Shuttle)"
+    },
+    {
+      "Name": "Letter Recognition Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Letter+Recognition"
+    },
+    {
+      "Name": "Wine Dataset (UCI)",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Wine"
+    },
+    {
+      "Name": "Computer Hardware Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Computer+Hardware"
+    },
+    {
+      "Name": "Forest Covertype Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Covertype"
+    },
+    {
+      "Name": "Mushroom Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Mushroom"
+    },
+    {
+      "Name": "Zoo Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Zoo"
+    },
+    {
+      "Name": "Census-Income Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Census-Income+(KDD)"
+    },
+    {
+      "Name": "Online Shoppers Purchasing Intention Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset"
+    },
+    {
+      "Name": "Bike Sharing Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset"
+    },
+    {
+      "Name": "Bank Marketing Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Bank+Marketing"
+    },
+    {
+      "Name": "Default of Credit Card Clients Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients"
+    },
+    {
+      "Name": "Student Performance Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Student+Performance"
+    },
+    {
+      "Name": "Airfoil Self-Noise Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise"
+    },
+    {
+      "Name": "Yacht Hydrodynamics Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Yacht+Hydrodynamics"
+    },
+    {
+      "Name": "Parkinsons Telemonitoring Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Parkinsons+Telemonitoring"
+    },
+    {
+      "Name": "Combined Cycle Power Plant Dataset",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Combined+Cycle+Power+Plant"
+    },
+    {
+      "Name": "Titanic: Machine Learning from Disaster",
+      "Link": "https://www.kaggle.com/c/titanic"
+    },
+    {
+      "Name": "House Prices: Advanced Regression Techniques",
+      "Link": "https://www.kaggle.com/c/house-prices-advanced-regression-techniques"
+    },
+    {
+      "Name": "Digit Recognizer (MNIST)",
+      "Link": "https://www.kaggle.com/c/digit-recognizer"
+    },
+    {
+      "Name": "Dogs vs. Cats",
+      "Link": "https://www.kaggle.com/c/dogs-vs-cats"
+    },
+    {
+      "Name": "New York City Taxi Trip Duration",
+      "Link": "https://www.kaggle.com/c/nyc-taxi-trip-duration"
+    },
+    {
+      "Name": "Common Crawl",
+      "Link": "https://commoncrawl.org/"
+    },
+    {
+      "Name": "Instacart Market Basket Analysis",
+      "Link": "https://www.kaggle.com/c/instacart-market-basket-analysis"
+    },
+    {
+      "Name": "Santander Customer Transaction Prediction",
+      "Link": "https://www.kaggle.com/c/santander-customer-transaction-prediction"
+    },
+    {
+      "Name": "Credit Card Fraud Detection",
+      "Link": "https://www.kaggle.com/mlg-ulb/creditcardfraud"
+    },
+    {
+      "Name": "Pneumonia Detection",
+      "Link": "https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia"
+    },
+    {
+      "Name": "COVID-19 Open Research Dataset (CORD-19)",
+      "Link": "https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge"
+    },
+    {
+      "Name": "Zillow Prize: Zillow's Home Value Prediction",
+      "Link": "https://www.kaggle.com/c/zillow-prize-1"
+    },
+    {
+      "Name": "New York City Taxi Fare Prediction",
+      "Link": "https://www.kaggle.com/c/nyc-taxi-fare-prediction"
+    },
+    {
+      "Name": "Retail Transaction Data",
+      "Link": "https://www.kaggle.com/PromptCloudHQ/retail-transaction-data"
+    },
+    {
+      "Name": "Elo Merchant Category Recommendation",
+      "Link": "https://www.kaggle.com/c/elo-merchant-category-recommendation"
+    },
+    {
+      "Name": "Santander Value Prediction Challenge",
+      "Link": "https://www.kaggle.com/c/santander-value-prediction-challenge"
+    },
+    {
+      "Name": "Avito Demand Prediction Challenge",
+      "Link": "https://www.kaggle.com/c/avito-demand-prediction"
+    },
+    {
+      "Name": "Global Wheat Detection",
+      "Link": "https://www.kaggle.com/c/global-wheat-detection"
+    },
+    {
+      "Name": "GTSRB: German Traffic Sign Recognition Benchmark",
+      "Link": "http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset"
+    },
+    {
+      "Name": "COCO Dataset",
+      "Link": "https://cocodataset.org/#home"
+    },
+    {
+      "Name": "Pascal VOC Dataset",
+      "Link": "http://host.robots.ox.ac.uk/pascal/VOC/"
+    },
+    {
+      "Name": "Caltech 101",
+      "Link": "http://www.vision.caltech.edu/Image_Datasets/Caltech101/"
+    },
+    {
+      "Name": "Caltech 256",
+      "Link": "http://www.vision.caltech.edu/Image_Datasets/Caltech256/"
+    },
+    {
+      "Name": "Stanford Dogs Dataset",
+      "Link": "http://vision.stanford.edu/aditya86/ImageNetDogs/"
+    },
+    {
+      "Name": "LFW (Labeled Faces in the Wild)",
+      "Link": "http://vis-www.cs.umass.edu/lfw/"
+    },
+    {
+      "Name": "FERET Database",
+      "Link": "https://www.nist.gov/programs-projects/face-recognition"
+    },
+    {
+      "Name": "MNIST",
+      "Link": "http://yann.lecun.com/exdb/mnist/"
+    },
+    {
+      "Name": "Fashion-MNIST",
+      "Link": "https://github.com/zalandoresearch/fashion-mnist"
+    },
+    {
+      "Name": "SVHN (Street View House Numbers)",
+      "Link": "http://ufldl.stanford.edu/housenumbers/"
+    },
+    {
+      "Name": "CIFAR-10",
+      "Link": "https://www.cs.toronto.edu/~kriz/cifar.html"
+    },
+    {
+      "Name": "CIFAR-100",
+      "Link": "https://www.cs.toronto.edu/~kriz/cifar.html"
+    },
+    {
+      "Name": "Tiny ImageNet",
+      "Link": "http://cs231n.stanford.edu/tiny-imagenet-200.zip"
+    },
+    {
+      "Name": "ImageNet",
+      "Link": "http://www.image-net.org/"
+    },
+    {
+      "Name": "LSUN",
+      "Link": "http://lsun.cs.princeton.edu/"
+    },
+    {
+      "Name": "Open Images Dataset",
+      "Link": "https://storage.googleapis.com/openimages/web/index.html"
+    },
+    {
+      "Name": "KITTI Vision Benchmark Suite",
+      "Link": "http://www.cvlibs.net/datasets/kitti/"
+    },
+    {
+      "Name": "Cityscapes Dataset",
+      "Link": "https://www.cityscapes-dataset.com/"
+    },
+    {
+      "Name": "UCF101",
+      "Link": "https://www.crcv.ucf.edu/data/UCF101.php"
+    },
+    {
+      "Name": "HMDB51",
+      "Link": "https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/"
+    },
+    {
+      "Name": "Something-Something V2",
+      "Link": "https://20bn.com/datasets/something-something"
+    },
+    {
+      "Name": "ActivityNet",
+      "Link": "http://activity-net.org/"
+    },
+    {
+      "Name": "YouTube-8M",
+      "Link": "https://research.google.com/youtube8m/"
+    },
+    {
+      "Name": "Kinetics-400",
+      "Link": "https://deepmind.com/research/open-source/kinetics"
+    },
+    {
+      "Name": "Kinetics-600",
+      "Link": "https://deepmind.com/research/open-source/kinetics"
+    },
+    {
+      "Name": "Kinetics-700",
+      "Link": "https://deepmind.com/research/open-source/kinetics"
+    },
+    {
+      "Name": "20 Newsgroups",
+      "Link": "http://qwone.com/~jason/20Newsgroups/"
+    },
+    {
+      "Name": "Reuters-21578",
+      "Link": "https://archive.ics.uci.edu/ml/datasets/Reuters-21578+Text+Categorization+Collection"
+    },
+    {
+      "Name": "IMDB Reviews Dataset",
+      "Link": "https://ai.stanford.edu/~amaas/data/sentiment/"
+    },
+    {
+      "Name": "Amazon Reviews Dataset",
+      "Link": "https://nijianmo.github.io/amazon/index.html"
+    },
+    {
+      "Name": "Yelp Reviews Dataset",
+      "Link": "https://www.yelp.com/dataset"
+    },
+    {
+      "Name": "SQuAD (Stanford Question Answering Dataset)",
+      "Link": "https://rajpurkar.github.io/SQuAD-explorer/"
+    },
+    {
+      "Name": "Natural Questions",
+      "Link": "https://ai.google.com/research/NaturalQuestions"
+    },
+    {
+      "Name": "TriviaQA",
+      "Link": "http://nlp.cs.washington.edu/triviaqa/"
+    },
+    {
+      "Name": "CoQA (Conversational Question Answering)",
+      "Link": "https://stanfordnlp.github.io/coqa/"
+    },
+    {
+      "Name": "QuAC (Question Answering in Context)",
+      "Link": "http://quac.ai/"
+    },
+    {
+      "Name": "MultiRC",
+      "Link": "https://cogcomp.org/multirc/"
+    },
+    {
+      "Name": "RACE (ReAding Comprehension from Examinations)",
+      "Link": "http://www.cs.cmu.edu/~glai1/data/race/"
+    },
+    {
+      "Name": "WikiQA",
+      "Link": "https://www.microsoft.com/en-us/research/project/wikiqa/"
+    },
+    {
+      "Name": "MS MARCO",
+      "Link": "https://microsoft.github.io/msmarco/"
+    },
+    {
+      "Name": "OpenSubtitles",
+      "Link": "http://opus.nlpl.eu/OpenSubtitles-v2018.php"
+    },
+    {
+      "Name": "BookCorpus",
+      "Link": "https://huggingface.co/datasets/bookcorpus"
+    },
+    {
+      "Name": "Common Crawl",
+      "Link": "https://commoncrawl.org/the-data/"
+    },
+    {
+      "Name": "Wikipedia Corpus",
+      "Link": "https://dumps.wikimedia.org/enwiki/latest/"
+    },
+    {
+      "Name": "CC-News",
+      "Link": "https://github.com/indobenchmark/cc_news_dataset"
+    },
+    {
+      "Name": "Enron Email Dataset",
+      "Link": "https://www.cs.cmu.edu/~enron/"
+    },
+    {
+      "Name": "Twitter Sentiment Analysis Dataset",
+      "Link": "https://www.kaggle.com/kazanova/sentiment140"
+    },
+    {
+      "Name": "Stanford Sentiment Treebank",
+      "Link": "https://nlp.stanford.edu/sentiment/index.html"
+    },
+    {
+      "Name": "GLUE Benchmark",
+      "Link": "https://gluebenchmark.com/"
+    },
+    {
+      "Name": "SuperGLUE Benchmark",
+      "Link": "https://super.gluebenchmark.com/"
+    },
+    {
+      "Name": "TREC Question Classification",
+      "Link": "https://cogcomp.seas.upenn.edu/Data/QA/QC/"
+    },
+    {
+      "Name": "Emotion Recognition in Text (SemEval)",
+      "Link": "https://competitions.codalab.org/competitions/17751"
+    },
+    {
+      "Name": "SNLI (Stanford Natural Language Inference)",
+      "Link": "https://nlp.stanford.edu/projects/snli/"
+    },
+    {
+      "Name": "MultiNLI",
+      "Link": "https://cims.nyu.edu/~sbowman/multinli/"
+    },
+    {
+      "Name": "Quora Question Pairs",
+      "Link": "https://www.kaggle.com/c/quora-question-pairs"
+    },
+    {
+      "Name": "WikiText-103",
+      "Link": "https://blog.einstein.ai/the-wikitext-long-term-dependency-language-modeling-dataset/"
+    },
+    {
+      "Name": "OpenWebText",
+      "Link": "https://skylion007.github.io/OpenWebTextCorpus/"
+    },
+    {
+      "Name": "CC-Stories",
+      "Link": "https://www.kaggle.com/datasets/yamaerenay/cc-stories-dataset"
+    },
+    {
+      "Name": "Penn Treebank",
+      "Link": "https://catalog.ldc.upenn.edu/LDC99T42"
+    },
+    {
+      "Name": "Billion Word Benchmark",
+      "Link": "https://www.statmt.org/lm-benchmark/"
+    },
+    {
+      "Name": "Wiki-40B",
+      "Link": "https://github.com/google-research-datasets/wikipedia_datasets"
+    },
+    {
+      "Name": "RealNews",
+      "Link": "https://www.kaggle.com/c/realnews"
+    },
+    {
+      "Name": "News Category Dataset",
+      "Link": "https://www.kaggle.com/rmisra/news-category-dataset"
+    },
+    {
+      "Name": "Fake News Detection",
+      "Link": "https://www.kaggle.com/c/fake-news"
+    },
+    {
+      "Name": "The Pile",
+      "Link": "https://pile.eleuther.ai/"
+    },
+    {
+      "Name": "LAION-400M",
+      "Link": "https://laion.ai/blog/laion400m/"
+    },
+    {
+      "Name": "LAION-5B",
+      "Link": "https://laion.ai/blog/laion5b/"
+    },
+    {
+      "Name": "OpenImages V6",
+      "Link": "https://storage.googleapis.com/openimages/web/index.html"
+    },
+    {
+      "Name": "Flickr30k",
+      "Link": "http://shannon.cs.illinois.edu/DenotationGraph/"
+    },
+    {
+      "Name": "Visual Genome",
+      "Link": "https://visualgenome.org/"
+    },
+    {
+      "Name": "Conceptual Captions",
+      "Link": "https://ai.google.com/research/ConceptualCaptions"
+    },
+    {
+      "Name": "SBU Captioned Photo Dataset",
+      "Link": "https://www.cs.unc.edu/~crowds/"
+    },
+    {
+      "Name": "MS COCO Captions",
+      "Link": "https://cocodataset.org/#captions"
+    },
+    {
+      "Name": "Flickr8k",
+      "Link": "https://forms.illinois.edu/sec/1713398"
+    },
+    {
+      "Name": "Flickr30k Entities",
+      "Link": "https://bryanplummer.com/Flickr30kEntities/"
+    },
+    {
+      "Name": "CLEVR",
+      "Link": "https://cs.stanford.edu/people/jcjohns/clevr/"
+    },
+    {
+      "Name": "LibriSpeech ASR Corpus",
+      "Link": "http://www.openslr.org/12"
+    },
+    {
+      "Name": "TED-LIUM Release 3",
+      "Link": "http://www.openslr.org/51"
+    },
+    {
+      "Name": "Common Voice",
+      "Link": "https://commonvoice.mozilla.org/en/datasets"
+    },
+    {
+      "Name": "VoxCeleb1",
+      "Link": "http://www.robots.ox.ac.uk/~vgg/data/voxceleb/"
+    },
+    {
+      "Name": "VoxCeleb2",
+      "Link": "http://www.robots.ox.ac.uk/~vgg/data/voxceleb/"
+    },
+    {
+      "Name": "TIMIT",
+      "Link": "https://catalog.ldc.upenn.edu/LDC93S1"
+    },
+    {
+      "Name": "Fisher English Training Speech",
+      "Link": "https://catalog.ldc.upenn.edu/LDC2004S13"
+    },
+    {
+      "Name": "Aurora 4",
+      "Link": "https://catalog.ldc.upenn.edu/LDC2002S05"
+    },
+    {
+      "Name": "CHiME Speech Separation Challenge",
+      "Link": "http://spandh.dcs.shef.ac.uk/chime_challenge/"
+    },
+    {
+      "Name": "UrbanSound8K",
+      "Link": "https://urbansounddataset.weebly.com/urbansound8k.html"
+    },
+    {
+      "Name": "ESC-50",
+      "Link": "https://github.com/karolpiczak/ESC-50"
+    },
+    {
+      "Name": "GTZAN Music Genre Classification",
+      "Link": "http://marsyas.info/downloads/datasets.html"
+    },
+    {
+      "Name": "FMA (Free Music Archive) Dataset",
+      "Link": "https://github.com/mdeff/fma"
+    },
+    {
+      "Name": "VCTK Corpus",
+      "Link": "http://homepages.inf.ed.ac.uk/jyamagis/page3/page58/page58.html"
+    },
+    {
+      "Name": "CMU Arctic Speech Synthesis Databases",
+      "Link": "http://www.festvox.org/cmu_arctic/"
+    },
+    {
+      "Name": "VoxForge",
+      "Link": "http://www.voxforge.org/"
+    },
+    {
+      "Name": "UCF101",
+      "Link": "https://www.crcv.ucf.edu/data/UCF101.php"
+    },
+    {
+      "Name": "HMDB51",
+      "Link": "https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/"
+    },
+    {
+      "Name": "Sports-1M",
+      "Link": "https://cs.stanford.edu/people/karpathy/deepvideo/"
+    },
+    {
+      "Name": "ActivityNet",
+      "Link": "http://activity-net.org/"
+    },
+    {
+      "Name": "Moments in Time",
+      "Link": "http://moments.csail.mit.edu/"
+    },
+    {
+      "Name": "Charades",
+      "Link": "http://allenai.org/plato/charades/"
+    },
+    {
+      "Name": "AVA",
+      "Link": "https://research.google.com/ava/"
+    },
+    {
+      "Name": "LIRIS-ACCEDE",
+      "Link": "https://www.irit.fr/recherches/irisa/observatoire/en/liris-accede/"
+    },
+    {
+      "Name": "RAVDESS",
+      "Link": "https://zenodo.org/record/1188976"
+    },
+    {
+      "Name": "MSR-VTT",
+      "Link": "http://www.ms-multimedia-challenge.com/"
+    },
+    {
+      "Name": "YouCook2",
+      "Link": "http://youcook2.eecs.umich.edu/"
+    },
+    {
+      "Name": "KITTI Raw Dataset",
+      "Link": "http://www.cvlibs.net/datasets/kitti/raw_data.php"
+    },
+    {
+      "Name": "DAVIS (Densely Annotated VIdeo Segmentation)",
+      "Link": "https://davischallenge.org/"
+    },
+    {
+      "Name": "OpenAI Gym",
+      "Link": "https://gym.openai.com/"
+    },
+    {
+      "Name": "DeepMind Control Suite",
+      "Link": "https://www.deepmind.com/research/open-source/deepmind-control-suite"
+    },
+    {
+      "Name": "Atari 2600 Games Dataset",
+      "Link": "https://www.gymlibrary.ml/environments/atari/"
+    },
+    {
+      "Name": "D4RL (Datasets for Deep Data-Driven Reinforcement Learning)",
+      "Link": "https://github.com/rail-berkeley/d4rl"
+    },
+    {
+      "Name": "MuJoCo Physics Engine",
+      "Link": "http://www.mujoco.org/"
+    },
+    {
+      "Name": "Procgen Benchmark",
+      "Link": "https://github.com/openai/procgen"
+    },
+    {
+      "Name": "RoboSuite",
+      "Link": "https://robosuite.ai/datasets/"
+    },
+    {
+      "Name": "Unity ML-Agents",
+      "Link": "https://unity.com/products/machine-learning-agents"
+    },
+    {
+      "Name": "CARLA Autonomous Driving Simulator",
+      "Link": "http://carla.org/"
+    },
+    {
+      "Name": "Chest X-Ray Images (Pneumonia)",
+      "Link": "https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia"
+    },
+    {
+      "Name": "LIDC-IDRI (Lung Nodule Analysis)",
+      "Link": "https://wiki.cancerimagingarchive.net/display/Public/LIDC-IDRI"
+    },
+    {
+      "Name": "ISIC Skin Cancer Dataset",
+      "Link": "https://www.isic-archive.com/"
+    },
+    {
+      "Name": "MURA (Musculoskeletal Radiographs)",
+      "Link": "https://stanfordmlgroup.github.io/competitions/mura/"
+    },
+    {
+      "Name": "BraTS (Brain Tumor Segmentation Challenge)",
+      "Link": "https://www.med.upenn.edu/cbica/brats2021/data.html"
+    },
+    {
+      "Name": "ADNI (Alzheimer's Disease Neuroimaging Initiative)",
+      "Link": "http://adni.loni.usc.edu/"
+    },
+    {
+      "Name": "TCGA (The Cancer Genome Atlas)",
+      "Link": "https://www.cancer.gov/tcga"
+    },
+    {
+      "Name": "PhysioNet Challenge Datasets",
+      "Link": "https://physionet.org/challenge/"
+    },
+    {
+      "Name": "MIMIC-III Clinical Database",
+      "Link": "https://mimic.physionet.org/"
+    },
+    {
+      "Name": "OASIS Brain MRI Dataset",
+      "Link": "http://www.oasis-brains.org/"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "description": "This contains an introduction and short description of various C/C++ based  machine learning and deep learning libraries and frameworks.",
+  
+  "data":[
+    
+    {
+      "Name": "Dlib",
+      "Link": "https://github.com/davisking/dlib/blob/master/README.md"
+    },
+    {
+      "Name": "Caffe",
+      "Link": "https://github.com/BVLC/caffe/blob/master/README.md"
+    },
+    {
+      "Name": "Named Entity Recognition in Ecommerce Industry  Custom model [Github Repo]  03/07/24", 
+      "Link": "https://towardsai.net/p/machine-learning/named-entity-recognition-in-ecommerce-industry-custom-model-github-repo-03-07-24"
+    }, 
+    {
+      "Name": "Mean Squared Error Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Mean_squared_error"
+    },
+    {
+      "Name": "Huggingface diffusers Library : ControlNet",
+      "Link": "https://huggingface.com/docs/diffusers/en/using-diffusers/controlnet"
+    }
+  ]
+}

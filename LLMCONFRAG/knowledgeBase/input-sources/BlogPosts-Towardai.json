@@ -1,0 +1,405 @@
+{
+    "description": "This vector store is a dedicated repository of curated machine learning and artificial intelligence resources, featuring a diverse collection of technical articles, research insights, and practical guides sourced from Towards AI. It includes detailed entries on topics ranging from deploying models and custom implementations to in-depth analyses of algorithms and advanced concepts in retrieval augmentation generation (RAG) systems.",
+    
+    "data":
+    [
+        {
+            "Name": "BERT HuggingFace Model Deployment using Kubernetes [ Github Repo]  03/07/2024", 
+            "Link": "https://towardsai.net/p/machine-learning/bert-huggingface-model-deployment-using-kubernetes-github-repo-03-07-2024"
+        }, 
+        {
+            "Name": "Named Entity Recognition in Ecommerce Industry  Custom model [Github Repo]  03/07/24", 
+            "Link": "https://towardsai.net/p/machine-learning/named-entity-recognition-in-ecommerce-industry-custom-model-github-repo-03-07-24"
+        }, 
+        {
+            "Name": "AdaBoost Explained From Its Original Paper",
+            "Link": "https://towardsai.net/p/machine-learning/adaboost-explained-from-its-original-paper"
+        }, 
+        {
+            "Name": "Bias in Natural Language Processing (NLP)", 
+            "Link": "https://towardsai.net/p/machine-learning/bias-in-natural-language-processing-nlp"
+        }, 
+        {
+            "Name": "Making Bayesian Optimization Algorithm Simple for Practical Applications", 
+            "Link": "https://towardsai.net/p/machine-learning/making-bayesian-optimization-algorithm-simple-for-practical-applications"
+        }, 
+        {
+            "Name": "Learn Anything with AI and the Feynman Technique", 
+            "Link": "https://towardsai.net/p/machine-learning/learn-anything-with-ai-and-the-feynman-technique"
+        }, 
+        {
+            "Name": "But What Is Inside an AI Accelerator?", 
+            "Link": "https://towardsai.net/p/machine-learning/but-what-is-inside-an-ai-accelerator"
+        }, 
+        {
+            "Name": "Month in 4 Papers (June 2023)", 
+            "Link": "https://towardsai.net/p/machine-learning/month-in-4-papers-june-2023"
+        }, 
+        {
+            "Name": "AI Trends on TED", 
+            "Link": "https://towardsai.net/p/machine-learning/ai-trends-on-ted"
+        }, 
+        {
+            "Name": "A Practical Guide to Building GPT-2 with PyTorch (Part 2)", 
+            "Link": "https://towardsai.net/p/machine-learning/a-practical-guide-to-building-gpt-2-with-pytorch-part-2"
+        }, 
+        {
+            "Name": "A Practical Guide to Building GPT-2 with PyTorch (Part 1)", 
+            "Link": "https://towardsai.net/p/machine-learning/a-practical-guide-to-building-gpt-2-with-pytorch-part-1"
+        }, 
+        {
+            "Name": "Training LLMs with Synthetic Data",
+            "Link": "https://towardsai.net/p/machine-learning/training-llms-with-synthetic-data"
+        }, 
+        {
+            "Name": "On Stochastic Parrots", 
+            "Link": "https://towardsai.net/p/machine-learning/on-stochastic-parrots-paper-review"
+        }, 
+        {
+            "Name": "GraphRAG Analysis  Part 1", 
+            "Link": "https://towardsai.net/p/machine-learning/graphrag-analysis-part-1-how-indexing-elevates-knowledge-graph-performance-in-rag"
+        }, 
+        {
+            "Name": "Optimizing Dynamic Pricing with Reinforcement Learning", 
+            "Link": "https://towardsai.net/p/machine-learning/optimizing-dynamic-pricing-with-reinforcement-learning"
+        }, 
+        {
+            "Name": "Comparative Analysis of Fine-Tuning LLaMA 2 and LLaMA 3 Models with RTX 4090", 
+            "Link": "https://towardsai.net/p/machine-learning/comparative-analysis-of-fine-tuning-llama-2-and-llama-3-models-with-rtx-4090"
+        }, 
+        {
+            "Name": "Better GPT-4 Prompting For Interactive Python Plotly GIS Maps", 
+            "Link": "https://towardsai.net/p/machine-learning/better-gpt-4-prompting-for-interactive-python-plotly-gis-maps"
+        }, 
+        {
+            "Name": "Preventing Prompt Injection in OpenAI ", 
+            "Link": "https://towardsai.net/p/machine-learning/preventing-prompt-injection-in-openai-a-case-study-with-pricelines-openai-tool-penny"
+        }, 
+        {
+            "Name": "The Easiest Way To Stay Up to Date With Machine Learning.", 
+            "Link": "https://towardsai.net/p/machine-learning/the-easiest-way-to-stay-up-to-date-with-machine-learning"
+        }, 
+        {
+            "Name": "In-Depth Understanding of Vector Search for RAG and Generative AI Applications", 
+            "Link": "https://towardsai.net/p/machine-learning/in-depth-understanding-of-vector-search-for-rag-and-generative-ai-applications"
+        }, 
+        {
+            "Name": "Can You Actually Beat the Dealer in Blackjack?  Simulation of Most Popular Strategies", 
+            "Link": "https://towardsai.net/p/machine-learning/can-you-actually-beat-the-dealer-in-blackjack-simulation-of-most-popular-strategies"
+        }, 
+        {
+            "Name": "Significance of Image Labeling in AI", 
+            "Link": "https://towardsai.net/p/machine-learning/significance-of-image-labeling-in-ai"
+        }, 
+        {
+            "Name": "Transformers &amp; DSPy", 
+            "Link": "https://towardsai.net/p/machine-learning/transformers-dspy-the-perfect-combo-to-start-with-llms"
+        }, 
+        {
+            "Name": "Fine-Tuning LLMs with Synthetic Data for High-Quality Content Generation",
+            "Link": "https://towardsai.net/p/machine-learning/fine-tuning-llms-with-synthetic-data-for-high-quality-content-generation"
+        }, 
+        {
+            "Name": "Quantization", 
+            "Link": "https://towardsai.net/p/machine-learning/quantization-post-training-quantization-quantization-error-and-quantization-aware-training"
+        }, 
+        {
+            "Name": "From Concept to Creation", 
+            "Link": "https://towardsai.net/p/machine-learning/from-concept-to-creation-u-net-for-flawless-inpainting"
+        }, 
+        {
+            "Name": "Important LLMs Papers for the Week from 08/07 to 14/07",
+            "Link": "https://towardsai.net/p/machine-learning/important-llms-papers-for-the-week-from-08-07-to-14-07"
+        }, 
+        {
+            "Name": "Bayesian analysis and decision theory", 
+            "Link": "https://towardsai.net/p/machine-learning/bayesian-analysis-and-decision-theory-application-to-determine-a-decision-point-for-classification-problems"
+        },
+        {
+            "Name": "A Complete Guide to Descriptive Statistics  Central Tendency and Dispersion", 
+            "Link": "https://towardsai.net/p/machine-learning/a-complete-guide-to-descriptive-statistics-central-tendency-and-dispersion"
+        }, 
+        {
+            "Name": "10 Important Blogs to Stay Updated with LLM Research &amp; News", 
+            "Link": "https://towardsai.net/p/machine-learning/10-important-blogs-to-stay-updated-with-llm-research-news"
+        }, 
+        {
+            "Name": "Reinforcement Learning", 
+            "Link": "https://towardsai.net/p/machine-learning/reinforcement-learning-introducing-deep-q-networks-part-6"
+        }, 
+        {
+            "Name": "Fine-Tuning and Evaluating Large Language Models", 
+            "Link": "https://towardsai.net/p/machine-learning/fine-tuning-and-evaluating-large-language-models-key-benchmarks-and-metrics"
+        }, 
+        {
+            "Name": "Adversarial Machine Learning", 
+            "Link": "https://towardsai.net/p/machine-learning/adversarial-machine-learning-defense-strategies"
+        }, 
+        {
+            "Name": "An Introduction to Using NVIDIAs NIM API", 
+            "Link": "https://towardsai.net/p/machine-learning/an-introduction-to-using-nvidias-nim-api"
+        }, 
+        {
+            "Name": "Building a Multi-Agent AI Application with LlamaIndex  Bedrock  and Slack Integration", 
+            "Link": "https://towardsai.net/p/machine-learning/building-a-multi-agent-ai-application-with-llamaindex-bedrock-and-slack-integration-a-technical-journey-part-1"
+        }, 
+        {
+            "Name": "Understanding Boosting Algorithms", 
+            "Link": "https://towardsai.net/p/machine-learning/understanding-boosting-algorithms-a-mathematical-and-python-implementation-guide"
+        }, 
+        {
+            "Name": "Generative AI Foundations", 
+            "Link": "https://towardsai.net/p/machine-learning/generative-ai-foundations-training-a-vanilla-gan-for-fashion"
+        },
+        {
+            "Name": "Inside NuminaMath", 
+            "Link": "https://towardsai.net/p/machine-learning/inside-numinamath-the-ai-model-that-took-the-first-place-in-the-ai-math-olympiad"
+        }, 
+        {
+            "Name": "GraphRAG + GPT-4o-Mini is the RAG Heaven", 
+            "Link": "https://towardsai.net/p/machine-learning/graphrag-gpt-4o-mini-is-the-rag-heaven"
+        }, 
+        {
+            "Name": "GraphRAG + GPT-4o-Mini is the RAG Heaven", 
+            "Link": "https://towardsai.net/p/machine-learning/graphrag-gpt-4o-mini-is-the-rag-heaven-2"
+        }, 
+        {
+            "Name": "6 Years of Studying ML in 16 Minutes", 
+            "Link": "https://towardsai.net/p/machine-learning/6-years-of-studying-ml-in-16-minutes"}, 
+        {
+            "Name": "RAG Architecture", 
+            "Link": "https://towardsai.net/p/machine-learning/rag-architecture-advanced-rag"
+        },
+        {
+            "Name": "Building Visual Questioning Answering System Using Hugging Face Open-Source Models", 
+            "Link": "https://towardsai.net/p/machine-learning/building-visual-questioning-answering-system-using-hugging-face-open-source-models"
+        }, 
+        {
+            "Name": "The Mathematics of Small Things", 
+            "Link": "https://towardsai.net/p/machine-learning/the-mathematics-of-small-things-on-grokking-and-the-double-descent-phenomenon"
+        }, 
+        {
+            "Name": "Top Important Computer Vision Papers for the Week from 15/07 to 21/07", 
+            "Link": "https://towardsai.net/p/machine-learning/top-important-computer-vision-papers-for-the-week-from-15-07-to-21-07"
+        }, 
+        {
+            "Name": "RouteLLM", 
+            "Link": "https://towardsai.net/p/machine-learning/routellm-how-i-route-to-the-best-model-to-cut-api-costs"
+        }, 
+        {
+            "Name": "Let us Look at Change Detection and Machine Learning.", 
+            "Link": "https://towardsai.net/p/machine-learning/let-us-look-at-change-detection-and-machine-learning"
+        }, 
+        {
+            "Name": "Detailed Guide of How To Set up MLflow on GCP in a Secure Way", 
+            "Link": "https://towardsai.net/p/machine-learning/detailed-guide-of-how-to-set-up-mlflow-on-gcp-in-a-secure-way"
+        }, 
+        {
+            "Name": "Top 5 OpenAI API Alternatives Everyone Should Know About",
+            "Link": "https://towardsai.net/p/machine-learning/top-5-openai-api-alternatives-everyone-should-know-about"
+        }, 
+        {
+            "Name": "Improving RAG Answer Quality Through Complex Reasoning", 
+            "Link": "https://towardsai.net/p/machine-learning/improving-rag-answer-quality-through-complex-reasoning"
+        }, 
+        {
+            "Name": "5 AI Real-World Projects To Set Foot in The Door", 
+            "Link": "https://towardsai.net/p/machine-learning/5-ai-real-world-projects-to-set-foot-in-the-door"
+        }, 
+        {
+            "Name": "The Fundamental Mathematics of Machine Learning", 
+            "Link": "https://towardsai.net/p/machine-learning/the-fundamental-mathematics-of-machine-learning"
+        }, 
+        {
+            "Name": "Built-In AI Web APIs Will Enable A New Generation Of AI Startups", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/built-in-ai-web-apis-will-enable-a-new-generation-of-ai-startups"
+        }, 
+        {
+            "Name": "Why is Llama 3.1 Such a Big deal?", 
+            "Link": "https://towardsai.net/p/machine-learning/why-is-llama-3-1-such-a-big-deal-3"
+        }, 
+        {
+            "Name": "Why Llama 3.1 405B Is So Much Better Than GPT-4o And Claude 3.5 Sonnet Here The Result", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/why-llama-3-1-405b-is-so-much-better-than-gpt-4o-and-claude-3-5-sonnet-here-the-result"
+        }, 
+        {
+            "Name": "What is Claude AI  and How Does it Differ From ChatGPT?", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/what-is-claude-ai-and-how-does-it-differ-from-chatgpt"
+        }, 
+        {
+            "Name": "How to Use Functional Programming Features in Python?", 
+            "Link": "https://towardsai.net/p/machine-learning/how-to-use-functional-programming-features-in-python"
+        },
+        {
+            "Name": "How to Build With the Chromes Latest Built-in AI", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/how-to-build-with-the-chromes-latest-built-in-ai"
+        }, 
+        {
+            "Name": "The Problem with Prompting and What it Really is", 
+            "Link": "https://towardsai.net/p/machine-learning/the-problem-with-prompting-and-what-it-really-is"
+        }, 
+        {
+            "Name": "Uncovering K-means Clustering for Spatial Analysis", 
+            "Link": "https://towardsai.net/p/machine-learning/uncovering-k-means-clustering-for-spatial-analysis"
+        }, 
+        {
+            "Name": "Google Does it Again", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/google-does-it-again"
+        }, 
+        {
+            "Name": "Building and Extending Your Decision Tree", 
+            "Link": "https://towardsai.net/p/machine-learning/building-and-extending-your-decision-tree-a-hands-on-guide"
+        }, 
+        {
+            "Name": "Learn AI Security For FREE With These Amazing Resources", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/learn-ai-security-for-free-with-these-amazing-resources"
+        }, 
+        {
+            "Name": "Are You Trying to Automate Everything with AI? Heres Why You Should Stop.", 
+            "Link": "https://towardsai.net/p/machine-learning/are-you-trying-to-automate-everything-with-ai-heres-why-you-should-stop"
+        }, 
+        {
+            "Name": "Optimization of Language Models for Efficient Inference and Performance Using Mixed Architectures", 
+            "Link": "https://towardsai.net/p/machine-learning/optimization-of-language-models-for-efficient-inference-and-performance-using-mixed-architectures"
+        },
+        {
+            "Name": "Natural Selection for AI", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/natural-selection-for-ai"
+        }, 
+        {
+            "Name": "Building Intelligent Agents from Scratch", 
+            "Link": "https://towardsai.net/p/machine-learning/building-intelligent-agents-from-scratch-a-journey-into-llm-powered-autonomy"
+        }, 
+        {
+            "Name": "Meet Gemma Scope and ShieldGemma",
+            "Link": "https://towardsai.net/p/artificial-intelligence/meet-gemma-scope-and-shieldgemma-google-deepminds-new-releases-for-interpretability-and-guardrailing"
+        }, 
+        {
+            "Name": "A simple Introduction to Multilayer Perceptron and Autoencoder for Estimating Used Car Prices with Deep Learning for Beginners", 
+            "Link": "https://towardsai.net/p/machine-learning/a-simple-introduction-to-multilayer-perceptron-and-autoencoder-for-estimating-used-car-prices-with-deep-learning-for-beginners"
+        }, 
+        {
+            "Name": "Beyond LLMs", 
+            "Link": "https://towardsai.net/p/machine-learning/beyond-llms-compounds-systems-agents-and-whole-ai-products"
+        }, 
+        {
+            "Name": "Why Polars Destroy Pandas in All Possible Ways for Data Scientists?", 
+            "Link": "https://towardsai.net/p/machine-learning/why-polars-destroy-pandas-in-all-possible-ways-for-data-scientists"
+        }, 
+        {
+            "Name": "From Solo Notebooks to Collaborative Powerhouse", 
+            "Link": "https://towardsai.net/p/machine-learning/from-solo-notebooks-to-collaborative-powerhouse-vs-code-extensions-for-data-science-and-ml-teams"
+        }, 
+        {
+            "Name": "TensorFlow vs. PyTorch", 
+            "Link": "https://towardsai.net/p/machine-learning/tensorflow-vs-pytorch-whats-better-for-a-deep-learning-project"
+        }, 
+        {
+            "Name": "Building a Productized AI Chatbot for Credit Card Business", 
+            "Link": "https://towardsai.net/p/machine-learning/building-a-productized-ai-chatbot-for-credit-card-business"
+        }, 
+        {
+            "Name": "Can Mixture of Experts (MoE) Models Push GenAI to the Next Level?", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/can-mixture-of-experts-moe-models-push-genai-to-the-next-level"
+        }, 
+        {
+            "Name": "Taylor Series in AI.", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/taylor-series-in-ai"
+        }, 
+        {
+            "Name": "#38 Back to Basics  RAG  Transformers  ML Optimization  and LLM Evaluation.", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/38-back-to-basics-rag-transformers-ml-optimization-and-llm-evaluation"
+        }, 
+        {
+            "Name": "Generative AI Certification Test", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/generative-ai-certification-test-our-new-launch-with-activeloop"
+        }, 
+        {
+            "Name": "TAI #114", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/tai-114-two-paths-to-small-lms-synthetic-data-phi-3-5-vs-pruning-distillation-llama-3-1-minitron"
+        }, 
+        {
+            "Name": "The Curse of Dimensionality", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/the-curse-of-dimensionality-why-more-isnt-always-better-in-machine-learning"
+        }, 
+        {
+            "Name": "Building Your First Machine Learning Model with Linear Regression Using Ordinary Least Square", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/building-your-first-machine-learning-model-with-linear-regression-using-ordinary-least-square"
+        }, 
+        {
+            "Name": "Querying AI and Cloud Trends", 
+            "Link": "https://towardsai.net/p/machine-learning/querying-ai-and-cloud-trends-azure-and-openai-growth-slows-amazon-growth-peaked-in-june"
+        }, 
+        {
+            "Name": "Why scikit-learn isnt the Best for Visualizing Decision Trees", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/why-scikit-learn-isnt-the-best-for-visualizing-decision-trees-meet-dtreeviz"
+        }, 
+        {
+            "Name": "Simplifying LLM Development", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/simplifying-llm-development-treat-it-like-regular-ml-2"
+        }, 
+        {
+            "Name": "The Data Science Mentor", 
+            "Link": "https://towardsai.net/p/machine-learning/the-data-science-mentor"
+        }, 
+        {
+            "Name": "Explainable Artificial Intelligence (XAI) in Python", 
+            "Link": "https://towardsai.net/p/machine-learning/explainable-artificial-intelligence-xai-in-python-3-powerful-projects-you-need-to-know"
+        }, 
+        {
+            "Name": "Attention is all you need", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/attention-is-all-you-need-how-transformer-architecture-in-nlp-started"
+        }, 
+        {
+            "Name": "Why are Data Scientists Afraid to Use Test Driven Development?", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/why-are-data-scientists-afraid-to-use-test-driven-development"
+        }, 
+        {
+            "Name": "#37 GraphRAG  SAM 2  Embeddings  Discord Chatbot  LSTM Project!", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/37-graphrag-sam-2-embeddings-discord-chatbot-lstm-project"}, 
+        {
+            "Name": "Beyond Prompting", 
+            "Link": "https://towardsai.net/p/machine-learning/beyond-prompting-how-voice-will-define-the-future-of-ai"
+        },
+        {
+            "Name": "GraphRAG Analysis  Part 2", 
+            "Link": "https://towardsai.net/p/machine-learning/graphrag-analysis-part-2-graph-creation-and-retrieval-vs-vector-database-retrieval"
+        },
+        {
+            "Name": "TAI #113; Sakanas AI Scientist  Are LLM Agents Ready To Assist AI Research?", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/tai-113-sakanas-ai-scientist-are-llm-agents-ready-to-assist-ai-research"
+        }, 
+        {
+            "Name": "Face Detection in Python using YOLO", 
+            "Link": "https://towardsai.net/p/machine-learning/face-detection-in-python-using-yolo-a-practical-guide"
+        }, 
+        {
+            "Name": "#36 A Framework for Building Scalable AI Products  Best AI Tools for Marketers  ML Library  and more!", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/36-a-framework-for-building-scalable-ai-products-best-ai-tools-for-marketers-ml-library-and-more"
+        }, 
+        {
+            "Name": "TAI 112; Agent Capabilities Advancing; METR Eval and Inference Compute Scaling", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/tai-112-agent-capabilities-advancing-metr-eval-and-inference-compute-scaling"
+        }, 
+        {
+            "Name": "Encoding Categorical Data", 
+            "Link": "https://towardsai.net/p/machine-learning/encoding-categorical-data-a-step-by-step-guide"
+        }, 
+        {
+            "Name": "Simplifying Data Preprocessing with ColumnTransformer in Python", 
+            "Link": "https://towardsai.net/p/machine-learning/simplifying-data-preprocessing-with-columntransformer-in-python-a-step-by-step-guide"
+        }, 
+        {
+            "Name": "KNNs &amp; K-Means", 
+            "Link": "https://towardsai.net/p/artificial-intelligence/knns-k-means-the-superior-alternative-to-clustering-classification"
+        }, 
+        {
+            "Name": "Mathematical Transformations in Feature Engineering", 
+            "Link": "https://towardsai.net/p/machine-learning/mathematical-transformations-in-feature-engineering-log-reciprocal-and-power-transforms-explained-with-visualization"
+        }, 
+        {
+            "Name": "Automation Tool Use Deviation from AI-Related Tools Confirms Possible AI Hype Cycle Focus on Automation; Trend Now Reversing", 
+            "Link": "https://towardsai.net/p/machine-learning/automation-tool-use-deviation-from-ai-related-tools-confirms-possible-ai-hype-cycle-focus-on-automation-trend-now-reversing"
+        }
+    ]
+}
