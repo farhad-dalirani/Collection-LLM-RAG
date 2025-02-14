@@ -3,9 +3,11 @@ from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core.agent.react import ReActAgent
 from llama_index.core.tools import QueryEngineTool
 from llama_index.core.memory import ChatMemoryBuffer
+from llama_index.core.query_engine import RouterQueryEngine
+from llama_index.core.selectors import PydanticMultiSelector
 
 from knowledgeBase.query_engines import load_query_engine
-
+from utils import remove_duplicates_pairs
 
 class UserAgent:
     """
@@ -32,11 +34,12 @@ class UserAgent:
         set_api(openAI_api):
             Sets the OpenAI API key and reinitializes the models and agent.
     """
-    def __init__(self, llm_name, embedding_name, openAI_api, query_engines_details=[], temperature=0):
+    def __init__(self, llm_name, embedding_name, openAI_api, mode, query_engines_details=[], temperature=0):
         
         self.llm_name = llm_name
         self.embedding_name = embedding_name
         self.openAI_api = openAI_api
+        self.mode = mode
         self.temperature = temperature
 
         self.model_llm = None
@@ -48,6 +51,72 @@ class UserAgent:
         if self.openAI_api != "":
             self.set_llm(llm_name)
             self.set_embd(embedding_name)
+
+
+    def interact_with_agent(self, message, chat_history):
+        """
+        Interacts with the AI agent based on the selected mode and updates the chat history.
+        Parameters:
+        message (str): The user's message to be sent to the AI agent.
+        chat_history (list): The current chat history, which will be updated with the new interaction.
+        Returns:
+        tuple: An empty string and the updated chat history.
+        Raises:
+        ValueError: If the selected mode is not supported.
+        The function operates in two modes:
+        1. "ReAct-Powered Query Engines": Sends the user's message to the AI agent and collects article names and links from the sources.
+        2. "Router-Based Query Engines": Sends the user's message to the Router Query Engine and collects article names and links from the source nodes.
+        The collected references are formatted and appended to the bot's message, which is then added to the chat history.
+        """
+        references = []
+        
+        if self.mode == "ReAct-Powered Query Engines":
+            # Send the user's message to the AI agent 
+            ai_answer = self.agent.chat(message)
+            bot_message = ai_answer.response
+
+            # Collect article names and links
+            for tool_output in ai_answer.sources:
+                raw_output = tool_output.raw_output
+                # Check if raw_output has the attribute 'source_nodes'
+                if hasattr(raw_output, 'source_nodes'):
+                    for node in raw_output.source_nodes:
+                        name = node.node.metadata.get('Name')
+                        link = node.node.metadata.get('Link')
+                        if name and link:
+                            references.append(f"[{name}]({link})")
+                else:
+                    # Handle the case where source_nodes isn't available
+                    print("Warning: 'source_nodes' attribute not found in raw_output.")
+            references = remove_duplicates_pairs(references)
+        elif self.mode == "Router-Based Query Engines":
+            # Send the user's message to the Router Query Engine
+            response = self.agent.query(message)
+            
+            bot_message = response.response
+            for source in response.source_nodes:
+                # Access the underlying node from the NodeWithScore object
+                node = source.node  
+                # Assuming metadata is stored as a dict in the node's metadata attribute:
+                metadata = node.metadata  
+                name = metadata.get('Name')
+                link = metadata.get('Link')
+                if name and link:
+                    references.append(f"[{name}]({link})")
+            references = remove_duplicates_pairs(references)
+        else:
+            raise ValueError('Selected mode is not supported.')
+        
+        # Format the references
+        if references:
+            references_text = "Here are some articles you might find helpful:\n" + "\n".join(references)
+            bot_message += "\n\n" + references_text
+        
+        # Update the chat history
+        chat_history.append({"role": "user", "content": message})
+        chat_history.append({"role": "assistant", "content": bot_message})
+        return "", chat_history
+
 
     def set_llm(self, llm_name):
         """
@@ -67,6 +136,7 @@ class UserAgent:
         else:
             raise ValueError('Selected LLM name is not supported.')
 
+
     def set_embd(self, embedding_name):
         """
         Sets the embedding model based on the provided embedding name.
@@ -83,23 +153,20 @@ class UserAgent:
         else:
             raise ValueError('Selected Embedding name is not supported.')
     
+
     def set_agent(self, query_engines_details):
         """
-        Initializes and sets up the agent with the provided query engines.
+        Set up the agent with the provided query engines details.
+        This method initializes and configures the agent based on the provided query engines details.
+        It supports two modes: "ReAct-Powered Query Engines" and "Router-Based Query Engines".
         Args:
-            query_engines_details (list of dict): A list of dictionaries where each dictionary contains
-                the details of a query engine. Each dictionary should have the following keys:
-                - 'name' (str): The name of the query engine.
-                - 'description' (str): A description of the query engine.
-        The method performs the following steps:
-        1. Loads and initializes query engines based on the provided details.
-        2. Creates a list of QueryEngineTool instances from the loaded query engines.
-        3. Initializes a ChatMemoryBuffer with a token limit of 1500.
-        4. Creates a ReActAgent using the list of tools, the language model, and the memory buffer.
-        5. Sets the created ReActAgent to the instance variable `self.agent`.
-        If a query engine cannot be loaded, a message is printed indicating the failure.
+            query_engines_details (list): A list of dictionaries, each containing details of a query engine.
+                Each dictionary should have the following keys:
+                - 'name': The name of the query engine.
+                - 'description': A description of the query engine.
+        Raises:
+            ValueError: If the selected mode is not supported.
         """
-
         # Load and initialize query engines based on provided set of query engines
         qs_list = []
         for qs_detail_i in query_engines_details:
@@ -110,21 +177,32 @@ class UserAgent:
                 print('>    Query engine {} was loaded.'.format(qs_detail_i['name']))
                 # Create a QueryEngine tool instance from the loaded query engine
                 qs_i_tool = QueryEngineTool.from_defaults(
-                    query_engine=qs_i,
-                    description=qs_detail_i['description'],
+                   query_engine=qs_i,
+                   description=qs_detail_i['description'],
                 )
                 qs_list.append(qs_i_tool)
 
-        # Initialize a ChatMemoryBuffer with a token limit
-        memory = ChatMemoryBuffer.from_defaults(token_limit=1500)
+        if self.mode == "ReAct-Powered Query Engines":
+            # Initialize a ChatMemoryBuffer with a token limit
+            memory = ChatMemoryBuffer.from_defaults(token_limit=1500)
 
-        # Create a ReActAgent using the list of tools, the language model, and the memory buffer
-        self.agent = ReActAgent.from_tools(
-            tools=qs_list,
-            llm=self.model_llm,
-            memory=memory,
-            verbose=True
-        )
+            # Create a ReActAgent using the list of tools, the language model, and the memory buffer
+            self.agent = ReActAgent.from_tools(
+                tools=qs_list,
+                llm=self.model_llm,
+                memory=memory,
+                verbose=True
+            )
+        elif self.mode == "Router-Based Query Engines":
+            # Create a RouterQueryEngine using the list of tools
+            self.agent = RouterQueryEngine(
+                            selector=PydanticMultiSelector.from_defaults(llm=self.model_llm),
+                            query_engine_tools=qs_list,
+                            llm=self.model_llm
+                        )
+        else:
+           raise ValueError('Selected mode is not supported.')
+
 
     def set_api(self, openAI_api):
         """
@@ -138,4 +216,13 @@ class UserAgent:
         self.set_embd(embedding_name=self.embedding_name)
         self.set_agent(query_engines_details=self.query_engines_details)
     
-    
+
+    def set_mode(self, mode):
+        """
+        Sets the mode of the agent.
+        Args:
+            mode (str): The mode of the agent. Supported values are 'ReAct-Powered Query Engines' and 'Router-Based Query Engines'.
+        """
+        self.mode = mode
+        self.set_agent(query_engines_details=self.query_engines_details)
+
