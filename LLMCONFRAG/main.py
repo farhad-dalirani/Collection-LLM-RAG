@@ -2,7 +2,7 @@ import gradio as gr
 import json 
 from knowledgeBase.query_engines import create_new_query_engine, get_query_engines_detail
 
-from utils import get_query_engines_name, get_query_engines_detail_by_name
+from utils import get_query_engines_name, get_query_engines_detail_by_name, remove_duplicates_pairs
 from user_agent import UserAgent
 
 def interact_with_agent(message, chat_history, user_models):
@@ -12,11 +12,19 @@ def interact_with_agent(message, chat_history, user_models):
     # Collect article names and links
     references = []
     for tool_output in ai_answer.sources:
-        for node in tool_output.raw_output.source_nodes:
-            name = node.node.metadata.get('Name')
-            link = node.node.metadata.get('Link')
-            if name and link:
-                references.append(f"[{name}]({link})")
+        raw_output = tool_output.raw_output
+        # Check if raw_output has the attribute 'source_nodes'
+        if hasattr(raw_output, 'source_nodes'):
+            for node in raw_output.source_nodes:
+                name = node.node.metadata.get('Name')
+                link = node.node.metadata.get('Link')
+                if name and link:
+                    references.append(f"[{name}]({link})")
+        else:
+            # Handle the case where source_nodes isn't available
+            print("Warning: 'source_nodes' attribute not found in raw_output.")
+    references = remove_duplicates_pairs(references)
+
 
     # Format the references
     if references:

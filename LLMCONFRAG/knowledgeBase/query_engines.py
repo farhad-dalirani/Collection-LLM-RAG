@@ -102,7 +102,7 @@ def create_new_query_engine(user_models, path_json_file, type_json, output_path=
     print('>    Nodes were created.')
 
 
-def load_query_engine(query_engine_name, llm_model, embed_model):
+def load_query_engine(query_engine_name, llm_model, embed_model, k=10):
     qe_details = get_query_engines_detail()
     
     loc = -1
@@ -120,7 +120,7 @@ def load_query_engine(query_engine_name, llm_model, embed_model):
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
     vector_store_index = VectorStoreIndex.from_vector_store(vector_store, embed_model=embed_model)
 
-    qe = vector_store_index.as_query_engine(llm=llm_model)
+    qe = vector_store_index.as_query_engine(llm=llm_model, similarity_top_k=k)
 
     return qe
 

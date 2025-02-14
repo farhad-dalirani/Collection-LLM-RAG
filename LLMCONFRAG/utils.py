@@ -40,3 +40,12 @@ def get_query_engines_name():
     vec_store_desc=get_query_engines_detail()
    
     return [vs_i['name'] for vs_i in vec_store_desc]
+
+def remove_duplicates_pairs(pairs):
+    seen = set()
+    unique_pairs = []
+    for pair in pairs:
+        if pair not in seen:
+            unique_pairs.append(pair)
+            seen.add(pair)
+    return unique_pairs
