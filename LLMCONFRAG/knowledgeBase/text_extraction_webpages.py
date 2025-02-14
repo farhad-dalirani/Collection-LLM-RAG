@@ -7,6 +7,19 @@ from bs4 import BeautifulSoup
 import re
 
 def extract_text_from_url(url):
+    """
+    Extracts and cleans text content from a given URL.
+    This function sends a GET request to the specified URL, parses the HTML content,
+    removes unwanted elements (such as scripts, styles, headers, footers, navigation, and asides),
+    and extracts the text from paragraph, preformatted, and code elements. The extracted text
+    is then normalized to avoid unwanted formatting issues.
+    Args:
+        url (str): The URL of the webpage to extract text from.
+    Returns:
+        str: The cleaned and extracted text content from the webpage, or None if an error occurs
+             or if the URL returns a 404 Not Found status.
+    """
+
     try:
         response = requests.get(url, timeout=10)
         if response.status_code == 404:
@@ -90,6 +103,3 @@ def scrape_articles(json_file, output_file):
 
     return output_file
 
-if __name__ == '__main__':
-    # Example usage:
-    scrape_articles("LLMCONFRAG/createKnowledgeBase/input-sources/test.json", "LLMCONFRAG/createKnowledgeBase/output-processed-sources/test.json")

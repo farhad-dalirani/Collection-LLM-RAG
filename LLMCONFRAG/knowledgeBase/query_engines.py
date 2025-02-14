@@ -14,8 +14,20 @@ from utils import get_query_engines_detail
 
 def create_new_query_engine(user_models, path_json_file, type_json, output_path='LLMCONFRAG/knowledgeBase/output-processed-sources'):
     """
+    Creates a new query engine by processing a JSON file containing entities, extracting their text content,
+    converting the text to document objects, and storing the documents in a vector-based database.
+    Args:
+        user_models: A user-defined model object that includes an embedding model.
+        path_json_file (str): The path to the input JSON file containing entities.
+        type_json (str): The type of JSON file, either 'Webpages' or 'PDFs'.
+        output_path (str, optional): The path to store the processed output files. Defaults to 'LLMCONFRAG/knowledgeBase/output-processed-sources'.
+    Raises:
+        ValueError: If the type_json is not 'Webpages' or 'PDFs'.
+        FileNotFoundError: If the output file is not found.
+        ValueError: If the output file contains invalid JSON.
+    Returns:
+        None
     """
-    
     file_name = os.path.basename(path_json_file)
     dot_location = file_name.find('.')
     file_name_no_exten = file_name[0:dot_location]
@@ -99,10 +111,23 @@ def create_new_query_engine(user_models, path_json_file, type_json, output_path=
     with open(file_path, 'w') as file:
             json.dump(vec_store_desc, file)
     
-    print('>    Nodes were created.')
+    print('>    Nodes were created and saved.')
 
 
 def load_query_engine(query_engine_name, llm_model, embed_model, k=10):
+    """
+    Load a query engine by its name.
+    This function retrieves the details of available query engines, locates the specified query engine by name,
+    and loads it from a persistent database. It then initializes the query engine with the provided language
+    model and embedding model, and sets the number of top similar results to return.
+    Args:
+        query_engine_name (str): The name of the query engine to load.
+        llm_model: The language model to use with the query engine.
+        embed_model: The embedding model to use with the query engine.
+        k (int, optional): The number of top similar results to return. Defaults to 10.
+    Returns:
+        QueryEngine: The initialized query engine, or None if the query engine is not found.
+    """
     qe_details = get_query_engines_detail()
     
     loc = -1

@@ -1,11 +1,27 @@
-import gradio as gr
-import json 
-from knowledgeBase.query_engines import create_new_query_engine, get_query_engines_detail
+import json
 
-from utils import get_query_engines_name, get_query_engines_detail_by_name, remove_duplicates_pairs
+import gradio as gr
+
+from knowledgeBase.query_engines import create_new_query_engine, get_query_engines_detail
 from user_agent import UserAgent
+from utils import get_query_engines_name, get_query_engines_detail_by_name, remove_duplicates_pairs
+
 
 def interact_with_agent(message, chat_history, user_models):
+    """
+    Interacts with an AI agent using the provided message and updates the chat history.
+    Args:
+        message (str): The message from the user to be sent to the AI agent.
+        chat_history (list): A list of dictionaries representing the chat history.
+        user_models (object): An object containing user-specific models, including the AI agent.
+    Returns:
+        tuple: A tuple containing an empty string and the updated chat history.
+    The function sends the user's message to the AI agent and retrieves the agent's response.
+    It then collects article names and links from the agent's sources, formats them, and appends
+    them to the bot's message. The updated message and references are added to the chat history.
+    """
+    
+    # Send the user's message to the AI agent 
     ai_answer = user_models.agent.chat(message)
     bot_message = ai_answer.response
 
@@ -31,45 +47,103 @@ def interact_with_agent(message, chat_history, user_models):
         references_text = "Here are some articles you might find helpful:\n" + "\n".join(references)
         bot_message += "\n\n" + references_text
     
+    # Update the chat history
     chat_history.append({"role": "user", "content": message})
     chat_history.append({"role": "assistant", "content": bot_message})
     return "", chat_history
 
 def toggle_button(text):
-    """Function to check if textbox has input and update button interactiveness"""
+    """
+    Function to check if the textbox has input and update the button's interactiveness.
+    Args:
+        text (str): The input text from the textbox.
+    Returns:
+        gradio.components.Component: An updated button component with its interactiveness set based on the input text.
+    """
     return gr.update(interactive=bool(text))
 
 def change_llm(llm_radio, user_models):
-    """Function to change User's llm if user changed the selected LLM model"""
+    """
+    Update the user's selected LLM (Language Model).
+
+    This function updates the user's selected LLM model based on the provided
+    radio button selection.
+
+    Args:
+        llm_radio (str): The identifier of the selected LLM model.
+        user_models (UserModels): An instance of the UserModels class that manages
+                                  the user's models and settings.
+
+    Returns:
+        None
+    """
     user_models.set_llm(llm_radio)
+    print(">    LLM changed to: {}".format(llm_radio))
 
 def change_embd(emb_radio, user_models):
-    """Function to change User's embding model if user changed the selected embedding model"""
+    """
+    Update the user's embedding model based on the selected embedding option.
+
+    Parameters:
+    emb_radio (str): The selected embedding model identifier.
+    user_models (UserModels): An instance of the UserModels class that manages user-specific models.
+
+    Returns:
+    None
+    """
     user_models.set_embd(emb_radio)
 
 def change_models_api(open_ai_api_textbox, user_models):
-    """Function to change User's models if user changed the api"""
+    """
+    Updates the user's models with a new API key if provided.
+
+    Args:
+        open_ai_api_textbox (str): The new API key entered by the user.
+        user_models (object): The user's models object that has a method `set_api` to update the API key.
+
+    Returns:
+        None
+    """
     if open_ai_api_textbox != "":
         user_models.set_api(open_ai_api_textbox)
 
 def new_query_engine(user_models, path_json_file, type_json):
-    """Creates a new query engine"""
+    """
+    Creates a new query engine based on a input json file that contain name of article/papers and their links.
+
+    Args:
+        user_models (list): A list of user models to be used by the query engine.
+        path_json_file (str): The file path to the JSON configuration file.
+        type_json (str): The type of JSON configuration (e.g., 'schema', 'data').
+
+    Returns:
+        None
+    """
     create_new_query_engine(user_models, path_json_file, type_json)
 
 def on_select_query_engine(user_models, selected_query_engines):
-    """Update agents query engine tools acoording to input name list"""
+    """
+    Update the set of query engine tools for the agents based on the provided list of query engine names.
+
+    Args:
+        user_models (UserModels): An instance of UserModels containing the current state and details of the user's models.
+        selected_query_engines (list of str): A list of query engine names to be set for the agents.
+
+    Returns:
+        None
+    """
     user_models.query_engines_details = selected_query_engines
     user_models.set_agent(query_engines_details=get_query_engines_detail_by_name(selected_query_engines))
 
-if __name__ == '__main__':
-    
+
+def launch_app():
     # Loading setting configurations
     with open('./LLMCONFRAG/program_init_config.json', 'r') as file:
         config_data = json.load(file)         
-    llm_names = [ name + ' (Local)' for name in config_data['LLMs']['local']]
-    llm_names.extend([ name for name in config_data['LLMs']['API']])
-    emb_names = [ name + ' (Local)' for name in config_data['Embedding']['local']]
-    emb_names.extend([ name for name in config_data['Embedding']['API']])
+    llm_names = [name + ' (Local)' for name in config_data['LLMs']['local']]
+    llm_names.extend([name for name in config_data['LLMs']['API']])
+    emb_names = [name + ' (Local)' for name in config_data['Embedding']['local']]
+    emb_names.extend([name for name in config_data['Embedding']['API']])
 
     # Web based GUI
     with gr.Blocks() as app:
@@ -160,5 +234,9 @@ if __name__ == '__main__':
                                     outputs=[user_message, chat_interface])
                 
     
+    # Launch the web based GUI
     app.launch()
+
+if __name__ == '__main__':
+    launch_app()
     
