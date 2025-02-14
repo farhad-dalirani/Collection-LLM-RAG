@@ -2,13 +2,12 @@ import gradio as gr
 import json 
 from knowledgeBase.query_engines import create_new_query_engine, get_query_engines_detail
 
-from utils import get_query_engines_name
+from utils import get_query_engines_name, get_query_engines_detail_by_name
 from user_agent import UserAgent
 
 def interact_with_agent(message, chat_history, user_models):
     ai_answer = user_models.agent.chat(message)
     bot_message = ai_answer.response
-    message_sources = ai_answer.sources
 
     # Collect article names and links
     references = []
@@ -49,6 +48,10 @@ def new_query_engine(user_models, path_json_file, type_json):
     """Creates a new query engine"""
     create_new_query_engine(user_models, path_json_file, type_json)
 
+def on_select_query_engine(user_models, selected_query_engines):
+    """Update agents query engine tools acoording to input name list"""
+    user_models.query_engines_details = selected_query_engines
+    user_models.set_agent(query_engines_details=get_query_engines_detail_by_name(selected_query_engines))
 
 if __name__ == '__main__':
     
@@ -122,6 +125,7 @@ if __name__ == '__main__':
                     # questions of users
                     gr.Markdown("Existing Query Engines")
                     selected_query_engines = gr.CheckboxGroup(get_query_engines_name(), value=get_query_engines_name(), label="Select Query Engine", interactive=True)
+                    selected_query_engines.select(fn=on_select_query_engine, inputs=[user_models, selected_query_engines])
 
                     # Call function for creating new query engine if the button pressed
                     button_create_new_Query_engine.click(

@@ -17,6 +17,22 @@ def get_query_engines_detail():
     return vec_store_desc
 
 
+def get_query_engines_detail_by_name(query_engine_names):
+    """
+    Function to get existing query engines detail filtered by name of query engines, information
+    like name, description, embedding model that used
+    """
+
+    vec_store_desc=get_query_engines_detail()
+
+    filtered_vec_store_desc = []
+    for qe_i in vec_store_desc:
+        if qe_i['name'] in query_engine_names:
+            filtered_vec_store_desc.append(qe_i)
+
+    return filtered_vec_store_desc
+
+
 def get_query_engines_name():
     """
     Function to list name of existing query engines
