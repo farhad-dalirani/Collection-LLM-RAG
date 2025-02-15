@@ -104,7 +104,7 @@ class UserAgent:
                 name = metadata.get('Name')
                 link = metadata.get('Link')
                 if name and link:
-                    references.append(f"[{name}]({link})")
+                    references.append(f"🔗 [{name}]({link})")
             references = remove_duplicates_pairs(references)
         else:
             raise ValueError('Selected mode is not supported.')
