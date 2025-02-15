@@ -45,6 +45,8 @@ class UserAgent:
         self.model_llm = None
         self.model_embd = None
         self.agent = None
+        
+        self.memory = None
 
         self.query_engines_details = query_engines_details
         
@@ -184,13 +186,13 @@ class UserAgent:
 
         if self.mode == "ReAct-Powered Query Engines":
             # Initialize a ChatMemoryBuffer with a token limit
-            memory = ChatMemoryBuffer.from_defaults(token_limit=1500)
+            self.memory = ChatMemoryBuffer.from_defaults(token_limit=1500)
 
             # Create a ReActAgent using the list of tools, the language model, and the memory buffer
             self.agent = ReActAgent.from_tools(
                 tools=qs_list,
                 llm=self.model_llm,
-                memory=memory,
+                memory=self.memory,
                 verbose=True
             )
         elif self.mode == "Router-Based Query Engines":
@@ -198,7 +200,8 @@ class UserAgent:
             self.agent = RouterQueryEngine(
                             selector=PydanticMultiSelector.from_defaults(llm=self.model_llm),
                             query_engine_tools=qs_list,
-                            llm=self.model_llm
+                            llm=self.model_llm,
+                            verbose=True
                         )
         else:
            raise ValueError('Selected mode is not supported.')
@@ -226,3 +229,9 @@ class UserAgent:
         self.mode = mode
         self.set_agent(query_engines_details=self.query_engines_details)
 
+    def reset_memory(self):
+        """
+        Resets the memory buffer of the agent.
+        """
+        if self.memory is not None:
+            self.memory.reset()

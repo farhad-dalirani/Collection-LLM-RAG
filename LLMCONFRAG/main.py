@@ -18,6 +18,19 @@ def ai_response(user_message, chat_interface, user_models):
     """
     return user_models.interact_with_agent(message=user_message, chat_history=chat_interface)
 
+def clear_chat(chat_interface, user_models):
+    """
+    Clears the chat interface.
+
+    Args:
+        chat_interface (gr.Chatbot): The chat interface component to be cleared.
+
+    Returns:
+        list: An empty list to reset the chat interface.
+    """
+    user_models.reset_memory()
+    return []
+
 def toggle_button(text):
     """
     Function to check if the textbox has input and update the button's interactiveness.
@@ -146,7 +159,7 @@ def launch_app():
     emb_names.extend([name for name in config_data['Embedding']['API']])
 
     # Web based GUI
-    with gr.Blocks() as app:
+    with gr.Blocks(theme=gr.themes.Ocean()) as app:
         
         # Each user has its own models and settings
         user_models = gr.State(
@@ -193,11 +206,10 @@ def launch_app():
 
                 
                 # Query engines
-                with gr.Accordion("🗄️ Query Engines"):                    
+                with gr.Accordion("🗄️ Create New Query Engine"):                    
                     
-                    # Create new query engine
-                    gr.Markdown("Create a New Query Engine")
-                    path_documents_json_file = gr.File(label="Upload a File", file_count='single', file_types=[".json"])
+                    # Upload a JSON file containing article/paper names and their links to create a new query engine.
+                    path_documents_json_file = gr.File(label="Upload a JSON File", file_count='single', file_types=[".json"])
                     type_documents_folder = gr.Radio(config_data['QueryEngine-creation-input-type'],
                                                      value=config_data['QueryEngine-creation-input-type'][0], 
                                                      label='Type of Files in Directory', 
@@ -207,20 +219,6 @@ def launch_app():
                     path_documents_json_file.change(
                             fn=toggle_button, inputs=path_documents_json_file, outputs=button_create_new_Query_engine
                         )
-
-                    # Selecting one or more query engines to answer
-                    # questions of users
-                    gr.Markdown("Existing Query Engines")
-                    selected_query_engines = gr.CheckboxGroup(get_query_engines_name(), value=get_query_engines_name(), label="Select Query Engine", interactive=True)
-                    selected_query_engines.select(fn=on_select_query_engine, inputs=[user_models, selected_query_engines])
-
-                    # Call function for creating new query engine if the button pressed
-                    button_create_new_Query_engine.click(
-                        new_query_engine,
-                        inputs=[user_models, path_documents_json_file, type_documents_folder], 
-                        outputs=None
-                        ).then(lambda: gr.CheckboxGroup(choices=get_query_engines_name()), outputs=selected_query_engines)
-                    
 
             # Second column, Chat area
             with gr.Column(scale=3):
@@ -238,7 +236,20 @@ def launch_app():
                                     inputs=[user_message, chat_interface, user_models], 
                                     outputs=[user_message, chat_interface])
                 
-    
+                # Selecting one or more query engines to answer queries
+                selected_query_engines = gr.CheckboxGroup(get_query_engines_name(), value=get_query_engines_name(), label="Select Existing Query Engines to Use", interactive=True)
+                selected_query_engines.select(fn=on_select_query_engine, inputs=[user_models, selected_query_engines])
+                # Call function for creating new query engine if the button pressed
+                button_create_new_Query_engine.click(
+                    new_query_engine,
+                    inputs=[user_models, path_documents_json_file, type_documents_folder], 
+                    outputs=None
+                    ).then(lambda: gr.CheckboxGroup(choices=get_query_engines_name()), outputs=selected_query_engines)
+
+                # Clear chat
+                clear_button = gr.Button(value="Clear Chat")
+                clear_button.click(clear_chat, inputs=[chat_interface, user_models], outputs=[chat_interface])
+
     # Launch the web based GUI
     app.launch()
 
