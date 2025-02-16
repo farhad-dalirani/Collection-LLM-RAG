@@ -8,3 +8,9 @@ LLMCONFRAG/pdf.py
 LLMCONFRAG/KnowledgeBase/input-sources/test.json
 LLMCONFRAG/knowledgeBase/__pycache__
 .gradio
+
+LLMCONFRAG/knowledgeBase/output-processed-sources/!.*
+LLMCONFRAG/knowledgeBase/output-processed-sources/*
+
+query-engines/!.*
+query-engines/*
