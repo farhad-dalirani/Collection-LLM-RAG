@@ -223,7 +223,7 @@ def launch_app():
             # Second column, Chat area
             with gr.Column(scale=3):
                 # Area to show user questions and AI responses
-                chat_interface = gr.Chatbot(type='messages')
+                chat_interface = gr.Chatbot(type='messages', min_height=600)
 
                 # User input text box
                 user_message = gr.Textbox(placeholder='Message LLMConfRag', 

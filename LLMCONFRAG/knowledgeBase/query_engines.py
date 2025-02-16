@@ -7,6 +7,8 @@ from llama_index.vector_stores.chroma import ChromaVectorStore
 from llama_index.core.node_parser import TokenTextSplitter
 from llama_index.core.ingestion import IngestionPipeline
 from llama_index.core import VectorStoreIndex
+from llama_index.core.postprocessor.rankGPT_rerank import RankGPTRerank
+
 
 from knowledgeBase.text_extraction_webpages import scrape_articles
 from utils import get_query_engines_detail
@@ -114,7 +116,7 @@ def create_new_query_engine(user_models, path_json_file, type_json, output_path=
     print('>    Nodes were created and saved.')
 
 
-def load_query_engine(query_engine_name, llm_model, embed_model, k=10):
+def load_query_engine(query_engine_name, llm_model, embed_model, k=16):
     """
     Load a query engine by its name.
     This function retrieves the details of available query engines, locates the specified query engine by name,
@@ -145,7 +147,17 @@ def load_query_engine(query_engine_name, llm_model, embed_model, k=10):
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
     vector_store_index = VectorStoreIndex.from_vector_store(vector_store, embed_model=embed_model)
 
-    qe = vector_store_index.as_query_engine(llm=llm_model, similarity_top_k=k)
+    # Reranker to sort retrieved results according to relevance to query by using the language model
+    num_keep_nodes = 1
+    if k > 1:
+        num_keep_nodes = k // 2
+    rankGPT  = RankGPTRerank(top_n=num_keep_nodes, llm=llm_model, verbose=True)
+
+    qe = vector_store_index.as_query_engine(
+                llm=llm_model, 
+                similarity_top_k=k,
+                postprocessor=[rankGPT]    
+            )
 
     return qe
 

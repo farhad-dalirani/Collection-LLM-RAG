@@ -7,7 +7,7 @@ from llama_index.core.query_engine import RouterQueryEngine
 from llama_index.core.selectors import PydanticMultiSelector
 
 from knowledgeBase.query_engines import load_query_engine
-from utils import remove_duplicates_pairs
+from utils import remove_duplicates_pairs, sort_dict_by_values
 
 class UserAgent:
     """
@@ -70,8 +70,7 @@ class UserAgent:
         2. "Router-Based Query Engines": Sends the user's message to the Router Query Engine and collects article names and links from the source nodes.
         The collected references are formatted and appended to the bot's message, which is then added to the chat history.
         """
-        references = []
-        
+        references = {}
         if self.mode == "ReAct-Powered Query Engines":
             # Send the user's message to the AI agent 
             ai_answer = self.agent.chat(message)
@@ -80,18 +79,24 @@ class UserAgent:
             # Collect article names and links
             for tool_output in ai_answer.sources:
                 raw_output = tool_output.raw_output
-                # Check if raw_output has the attribute 'source_nodes'
+                # Check if raw_output has the attribute 'source_nodes', to avoid situations when 
+                # the agent has not decided to retrieve any information from the query engines
                 if hasattr(raw_output, 'source_nodes'):
                     for node in raw_output.source_nodes:
                         name = node.node.metadata.get('Name')
                         link = node.node.metadata.get('Link')
                         if name and link:
-                            references.append(f"[{name}]({link})")
+                            if name and link:
+                                if (name, link) in references:
+                                    # Update the score if the reference already exists
+                                    references[(name, link)] = max(references[(name, link)], node.score)
+                                else:
+                                    references[(name, link)] = node.score
                 else:
                     # Handle the case where source_nodes isn't available
                     print("Warning: 'source_nodes' attribute not found in raw_output.")
-            references = remove_duplicates_pairs(references)
-        elif self.mode == "Router-Based Query Engines":
+        
+        elif self.mode == "Router-Based Query Engines":    
             # Send the user's message to the Router Query Engine
             response = self.agent.query(message)
             
@@ -104,14 +109,28 @@ class UserAgent:
                 name = metadata.get('Name')
                 link = metadata.get('Link')
                 if name and link:
-                    references.append(f"🔗 [{name}]({link})")
-            references = remove_duplicates_pairs(references)
+                    if (name, link) in references:
+                        # Update the score if the reference already exists
+                        references[(name, link)] = max(references[(name, link)], source.score)
+                    else:
+                        references[(name, link)] = source.score
         else:
             raise ValueError('Selected mode is not supported.')
         
         # Format the references
         if references:
-            references_text = "Here are some articles you might find helpful:\n" + "\n".join(references)
+            # Sort the references by LLM Judge score 
+            references = sort_dict_by_values(references)
+            formatted_references = []
+            # Loop through references
+            for item in references:
+                # Unpack the first part of the tuple and the score
+                (name, link), score = item
+                # Format the reference as needed
+                formatted_references.append(f"🔗 [{name}]({link}) ⭐ {score:.2f}/1  | ")
+            references = formatted_references
+
+            references_text = "Here are some articles you might find helpful:\n" + " ".join(references)
             bot_message += "\n\n" + references_text
         
         # Update the chat history
