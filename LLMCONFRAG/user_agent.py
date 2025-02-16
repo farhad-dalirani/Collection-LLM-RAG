@@ -6,7 +6,7 @@ from llama_index.core.memory import ChatMemoryBuffer
 from llama_index.core.query_engine import RouterQueryEngine
 from llama_index.core.selectors import PydanticMultiSelector
 
-from knowledgeBase.query_engines import load_query_engine
+from knowledgeBase.collection import load_collection
 from utils import remove_duplicates_pairs, sort_dict_by_values
 
 class UserAgent:
@@ -191,7 +191,7 @@ class UserAgent:
         # Load and initialize query engines based on provided set of query engines
         qs_list = []
         for qs_detail_i in query_engines_details:
-            qs_i = load_query_engine(qs_detail_i['name'], llm_model=self.model_llm, embed_model=self.model_embd)
+            qs_i = load_collection(qs_detail_i['name'], llm_model=self.model_llm, embed_model=self.model_embd)
             if qs_i is None:
                 print('>    Could not load the query engine.')
             else:

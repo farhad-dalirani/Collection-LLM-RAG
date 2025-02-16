@@ -14,9 +14,9 @@ from knowledgeBase.text_extraction_webpages import scrape_articles
 from utils import get_query_engines_detail
 
 
-def create_new_query_engine(user_models, path_json_file, type_json, output_path='LLMCONFRAG/knowledgeBase/output-processed-sources'):
+def create_new_collection(user_models, path_json_file, type_json, output_path='LLMCONFRAG/knowledgeBase/output-processed-sources'):
     """
-    Creates a new query engine by processing a JSON file containing entities, extracting their text content,
+    Creates a new collection (query engine) by processing a JSON file containing entities, extracting their text content,
     converting the text to document objects, and storing the documents in a vector-based database.
     Args:
         user_models: A user-defined model object that includes an embedding model.
@@ -116,9 +116,9 @@ def create_new_query_engine(user_models, path_json_file, type_json, output_path=
     print('>    Nodes were created and saved.')
 
 
-def load_query_engine(query_engine_name, llm_model, embed_model, k=16):
+def load_collection(query_engine_name, llm_model, embed_model, k=16):
     """
-    Load a query engine by its name.
+    Load a collection (query engine) by its name.
     This function retrieves the details of available query engines, locates the specified query engine by name,
     and loads it from a persistent database. It then initializes the query engine with the provided language
     model and embedding model, and sets the number of top similar results to return.

@@ -2,7 +2,7 @@ import json
 
 import gradio as gr
 
-from knowledgeBase.query_engines import create_new_query_engine, get_query_engines_detail
+from knowledgeBase.collection import create_new_collection, get_query_engines_detail
 from user_agent import UserAgent
 from utils import get_query_engines_name, get_query_engines_detail_by_name
 
@@ -113,7 +113,7 @@ def new_query_engine(user_models, path_json_file, type_json):
     Returns:
         None
     """
-    create_new_query_engine(user_models, path_json_file, type_json)
+    create_new_collection(user_models, path_json_file, type_json)
 
 def on_select_query_engine(user_models, selected_query_engines):
     """
