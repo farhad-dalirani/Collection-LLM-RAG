@@ -2,7 +2,7 @@ import os
 import json
 
 
-def get_query_engines_detail():
+def get_query_engines_detail(query_engines_info_json='Data/query-engines/query_engines_list.json'):
     """
     Retrieves details of existing query engines from a JSON file.
 
@@ -13,11 +13,10 @@ def get_query_engines_detail():
     Returns:
         list: A list of dictionaries, each containing details of a query engine.
     """
-    file_path = "./query-engines/query_engines_list.json"
-    if not os.path.exists(file_path):
+    if not os.path.exists(query_engines_info_json):
         return []
     vec_store_desc=[]
-    with open(file_path, 'r') as file:
+    with open(query_engines_info_json, 'r') as file:
         vec_store_desc = json.load(file)
 
     return vec_store_desc

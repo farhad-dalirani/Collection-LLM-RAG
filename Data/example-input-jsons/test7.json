@@ -1,0 +1,19 @@
+{
+  "description": "This is a curated collection of documentation references for a wide range of machine learning loss functions, including variants such as Mean Squared Error, Mean Absolute Error, Crossentropy, Huber, and many more.",
+  
+  "data": 
+  [
+    {
+      "Name": "Mean Squared Error Loss (Wikipedia)",
+      "Link": "https://en.wikipedia.org/wiki/Mean_squared_error"
+    },
+    {
+      "Name": "MSELoss (PyTorch)",
+      "Link": "https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html"
+    },
+    {
+      "Name": "Mean Squared Error (TensorFlow)",
+      "Link": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/MeanSquaredError"
+    }
+  ]
+}

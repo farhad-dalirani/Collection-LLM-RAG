@@ -2,9 +2,11 @@ import json
 import logging
 import gradio as gr
 
-from knowledgeBase.collection import create_new_collection, get_query_engines_detail, delete_query_engine_by_name
+from knowledgeBase.collection import CollectionManager
 from user_agent import UserAgent
-from utils import get_query_engines_name, get_query_engines_detail_by_name
+from utils import get_query_engines_name, get_query_engines_detail_by_name, get_query_engines_detail
+
+collection_manager = CollectionManager()
 
 def ai_response(user_message, chat_interface, user_models, selected_query_engines):
     """
@@ -132,7 +134,7 @@ def new_query_engine(user_models, path_json_file, type_json, chat_interface):
         return chat_interface
     
     try:
-        create_new_collection(user_models, path_json_file, type_json)
+        collection_manager.create_new_collection(user_models, path_json_file, type_json)
     except Exception as e:
         chat_interface.append({"role": "assistant", "content": f"An error occurred: {e}"})
         return chat_interface
@@ -152,14 +154,13 @@ def on_select_query_engine(user_models, selected_query_engines):
     Returns:
         None
     """
-    user_models.query_engines_details = selected_query_engines
     user_models.set_agent(query_engines_details=get_query_engines_detail_by_name(selected_query_engines))
     logging.info('>    Query Engine(s) selected: {}'.format(selected_query_engines))
 
 def delete_query_engine(selected_query_engine):
     """
     """
-    delete_query_engine_by_name(selected_query_engine)
+    collection_manager.delete_query_engine_by_name(selected_query_engine)
     logging.info('>   Query Engine {} was deleted.'.format(selected_query_engine))
     return None
 
@@ -286,7 +287,7 @@ def launch_app():
         )
         
         # Enable the delete button only if a query engine is selected
-        delete_query_engine_dropdown.change(
+        delete_query_engine_dropdown.focus(
                 fn=toggle_button, inputs=delete_query_engine_dropdown, outputs=button_delete_query_engine
         )
                      
@@ -307,7 +308,7 @@ def launch_app():
             inputs=[delete_query_engine_dropdown],
             outputs=None
         ).then(
-            fn=lambda: gr.CheckboxGroup(choices=get_query_engines_name()), 
+            fn=lambda: gr.CheckboxGroup(choices=get_query_engines_name(), value=get_query_engines_name()), 
             outputs=selected_query_engines
         ).then(
             fn=lambda: gr.Dropdown(choices=get_query_engines_name()), 
@@ -338,6 +339,10 @@ def launch_app():
 
 if __name__ == '__main__':
     
+    # Configure logging
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.info('Logging is configured.')
+
     # Launch the web-based GUI
     launch_app()
     

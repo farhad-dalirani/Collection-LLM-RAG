@@ -49,14 +49,17 @@ class HybridRetriever(BaseRetriever):
         self.model_llm = model_llm
         self.model_embd = model_embd
         
+        self.__vector_index_save_path='Data/query-engines/collections'
+        self.__keyword_index_save_path='Data/query-engines/keyword-index'
+        self.__query_engines_info_json='Data/query-engines/query_engines_list.json'
+
         # Load the vector index and keyword index
         vector_index = self.__load_vector_index_from_file()
         keyword_index = self.__load_keyword_index_from_file()
 
         self._vector_retriever = VectorIndexRetriever(index=vector_index, similarity_top_k=k_semantic)
         self._keyword_retriever = KeywordTableSimpleRetriever(index=keyword_index, num_chunks_per_query=k_keyword)
-
-        
+    
     def __load_vector_index_from_file(self):
         """
         Loads a vector index from a file based on the input name.
@@ -80,7 +83,7 @@ class HybridRetriever(BaseRetriever):
             return None
 
         # Load query engine from database
-        chroma_client = chromadb.PersistentClient(path='./query-engines/collections')
+        chroma_client = chromadb.PersistentClient(path=self.__vector_index_save_path)
         chroma_collection = chroma_client.get_collection(name=self.query_engine_name)
         vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
         vector_store_index = VectorStoreIndex.from_vector_store(vector_store, embed_model=self.model_embd)
@@ -96,7 +99,7 @@ class HybridRetriever(BaseRetriever):
         """
         # Rebuild the storage context
         storage_context = StorageContext.from_defaults(
-                persist_dir=os.path.join('./query-engines/', 'keyword-index', self.query_engine_name)
+                persist_dir=os.path.join(self.__keyword_index_save_path, self.query_engine_name)
             )
         keyword_index = load_index_from_storage(storage_context=storage_context, index_id=None, llm=self.model_llm)
         return keyword_index
