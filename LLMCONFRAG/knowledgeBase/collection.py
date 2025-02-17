@@ -8,7 +8,8 @@ from llama_index.core.node_parser import TokenTextSplitter
 from llama_index.core.ingestion import IngestionPipeline
 from llama_index.core import VectorStoreIndex
 from llama_index.core.postprocessor.rankGPT_rerank import RankGPTRerank
-
+from llama_index.core import SimpleKeywordTableIndex, ServiceContext
+from llama_index.core import Settings
 
 from knowledgeBase.text_extraction_webpages import scrape_articles
 from utils import get_query_engines_detail
@@ -17,7 +18,7 @@ from utils import get_query_engines_detail
 def create_new_collection(user_models, path_json_file, type_json, output_path='LLMCONFRAG/knowledgeBase/output-processed-sources'):
     """
     Creates a new collection (query engine) by processing a JSON file containing entities, extracting their text content,
-    converting the text to document objects, and storing the documents in a vector-based database.
+    converting the text to document objects, and storing the documents in a vector-based database (both vector index and keyword index).
     Args:
         user_models: A user-defined model object that includes an embedding model.
         path_json_file (str): The path to the input JSON file containing entities.
@@ -74,10 +75,42 @@ def create_new_collection(user_models, path_json_file, type_json, output_path='L
             )
         ) 
 
-    # Vector based database to store docs, their embeddings, ...
-    print(">    Creating {} vector store ...".format(file_name_no_exten))
+    # Create vector index
+    nodes = create_vector_index(
+        user_models=user_models, 
+        documents=documents, 
+        collection_name=file_name_no_exten, 
+        collection_description=data['description'])
+
+    # Create keyword index
+    create_keyword_index(nodes=nodes, collection_name=file_name_no_exten, model_llm=user_models.model_llm)
+
+
+def create_vector_index(user_models, documents, collection_name, collection_description):
+    """
+    Creates a vector index for a collection of documents using a specified user model for embeddings.
+    Args:
+        user_models (object): An object containing the user-defined models for embedding.
+        documents (list): A list of documents to be indexed.
+        collection_name (str): The name of the collection to be created.
+        collection_description (str): A description of the collection.
+    Returns:
+        list: A list of nodes representing the transformed documents stored in the vector index.
+    The function performs the following steps:
+    1. Initializes a persistent client for the vector database.
+    2. Creates a collection in the vector database with the specified name.
+    3. Defines a storage context object using the created vector database.
+    4. Sets up a token splitter to chunk the documents.
+    5. Creates an ingestion pipeline to transform the documents and store the transformed nodes in the vector store.
+    6. Runs the transformation pipeline on the provided documents.
+    7. Updates a JSON file with details of the created vector store.
+    8. Prints status messages indicating the progress and completion of the vector index creation.
+    """
+
+    #Vector based database to store docs, their embeddings, ...
+    print(">    Creating {} Vector Index ...".format(collection_name))
     chroma_client = chromadb.PersistentClient(path='./query-engines/collections')
-    chroma_collection = chroma_client.create_collection(name=file_name_no_exten)
+    chroma_collection = chroma_client.create_collection(name=collection_name)
     # Define a storage context object using the created vector database.
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)    
 
@@ -105,60 +138,40 @@ def create_new_collection(user_models, path_json_file, type_json, output_path='L
     with open(file_path, 'r') as file:
         vec_store_desc = json.load(file)
         new_entry = {
-                    "name": file_name_no_exten,
-                    "description": data['description'],
+                    "name": collection_name,
+                    "description": collection_description,
                     "embedding_name": user_models.embedding_name
                 }
         vec_store_desc.append(new_entry)
     with open(file_path, 'w') as file:
             json.dump(vec_store_desc, file)
     
-    print('>    Nodes were created and saved.')
+    print('>    Vector Index were created and saved.')
+
+    return nodes
 
 
-def load_collection(query_engine_name, llm_model, embed_model, k=16):
+def create_keyword_index(nodes, collection_name, model_llm):
     """
-    Load a collection (query engine) by its name.
-    This function retrieves the details of available query engines, locates the specified query engine by name,
-    and loads it from a persistent database. It then initializes the query engine with the provided language
-    model and embedding model, and sets the number of top similar results to return.
+    Creates a keyword index for a given collection of nodes using a specified language model.
+    This function initializes a SimpleKeywordTableIndex with the provided nodes and language model,
+    then saves the index to a specified directory.
     Args:
-        query_engine_name (str): The name of the query engine to load.
-        llm_model: The language model to use with the query engine.
-        embed_model: The embedding model to use with the query engine.
-        k (int, optional): The number of top similar results to return. Defaults to 10.
+        nodes (list): A list of nodes to be indexed.
+        collection_name (str): The name of the collection for which the keyword index is being created.
+        model_llm (object): The language model to be used for creating the keyword index.
     Returns:
-        QueryEngine: The initialized query engine, or None if the query engine is not found.
+        None
     """
-    qe_details = get_query_engines_detail()
-    
-    loc = -1
-    for idx, qe_i in enumerate(qe_details):
-        if qe_i['name'] == query_engine_name:
-            loc = idx
-            break
+    print(">    Creating {} Keyword Index ...".format(collection_name))
+    # Initialize the SimpleKeywordTableIndex with the service context
+    keyword_index = SimpleKeywordTableIndex(nodes=nodes, llm=model_llm, show_progress=True)
 
-    if loc == -1:
-        return None
+    # Define the directory path
+    directory_path = './query-engines/keyword-index/'
+    os.makedirs(directory_path, exist_ok=True)
 
-    # Load query engine from database
-    chroma_client = chromadb.PersistentClient(path='./query-engines/collections')
-    chroma_collection = chroma_client.get_collection(name=query_engine_name)
-    vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
-    vector_store_index = VectorStoreIndex.from_vector_store(vector_store, embed_model=embed_model)
-
-    # Reranker to sort retrieved results according to relevance to query by using the language model
-    num_keep_nodes = 1
-    if k > 1:
-        num_keep_nodes = k // 2
-    rankGPT  = RankGPTRerank(top_n=num_keep_nodes, llm=llm_model, verbose=True)
-
-    qe = vector_store_index.as_query_engine(
-                llm=llm_model, 
-                similarity_top_k=k,
-                postprocessor=[rankGPT]    
-            )
-
-    return qe
-
-
+    # Persist the index with a specific ID
+    persist_directory = os.path.join(directory_path, collection_name)
+    keyword_index.storage_context.persist(persist_directory)
+    print('>    Keyword Index were created and saved.')

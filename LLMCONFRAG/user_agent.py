@@ -6,8 +6,9 @@ from llama_index.core.memory import ChatMemoryBuffer
 from llama_index.core.query_engine import RouterQueryEngine
 from llama_index.core.selectors import PydanticMultiSelector
 
-from knowledgeBase.collection import load_collection
-from utils import remove_duplicates_pairs, sort_dict_by_values
+from knowledgeBase.hybrid_query_engine import load_hybrid_query_engine
+from utils import sort_dict_by_values
+
 
 class UserAgent:
     """
@@ -87,11 +88,12 @@ class UserAgent:
                         link = node.node.metadata.get('Link')
                         if name and link:
                             if name and link:
+                                current_score = node.score if node.score is not None else 0
                                 if (name, link) in references:
                                     # Update the score if the reference already exists
-                                    references[(name, link)] = max(references[(name, link)], node.score)
+                                    references[(name, link)] = max(references[(name, link)], current_score)
                                 else:
-                                    references[(name, link)] = node.score
+                                    references[(name, link)] = current_score
                 else:
                     # Handle the case where source_nodes isn't available
                     print("Warning: 'source_nodes' attribute not found in raw_output.")
@@ -109,11 +111,12 @@ class UserAgent:
                 name = metadata.get('Name')
                 link = metadata.get('Link')
                 if name and link:
+                    current_score = source.score if source.score is not None else 0
                     if (name, link) in references:
                         # Update the score if the reference already exists
-                        references[(name, link)] = max(references[(name, link)], source.score)
+                        references[(name, link)] = max(references[(name, link)], current_score)
                     else:
-                        references[(name, link)] = source.score
+                        references[(name, link)] = current_score
         else:
             raise ValueError('Selected mode is not supported.')
         
@@ -127,10 +130,11 @@ class UserAgent:
                 # Unpack the first part of the tuple and the score
                 (name, link), score = item
                 # Format the reference as needed
-                formatted_references.append(f"🔗 [{name}]({link}) ⭐ {score:.2f}/1  | ")
+                formatted_references.append(f"🔗 [{name}]({link}) ⭐ {score:.2f}/1  | " if score != 0 else f"🔗 [{name}]({link}) ⭐ -/1  | ")
+
             references = formatted_references
 
-            references_text = "Here are some articles you might find helpful:\n" + " ".join(references)
+            references_text = "Some helpful articles, sorted by relevance according to LLM Judge, along with semantic scores:\n" + " ".join(references)
             bot_message += "\n\n" + references_text
         
         # Update the chat history
@@ -191,9 +195,17 @@ class UserAgent:
         # Load and initialize query engines based on provided set of query engines
         qs_list = []
         for qs_detail_i in query_engines_details:
-            qs_i = load_collection(qs_detail_i['name'], llm_model=self.model_llm, embed_model=self.model_embd)
+            
+            # Load hybrid query engine: Semantic + Keyword-based
+            qs_i = load_hybrid_query_engine(
+                            model_llm=self.model_llm, 
+                            model_embd=self.model_embd, 
+                            query_engine_name=qs_detail_i['name'], 
+                            query_engine_description=qs_detail_i['description']
+                        )
+
             if qs_i is None:
-                print('>    Could not load the query engine.')
+                print('>    Query engine {} could not be loaded.'.format(qs_detail_i['name']))
             else:
                 print('>    Query engine {} was loaded.'.format(qs_detail_i['name']))
                 # Create a QueryEngine tool instance from the loaded query engine
