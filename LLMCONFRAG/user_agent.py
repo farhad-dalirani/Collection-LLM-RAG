@@ -225,10 +225,7 @@ class UserAgent:
 
         # Load and initialize query engines based on provided set of query engines
         qs_list = []
-        print('============================')
-        print(query_engines_details)
         for qs_detail_i in query_engines_details:
-            print('============================')
             print(qs_detail_i)
             # Load hybrid query engine: Semantic + Keyword-based
             qs_i = load_hybrid_query_engine(
