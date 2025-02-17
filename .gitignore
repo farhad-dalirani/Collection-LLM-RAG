@@ -2,7 +2,7 @@ test.py
 todo.txt
 sources
 .venv
-LLMCONFRAG/__pycache__
+*/__pycache__
 LLMCONFRAG/pdf.py
 /doc_download
 LLMCONFRAG/KnowledgeBase/input-sources/test.json

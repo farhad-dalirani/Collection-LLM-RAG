@@ -1,3 +1,4 @@
+import logging
 from llama_index.llms.openai import OpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding 
 from llama_index.core.agent.react import ReActAgent
@@ -5,6 +6,7 @@ from llama_index.core.tools import QueryEngineTool
 from llama_index.core.memory import ChatMemoryBuffer
 from llama_index.core.query_engine import RouterQueryEngine
 from llama_index.core.selectors import PydanticMultiSelector
+from openai import AuthenticationError
 
 from knowledgeBase.hybrid_query_engine import load_hybrid_query_engine
 from utils import sort_dict_by_values
@@ -74,7 +76,21 @@ class UserAgent:
         references = {}
         if self.mode == "ReAct-Powered Query Engines":
             # Send the user's message to the AI agent 
-            ai_answer = self.agent.chat(message)
+            try:
+                ai_answer = self.agent.chat(message)
+            except AuthenticationError:
+                bot_message = "An error occurred: Authentication Error. Please check your OpenAI API key."
+                chat_history.append({"role": "user", "content": message})
+                chat_history.append({"role": "assistant", "content": bot_message})
+                logging.error("Authentication error: Incorrect API key provided.")
+                return "", chat_history
+            except Exception as e:
+                bot_message = f"An error occurred: {e}"
+                chat_history.append({"role": "user", "content": message})
+                chat_history.append({"role": "assistant", "content": bot_message})
+                logging.error(f"An unexpected error occurred: {e}")
+                return "", chat_history
+            
             bot_message = ai_answer.response
 
             # Collect article names and links
@@ -96,12 +112,25 @@ class UserAgent:
                                     references[(name, link)] = current_score
                 else:
                     # Handle the case where source_nodes isn't available
-                    print("Warning: 'source_nodes' attribute not found in raw_output.")
+                    logging.info("Warning: 'source_nodes' attribute not found in raw_output.")
         
         elif self.mode == "Router-Based Query Engines":    
             # Send the user's message to the Router Query Engine
-            response = self.agent.query(message)
-            
+            try:
+                response = self.agent.query(message)
+            except AuthenticationError:
+                bot_message = "An error occurred: Authentication Error. Please check your OpenAI API key."
+                chat_history.append({"role": "user", "content": message})
+                chat_history.append({"role": "assistant", "content": bot_message})
+                logging.error("Authentication error: Incorrect API key provided.")
+                return "", chat_history
+            except Exception as e:
+                bot_message = f"An error occurred: {e}"
+                chat_history.append({"role": "user", "content": message})
+                chat_history.append({"role": "assistant", "content": bot_message})
+                logging.error(f"An unexpected error occurred: {e}")
+                return "", chat_history
+
             bot_message = response.response
             for source in response.source_nodes:
                 # Access the underlying node from the NodeWithScore object
@@ -205,9 +234,9 @@ class UserAgent:
                         )
 
             if qs_i is None:
-                print('>    Query engine {} could not be loaded.'.format(qs_detail_i['name']))
+                logging.info('>    Query engine {} could not be loaded.'.format(qs_detail_i['name']))
             else:
-                print('>    Query engine {} was loaded.'.format(qs_detail_i['name']))
+                logging.info('>    Query engine {} was loaded.'.format(qs_detail_i['name']))
                 # Create a QueryEngine tool instance from the loaded query engine
                 qs_i_tool = QueryEngineTool.from_defaults(
                    query_engine=qs_i,

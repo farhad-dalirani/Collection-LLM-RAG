@@ -1,5 +1,7 @@
 import os
 import json
+import logging
+from openai import AuthenticationError
 
 import chromadb
 from llama_index.core import Document
@@ -44,7 +46,7 @@ def create_new_collection(user_models, path_json_file, type_json, output_path='L
                 output_file=os.path.join(output_path, file_name)
             )
         except Exception as e:
-            print("An error occured: {}".format(e))
+            logging.error("An error occured: {}".format(e))
             output_file = None
     elif type_json == 'PDFs':
         pass
@@ -82,6 +84,7 @@ def create_new_collection(user_models, path_json_file, type_json, output_path='L
             collection_name=file_name_no_exten, 
             collection_description=data['description']
         )
+    
 
     # Create keyword index
     create_keyword_index(
@@ -113,7 +116,7 @@ def create_vector_index(user_models, documents, collection_name, collection_desc
     """
 
     #Vector based database to store docs, their embeddings, ...
-    print(">    Creating {} Vector Index ...".format(collection_name))
+    logging.info(">    Creating {} Vector Index ...".format(collection_name))
     chroma_client = chromadb.PersistentClient(path='./query-engines/collections')
     chroma_collection = chroma_client.create_collection(name=collection_name)
     # Define a storage context object using the created vector database.
@@ -132,7 +135,12 @@ def create_vector_index(user_models, documents, collection_name, collection_desc
     )
 
     # Run the transformation pipeline.
-    nodes = pipeline.run(documents=documents, show_progress=True);
+    try:
+        nodes = pipeline.run(documents=documents, show_progress=True)
+    except AuthenticationError:
+        raise ValueError("Authentication error: Incorrect API key provided.")
+    except Exception as e:
+        raise ValueError(f"An unexpected error occurred: {e}")
 
     # Add detail of created vector store to list of vector stores
     file_path = "./query-engines/query_engines_list.json"
@@ -166,7 +174,7 @@ def create_keyword_index(nodes, collection_name, model_llm):
     Returns:
         None
     """
-    print(">    Creating {} Keyword Index ...".format(collection_name))
+    logging.info(">    Creating {} Keyword Index ...".format(collection_name))
     # Initialize the SimpleKeywordTableIndex with the service context
     keyword_index = SimpleKeywordTableIndex(nodes=nodes, llm=model_llm, show_progress=True)
 

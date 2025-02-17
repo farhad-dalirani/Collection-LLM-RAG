@@ -1,3 +1,4 @@
+import logging
 import json
 import requests
 from bs4 import BeautifulSoup
@@ -23,7 +24,7 @@ def extract_text_from_url(url):
     try:
         response = requests.get(url, timeout=10)
         if response.status_code == 404:
-            print(f"Skipping {url}: 404 Not Found")
+            logging.warning(f"Skipping {url}: 404 Not Found")
             return None
         
         soup = BeautifulSoup(response.text, "html.parser")
@@ -48,7 +49,7 @@ def extract_text_from_url(url):
         
         return full_content
     except requests.RequestException as e:
-        print(f"Error fetching {url}: {e}")
+        logging.info(f"Error fetching {url}: {e}")
         return None
 
 def scrape_articles(json_file, output_file):
@@ -89,7 +90,7 @@ def scrape_articles(json_file, output_file):
     for article in data["data"]:
         name = article.get("Name", "")
         link = article.get("Link", "")
-        print(f"Scraping: {name}")
+        logging.info(f"Scraping: {name}")
         
         content = extract_text_from_url(link)
         if content:
@@ -99,7 +100,7 @@ def scrape_articles(json_file, output_file):
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump({"description": data["description"], "data": scraped_data}, f, indent=4, ensure_ascii=False)
     
-    print(f">   Scraping completed. Data saved to {output_file}")
+    logging.info(f">   Scraping completed. Data saved to {output_file}")
 
     return output_file
 
