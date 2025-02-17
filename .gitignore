@@ -5,12 +5,14 @@ sources
 */__pycache__
 LLMCONFRAG/pdf.py
 /doc_download
-LLMCONFRAG/KnowledgeBase/input-sources/test.json
+
 LLMCONFRAG/knowledgeBase/__pycache__
 .gradio
 
-LLMCONFRAG/knowledgeBase/output-processed-sources/!.*
-LLMCONFRAG/knowledgeBase/output-processed-sources/*
-
+Data/output-processed-sources/!.*
+Data/output-processed-sources/*
+Data/example-input-jsons/test*.json
+Data/query-engines/query_engines_list.json
+Data/query-engines/collections/*
 query-engines/!.*
 query-engines/*
