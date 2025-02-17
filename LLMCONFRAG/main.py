@@ -2,7 +2,7 @@ import json
 
 import gradio as gr
 
-from knowledgeBase.collection import create_new_collection, get_query_engines_detail
+from knowledgeBase.collection import create_new_collection, get_query_engines_detail, delete_query_engine_by_name
 from user_agent import UserAgent
 from utils import get_query_engines_name, get_query_engines_detail_by_name
 
@@ -29,6 +29,7 @@ def clear_chat(chat_interface, user_models):
         list: An empty list to reset the chat interface.
     """
     user_models.reset_memory()
+    print('>    Chat cleared.')
     return []
 
 def toggle_button(text):
@@ -86,6 +87,7 @@ def change_embd(emb_radio, user_models):
     None
     """
     user_models.set_embd(emb_radio)
+    print(">    Embedding model changed to: {}".format(emb_radio))
 
 def change_models_api(open_ai_api_textbox, user_models):
     """
@@ -100,6 +102,7 @@ def change_models_api(open_ai_api_textbox, user_models):
     """
     if open_ai_api_textbox != "":
         user_models.set_api(open_ai_api_textbox)
+    print(">    API key updated.")
 
 def new_query_engine(user_models, path_json_file, type_json):
     """
@@ -114,6 +117,7 @@ def new_query_engine(user_models, path_json_file, type_json):
         None
     """
     create_new_collection(user_models, path_json_file, type_json)
+    print('>    New Query Engine, Vector Index, and Keyword Index were created and saved.')
 
 def on_select_query_engine(user_models, selected_query_engines):
     """
@@ -128,7 +132,14 @@ def on_select_query_engine(user_models, selected_query_engines):
     """
     user_models.query_engines_details = selected_query_engines
     user_models.set_agent(query_engines_details=get_query_engines_detail_by_name(selected_query_engines))
+    print('>    Query Engine(s) selected: {}'.format(selected_query_engines))
 
+def delete_query_engine(selected_query_engine):
+    """
+    """
+    delete_query_engine_by_name(selected_query_engine)
+    print('>   Query Engine {} was deleted.'.format(selected_query_engine))
+    return None
 
 def launch_app():
     """
@@ -220,6 +231,17 @@ def launch_app():
                             fn=toggle_button, inputs=path_documents_json_file, outputs=button_create_new_Query_engine
                         )
 
+                with gr.Accordion("🗑️ Delete Query Engine"):
+                    # Select a query engine to delete
+                    delete_query_engine_dropdown = gr.Dropdown(get_query_engines_name(), label="Select Query Engine to Delete")
+                    button_delete_query_engine = gr.Button(value="Delete", interactive=False)
+                    
+                    # Enable the delete button only if a query engine is selected
+                    delete_query_engine_dropdown.change(
+                        fn=toggle_button, inputs=delete_query_engine_dropdown, outputs=button_delete_query_engine
+                    )
+
+
             # Second column, Chat area
             with gr.Column(scale=3):
                 # Area to show user questions and AI responses
@@ -239,12 +261,38 @@ def launch_app():
                 # Selecting one or more query engines to answer queries
                 selected_query_engines = gr.CheckboxGroup(get_query_engines_name(), value=get_query_engines_name(), label="Select Existing Query Engines to Use", interactive=True)
                 selected_query_engines.select(fn=on_select_query_engine, inputs=[user_models, selected_query_engines])
+                
+                
+                # Call function for deleting query engine if the button pressed
+                button_delete_query_engine.click(
+                    delete_query_engine,
+                    inputs=[delete_query_engine_dropdown],
+                    outputs=None
+                ).then(
+                    fn=lambda: gr.CheckboxGroup(choices=get_query_engines_name()), 
+                    outputs=selected_query_engines
+                ).then(
+                    fn=lambda: gr.Dropdown(choices=get_query_engines_name()), 
+                    outputs=delete_query_engine_dropdown
+                ).then(
+                    fn=lambda: gr.Button(value="Delete", interactive=False), 
+                    outputs=button_delete_query_engine
+                ).then(
+                    fn=on_select_query_engine, inputs=[user_models, selected_query_engines]
+                )
+
                 # Call function for creating new query engine if the button pressed
                 button_create_new_Query_engine.click(
                     new_query_engine,
                     inputs=[user_models, path_documents_json_file, type_documents_folder], 
                     outputs=None
-                    ).then(lambda: gr.CheckboxGroup(choices=get_query_engines_name()), outputs=selected_query_engines)
+                ).then(
+                    lambda: gr.Button(value="Create", interactive=False), outputs=button_create_new_Query_engine
+                ).then(
+                    lambda: gr.CheckboxGroup(choices=get_query_engines_name()), outputs=selected_query_engines
+                ).then(
+                    lambda: gr.Dropdown(choices=get_query_engines_name()), outputs=delete_query_engine_dropdown
+                )
 
                 # Clear chat
                 clear_button = gr.Button(value="Clear Chat")

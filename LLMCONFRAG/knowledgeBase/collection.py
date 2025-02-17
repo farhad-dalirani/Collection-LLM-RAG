@@ -77,13 +77,18 @@ def create_new_collection(user_models, path_json_file, type_json, output_path='L
 
     # Create vector index
     nodes = create_vector_index(
-        user_models=user_models, 
-        documents=documents, 
-        collection_name=file_name_no_exten, 
-        collection_description=data['description'])
+            user_models=user_models, 
+            documents=documents, 
+            collection_name=file_name_no_exten, 
+            collection_description=data['description']
+        )
 
     # Create keyword index
-    create_keyword_index(nodes=nodes, collection_name=file_name_no_exten, model_llm=user_models.model_llm)
+    create_keyword_index(
+            nodes=nodes, 
+            collection_name=file_name_no_exten, 
+            model_llm=user_models.model_llm
+        )
 
 
 def create_vector_index(user_models, documents, collection_name, collection_description):
@@ -145,8 +150,6 @@ def create_vector_index(user_models, documents, collection_name, collection_desc
         vec_store_desc.append(new_entry)
     with open(file_path, 'w') as file:
             json.dump(vec_store_desc, file)
-    
-    print('>    Vector Index were created and saved.')
 
     return nodes
 
@@ -174,4 +177,31 @@ def create_keyword_index(nodes, collection_name, model_llm):
     # Persist the index with a specific ID
     persist_directory = os.path.join(directory_path, collection_name)
     keyword_index.storage_context.persist(persist_directory)
-    print('>    Keyword Index were created and saved.')
+
+
+def delete_query_engine_by_name(name):
+    """
+    Deletes a query engine (collection) by its name.
+    Args:
+        name (str): The name of the query engine to be deleted.
+    Returns:
+        None
+    """
+    # Delete the vector store
+    chroma_client = chromadb.PersistentClient(path='./query-engines/collections')
+    chroma_client.delete_collection(name)
+
+    # Delete the keyword index
+    directory_path = './query-engines/keyword-index/'
+    persist_directory = os.path.join(directory_path, name)
+    os.system("rm -rf {}".format(persist_directory))
+
+    # Update the list of query engines
+    file_path = "./query-engines/query_engines_list.json"
+    with open(file_path, 'r') as file:
+        vec_store_desc = json.load(file)
+        vec_store_desc = [i for i in vec_store_desc if i['name'] != name]
+    with open(file_path, 'w') as file:
+        json.dump(vec_store_desc, file)
+
+    
