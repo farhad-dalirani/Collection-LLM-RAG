@@ -1,45 +1,31 @@
-import os
-import chromadb
-from llama_index.vector_stores.chroma import ChromaVectorStore
-from llama_index.core import VectorStoreIndex
 from llama_index.core.postprocessor.rankGPT_rerank import RankGPTRerank
 from llama_index.core.retrievers import BaseRetriever
 from llama_index.core.schema import NodeWithScore
 from llama_index.core import QueryBundle
-from llama_index.core.storage import StorageContext
-from llama_index.core import load_index_from_storage
+
 from llama_index.core import get_response_synthesizer
 from llama_index.core.query_engine import RetrieverQueryEngine
 from llama_index.core.retrievers import VectorIndexRetriever, KeywordTableSimpleRetriever
 
 from typing import List
-
-from utils import get_query_engines_detail
-
+from knowledgeBase.collection import CollectionManager
 
 class HybridRetriever(BaseRetriever):
     """
-    HybridRetriever is a class that combines both vector-based and keyword-based retrieval mechanisms to fetch relevant nodes based on a query.
+    A retriever that combines vector-based and keyword-based retrieval methods to
+    retrieve relevant nodes based on a given query.
     Attributes:
         query_engine_name (str): The name of the query engine.
         query_engine_description (str): A description of the query engine.
         model_llm: The language model used for keyword-based retrieval.
         model_embd: The embedding model used for vector-based retrieval.
-        _vector_retriever: An instance of VectorIndexRetriever for vector-based retrieval.
-        _keyword_retriever: An instance of KeywordTableSimpleRetriever for keyword-based retrieval.
+        _vector_retriever (VectorIndexRetriever): The retriever for vector-based retrieval.
+        _keyword_retriever (KeywordTableSimpleRetriever): The retriever for keyword-based retrieval.
     Methods:
         __init__(model_llm, model_embd, query_engine_name, query_engine_description, k_semantic=16, k_keyword=6):
-            Initializes the HybridRetriever with the given models, query engine details, and retrieval parameters.
-        __load_vector_index_from_file():
-            Loads the vector index from a file based on the query engine name.
-        __load_keyword_index_from_file():
-            Loads the keyword index from a file based on the query engine name.
         _retrieve(query_bundle: QueryBundle) -> List[NodeWithScore]:
-            Retrieves relevant nodes based on the given query bundle using both vector and keyword retrieval mechanisms.
     """
     
-   
-
     def __init__(self, model_llm, model_embd, query_engine_name, query_engine_description, k_semantic=16, k_keyword=6)-> None:
         """
         Initializes the HybridRetriever with the given models, query engine details, and retrieval parameters.
@@ -49,61 +35,14 @@ class HybridRetriever(BaseRetriever):
         self.model_llm = model_llm
         self.model_embd = model_embd
         
-        self.__vector_index_save_path='Data/query-engines/collections'
-        self.__keyword_index_save_path='Data/query-engines/keyword-index'
-        self.__query_engines_info_json='Data/query-engines/query_engines_list.json'
+        collection_manager = CollectionManager()
 
         # Load the vector index and keyword index
-        vector_index = self.__load_vector_index_from_file()
-        keyword_index = self.__load_keyword_index_from_file()
+        vector_index = collection_manager.load_vector_index_from_file(query_engine_name=query_engine_name, model_embd=model_embd)
+        keyword_index = collection_manager.load_keyword_index_from_file(query_engine_name=query_engine_name, model_llm=model_llm)
 
         self._vector_retriever = VectorIndexRetriever(index=vector_index, similarity_top_k=k_semantic)
         self._keyword_retriever = KeywordTableSimpleRetriever(index=keyword_index, num_chunks_per_query=k_keyword)
-    
-    def __load_vector_index_from_file(self):
-        """
-        Loads a vector index from a file based on the input name.
-        This method retrieves the details of vector index and searches for the 
-        vector index with the specified name. If found, it loads the corresponding 
-        vector index from a persistent Chroma database.
-        Returns:
-            VectorStoreIndex: The vector store index associated with the query engine name.
-            None: If the query engine name is not found in the details.
-        """
-        
-        qe_details = get_query_engines_detail()
-        
-        loc = -1
-        for idx, qe_i in enumerate(qe_details):
-            if qe_i['name'] == self.query_engine_name:
-                loc = idx
-                break
-
-        if loc == -1:
-            return None
-
-        # Load query engine from database
-        chroma_client = chromadb.PersistentClient(path=self.__vector_index_save_path)
-        chroma_collection = chroma_client.get_collection(name=self.query_engine_name)
-        vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
-        vector_store_index = VectorStoreIndex.from_vector_store(vector_store, embed_model=self.model_embd)
-        return vector_store_index
-
-    def __load_keyword_index_from_file(self):
-        """
-        Load the keyword index from a file.
-        This method rebuilds the storage context using the default settings and 
-        loads the keyword index from the specified storage directory.
-        Returns:
-            keyword_index: The loaded keyword index.
-        """
-        # Rebuild the storage context
-        storage_context = StorageContext.from_defaults(
-                persist_dir=os.path.join(self.__keyword_index_save_path, self.query_engine_name)
-            )
-        keyword_index = load_index_from_storage(storage_context=storage_context, index_id=None, llm=self.model_llm)
-        return keyword_index
-
 
     def _retrieve(self, query_bundle: QueryBundle) -> List[NodeWithScore]:
         """
@@ -137,16 +76,16 @@ class HybridRetriever(BaseRetriever):
 
 def load_hybrid_query_engine(model_llm, model_embd, query_engine_name, query_engine_description, k_semantic=18, k_keyword=6):
     """
-    Load and configure a hybrid query engine that combines semantic and keyword-based retrieval.
+    Load a hybrid query engine that combines vector-based and keyword-based retrieval methods.
     Args:
-        model_llm: The language model to be used for semantic understanding and response synthesis.
-        model_embd: The embedding model to be used for keyword-based retrieval.
+        model_llm (object): The language model to be used for semantic understanding and reranking.
+        model_embd (object): The embedding model to be used for vector-based retrieval.
         query_engine_name (str): The name of the query engine.
         query_engine_description (str): A description of the query engine.
-        k_semantic (int, optional): The number of top results to retrieve based on semantic similarity. Defaults to 16.
-        k_keyword (int, optional): The number of top results to retrieve based on keyword matching. Defaults to 5.
+        k_semantic (int, optional): The number of top results to retrieve using semantic search. Defaults to 18.
+        k_keyword (int, optional): The number of top results to retrieve using keyword search. Defaults to 6.
     Returns:
-        hybrid_query_engine: An instance of RetrieverQueryEngine configured with the specified models and parameters.
+        object: An instance of the hybrid query engine.
     """
 
     # Hybrid retriever to combine vector and keyword-based retrieval

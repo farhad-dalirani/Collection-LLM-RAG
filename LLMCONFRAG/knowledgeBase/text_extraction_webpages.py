@@ -1,11 +1,9 @@
-import logging
+import re
 import json
+import logging
 import requests
 from bs4 import BeautifulSoup
-import re
-import requests
-from bs4 import BeautifulSoup
-import re
+
 
 def extract_text_from_url(url):
     """

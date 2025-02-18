@@ -4,7 +4,6 @@ import gradio as gr
 
 from knowledgeBase.collection import CollectionManager
 from user_agent import UserAgent
-from utils import get_query_engines_name, get_query_engines_detail_by_name, get_query_engines_detail
 
 collection_manager = CollectionManager()
 
@@ -154,7 +153,7 @@ def on_select_query_engine(user_models, selected_query_engines):
     Returns:
         None
     """
-    user_models.set_agent(query_engines_details=get_query_engines_detail_by_name(selected_query_engines))
+    user_models.set_agent(query_engines_details=collection_manager.get_query_engines_detail_by_name(selected_query_engines))
     logging.info('>    Query Engine(s) selected: {}'.format(selected_query_engines))
 
 def delete_query_engine(selected_query_engine):
@@ -201,7 +200,7 @@ def launch_app():
                 llm_name=llm_names[0], 
                 embedding_name=emb_names[0], 
                 mode=config_data['Modes'][0],
-                query_engines_details=get_query_engines_detail(), 
+                query_engines_details=collection_manager.get_query_engines_detail(), 
                 openAI_api="")
             )
         
@@ -245,7 +244,7 @@ def launch_app():
                     
                 with gr.Accordion("🗑️ Delete Query Engine"):
                     # Select a query engine to delete
-                    delete_query_engine_dropdown = gr.Dropdown(get_query_engines_name(), label="Select Query Engine to Delete")
+                    delete_query_engine_dropdown = gr.Dropdown(collection_manager.get_query_engines_name(), label="Select Query Engine to Delete")
                     button_delete_query_engine = gr.Button(value="Delete", interactive=False)
                     
                     
@@ -262,7 +261,10 @@ def launch_app():
                 clear_button = gr.Button(value="Clear Chat")
 
                 # Selecting one or more query engines to answer queries
-                selected_query_engines = gr.CheckboxGroup(get_query_engines_name(), value=get_query_engines_name(), label="Select Existing Query Engines to Use", interactive=True)
+                selected_query_engines = gr.CheckboxGroup(
+                                            collection_manager.get_query_engines_name(), 
+                                            value=collection_manager.get_query_engines_name(), 
+                                            label="Select Existing Query Engines to Use", interactive=True)
 
         # Event handling
         
@@ -308,10 +310,12 @@ def launch_app():
             inputs=[delete_query_engine_dropdown],
             outputs=None
         ).then(
-            fn=lambda: gr.CheckboxGroup(choices=get_query_engines_name(), value=get_query_engines_name()), 
+            fn=lambda: gr.CheckboxGroup(choices=collection_manager.get_query_engines_name(), value=collection_manager.get_query_engines_name()), 
             outputs=selected_query_engines
         ).then(
-            fn=lambda: gr.Dropdown(choices=get_query_engines_name()), 
+            lambda: gr.Dropdown(
+                choices=collection_manager.get_query_engines_name(), 
+                value=collection_manager.get_query_engines_name()[0] if collection_manager.get_query_engines_name() else None), 
             outputs=delete_query_engine_dropdown
         ).then(
             fn=lambda: gr.Button(value="Delete", interactive=False), 
@@ -328,9 +332,17 @@ def launch_app():
         ).then(
             lambda: gr.Button(value="Create", interactive=False), outputs=button_create_new_Query_engine
         ).then(
-            lambda: gr.CheckboxGroup(choices=get_query_engines_name()), outputs=selected_query_engines
+            lambda: gr.CheckboxGroup(
+                choices=collection_manager.get_query_engines_name(), 
+                value=collection_manager.get_query_engines_name()), 
+            outputs=selected_query_engines
         ).then(
-            lambda: gr.Dropdown(choices=get_query_engines_name()), outputs=delete_query_engine_dropdown
+            lambda: gr.Dropdown(
+                choices=collection_manager.get_query_engines_name(), 
+                value=collection_manager.get_query_engines_name()[0] if collection_manager.get_query_engines_name() else None), 
+            outputs=delete_query_engine_dropdown
+        ).then(
+            fn=on_select_query_engine, inputs=[user_models, selected_query_engines]
         )
 
 
