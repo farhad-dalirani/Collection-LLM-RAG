@@ -184,7 +184,7 @@ def launch_app():
     - json.JSONDecodeError: If there is an error in parsing the configuration file.
     """
     # Loading setting configurations
-    with open('./LLMCONFRAG/program_init_config.json', 'r') as file:
+    with open('./Collection_LLM_RAG/program_init_config.json', 'r') as file:
         config_data = json.load(file)         
     llm_names = [name + ' (Local)' for name in config_data['LLMs']['local']]
     llm_names.extend([name for name in config_data['LLMs']['API']])
