@@ -13,7 +13,7 @@ from llama_index.core.storage import StorageContext
 from llama_index.core import load_index_from_storage
 from llama_index.core import VectorStoreIndex
 
-from knowledgeBase.text_extraction_webpages import scrape_articles
+from knowledgeBase.text_extraction_webpages import scrape_articles, scrape_pdfs
 
 
 class CollectionManager:
@@ -58,7 +58,14 @@ class CollectionManager:
                 logging.error("An error occured: {}".format(e))
                 output_file = None
         elif type_json == 'PDFs':
-            pass
+            try:
+                output_file = scrape_pdfs(
+                    json_file=path_json_file, 
+                    output_file=os.path.join(self.scraped_data_path, file_name)
+                )
+            except Exception as e:
+                logging.error("An error occured: {}".format(e))
+                output_file = None
         else:
             raise ValueError('Selected Type of JSON file is incorrect.')
 

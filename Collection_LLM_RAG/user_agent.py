@@ -105,6 +105,8 @@ class UserAgent:
                         if name and link:
                             if name and link:
                                 current_score = node.score if node.score is not None else 0
+                                if name and len(name) > 80:
+                                    name = name[:80] + "..."
                                 if (name, link) in references:
                                     # Update the score if the reference already exists
                                     references[(name, link)] = max(references[(name, link)], current_score)
@@ -141,6 +143,8 @@ class UserAgent:
                 link = metadata.get('Link')
                 if name and link:
                     current_score = source.score if source.score is not None else 0
+                    if name and len(name) > 80:
+                            name = name[:80] + "..."
                     if (name, link) in references:
                         # Update the score if the reference already exists
                         references[(name, link)] = max(references[(name, link)], current_score)

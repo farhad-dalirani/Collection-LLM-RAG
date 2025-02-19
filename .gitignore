@@ -2,8 +2,10 @@ test.py
 todo.txt
 sources
 .venv
+
+Collection_LLM_RAG/knowledgeBase/__pycache__
 */__pycache__
-LLMCONFRAG/pdf.py
+
 /doc_download
 
 LLMCONFRAG/knowledgeBase/__pycache__
@@ -14,5 +16,6 @@ Data/output-processed-sources/*
 Data/example-input-jsons/test*.json
 Data/query-engines/query_engines_list.json
 Data/query-engines/collections/*
+Data/query-engines/keyword-index/*
 query-engines/!.*
 query-engines/*
