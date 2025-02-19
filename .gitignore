@@ -17,5 +17,5 @@ Data/example-input-jsons/test*.json
 Data/query-engines/query_engines_list.json
 Data/query-engines/collections/*
 Data/query-engines/keyword-index/*
-query-engines/!.*
-query-engines/*
+
+Data copy

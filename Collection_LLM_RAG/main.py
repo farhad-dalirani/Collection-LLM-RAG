@@ -163,6 +163,29 @@ def delete_query_engine(selected_query_engine):
     logging.info('>   Query Engine {} was deleted.'.format(selected_query_engine))
     return None
 
+
+def lock_component(*components):
+    """
+    Locks the given components by setting them to be non-interactive.
+    Args:
+        *components: A variable number of components to be locked.
+    Returns:
+        list: A list of updated components with their interactive property set to False.
+    """
+    
+    return [gr.update(interactive=False) for _ in components]
+
+def unlock_component(*components):
+    """
+    Unlocks the given components by setting them to be interactive.
+    Args:
+        *components: A variable number of components to be unlocked.
+    Returns:
+        list: A list of updated components with their 'interactive' attribute set to True.
+    """
+    
+    return [gr.update(interactive=True) for _ in components]
+
 def launch_app():
     """
     Launches the web-based GUI application for LLMConfRAG.
@@ -268,24 +291,61 @@ def launch_app():
 
         # Event handling
         
+        # Lock the components during changes
+        lock_list = [mode_radio,
+        llm_radio,
+        user_message,
+        emb_radio,
+        open_ai_api_textbox,
+        path_documents_json_file,
+        type_documents_folder,
+        button_create_new_Query_engine,
+        selected_query_engines,
+        clear_button]
+
         # Update the mode based on the selected radio button
-        mode_radio.change(change_mode, inputs=[mode_radio, user_models])
+        mode_radio.change(
+            lock_component, inputs=lock_list, outputs=lock_list
+        ).then(
+            change_mode, inputs=[mode_radio, user_models]
+        ).then(
+            unlock_component, inputs=lock_list, outputs=lock_list
+        )
 
         # Update the llm model based on the selected radio button
-        llm_radio.change(change_llm, inputs=[llm_radio, user_models])
+        llm_radio.change(
+            lock_component, inputs=lock_list, outputs=lock_list
+        ).then(
+            change_llm, inputs=[llm_radio, user_models]
+        ).then(
+            unlock_component, inputs=lock_list, outputs=lock_list
+        )
 
         # Update the embedding model based on the selected radio button
-        emb_radio.change(change_embd, inputs=[emb_radio, user_models])
+        emb_radio.change(
+            lock_component, inputs=lock_list, outputs=lock_list
+        ).then(
+            change_embd, inputs=[emb_radio, user_models]
+        ).then(
+            unlock_component, inputs=lock_list, outputs=lock_list
+        )
                 
         # Update API key if provided
         open_ai_api_textbox.blur(
-                change_models_api, 
-                inputs=[open_ai_api_textbox, user_models]
-            )
+            lock_component, inputs=lock_list, outputs=lock_list
+        ).then(
+            change_models_api, inputs=[open_ai_api_textbox, user_models]
+        ).then(
+            unlock_component, inputs=lock_list, outputs=lock_list
+        )
 
         # Connect the toggle function to the textbox input
         path_documents_json_file.change(
+            lock_component, inputs=lock_list, outputs=lock_list
+        ).then(
             fn=toggle_button, inputs=path_documents_json_file, outputs=button_create_new_Query_engine
+        ).then(
+            unlock_component, inputs=lock_list, outputs=lock_list
         )
         
         # Enable the delete button only if a query engine is selected
@@ -297,15 +357,28 @@ def launch_app():
         clear_button.click(clear_chat, inputs=[chat_interface, user_models], outputs=[chat_interface])
         
         # Update the selected query engines based on the checkbox group
-        selected_query_engines.select(fn=on_select_query_engine, inputs=[user_models, selected_query_engines])
+        selected_query_engines.select(
+            lock_component, inputs=lock_list, outputs=lock_list
+        ).then(
+            fn=on_select_query_engine, inputs=[user_models, selected_query_engines]
+        ).then(
+            unlock_component, inputs=lock_list, outputs=lock_list
+        )
             
         # Send current user message and previous user messages and AI asnwers the ai to get a new asnwer
-        user_message.submit(ai_response, 
-                            inputs=[user_message, chat_interface, user_models, selected_query_engines], 
-                            outputs=[user_message, chat_interface])
+        user_message.submit(
+            lock_component, inputs=lock_list, outputs=lock_list
+        ).then(ai_response, 
+            inputs=[user_message, chat_interface, user_models, selected_query_engines], 
+            outputs=[user_message, chat_interface]
+        ).then(
+            unlock_component, inputs=lock_list, outputs=lock_list
+        )
         
         # Call function for deleting query engine if the button pressed
         button_delete_query_engine.click(
+            lock_component, inputs=lock_list, outputs=lock_list
+        ).then(
             delete_query_engine,
             inputs=[delete_query_engine_dropdown],
             outputs=None
@@ -322,10 +395,14 @@ def launch_app():
             outputs=button_delete_query_engine
         ).then(
             fn=on_select_query_engine, inputs=[user_models, selected_query_engines]
+        ).then(
+            unlock_component, inputs=lock_list, outputs=lock_list
         )
         
         # Call function for creating new query engine if the button pressed
         button_create_new_Query_engine.click(
+            lock_component, inputs=lock_list, outputs=lock_list
+        ).then(
             new_query_engine,
             inputs=[user_models, path_documents_json_file, type_documents_folder, chat_interface], 
             outputs=[chat_interface]
@@ -343,6 +420,8 @@ def launch_app():
             outputs=delete_query_engine_dropdown
         ).then(
             fn=on_select_query_engine, inputs=[user_models, selected_query_engines]
+        ).then(
+            unlock_component, inputs=lock_list, outputs=lock_list
         )
 
 

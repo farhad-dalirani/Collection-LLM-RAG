@@ -14,6 +14,7 @@ from llama_index.core import load_index_from_storage
 from llama_index.core import VectorStoreIndex
 
 from knowledgeBase.text_extraction_webpages import scrape_articles, scrape_pdfs
+from utils import format_collection_name
 
 
 class CollectionManager:
@@ -45,6 +46,8 @@ class CollectionManager:
         file_name = os.path.basename(path_json_file)
         dot_location = file_name.find('.')
         file_name_no_exten = file_name[0:dot_location]
+
+        file_name_no_exten = format_collection_name(name=file_name_no_exten)
 
         # Extract text content of each entities in input json file
         output_file = None
