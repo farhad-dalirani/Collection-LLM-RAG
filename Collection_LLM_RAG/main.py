@@ -253,6 +253,27 @@ def launch_app():
                                     max_lines=1,
                                     type="password"
                                 )
+            
+            # Second column, Chat area
+            with gr.Column(scale=4):
+                # Area to show user questions and AI responses
+                chat_interface = gr.Chatbot(type='messages', min_height=600)
+
+                # User input text box
+                user_message = gr.Textbox(placeholder='Message LLMConfRag', 
+                                          label='', submit_btn=True)
+
+                # Button for clearing chat
+                clear_button = gr.Button(value="Clear Chat")
+
+                # Selecting one or more query engines to answer queries
+                selected_query_engines = gr.CheckboxGroup(
+                                            collection_manager.get_query_engines_name(), 
+                                            value=collection_manager.get_query_engines_name(), 
+                                            label="Select Existing Query Engines to Use", interactive=True)
+
+            # Third column
+            with gr.Column(scale=1):
                 
                 # Query engines
                 with gr.Accordion("🗄️ Create New Query Engine"):                    
@@ -269,25 +290,7 @@ def launch_app():
                     # Select a query engine to delete
                     delete_query_engine_dropdown = gr.Dropdown(collection_manager.get_query_engines_name(), label="Select Query Engine to Delete")
                     button_delete_query_engine = gr.Button(value="Delete", interactive=False)
-                    
-                    
-            # Second column, Chat area
-            with gr.Column(scale=3):
-                # Area to show user questions and AI responses
-                chat_interface = gr.Chatbot(type='messages', min_height=600)
-
-                # User input text box
-                user_message = gr.Textbox(placeholder='Message LLMConfRag', 
-                                          label='', submit_btn=True)
-
-                # Button for clearing chat
-                clear_button = gr.Button(value="Clear Chat")
-
-                # Selecting one or more query engines to answer queries
-                selected_query_engines = gr.CheckboxGroup(
-                                            collection_manager.get_query_engines_name(), 
-                                            value=collection_manager.get_query_engines_name(), 
-                                            label="Select Existing Query Engines to Use", interactive=True)
+                       
 
         # Event handling
         
