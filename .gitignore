@@ -11,8 +11,7 @@ Collection_LLM_RAG/knowledgeBase/__pycache__
 LLMCONFRAG/knowledgeBase/__pycache__
 .gradio
 
-Data/output-processed-sources/!.*
-Data/output-processed-sources/*
+
 
 
 Data copy
