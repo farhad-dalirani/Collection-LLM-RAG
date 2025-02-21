@@ -1,4 +1,7 @@
 import re
+from duckduckgo_search import DDGS
+from knowledgeBase.text_extraction_webpages import extract_text_from_url
+from types import SimpleNamespace
 
 def remove_duplicates_pairs(pairs):
     """
@@ -59,3 +62,42 @@ def format_collection_name(name: str) -> str:
 
     # Truncate to 63 characters if too long
     return name[:63] if name else "default_name"  # Provide a fallback name if empty
+
+
+def internet_search(query: str) -> SimpleNamespace:
+    """
+    Perform an internet search using the DDGS (DuckDuckGo Search) API and return structured search results.
+
+    Args:
+        query (str): The search query string.
+
+    Returns:
+        SimpleNamespace: An object with attributes:
+            - formatted_results: str
+            - source_nodes: list of SimpleNamespace objects, each containing a 'node' (with metadata) and a 'score'.
+    
+    In case of an error during the search, returns a SimpleNamespace with an 'error' attribute describing the issue.
+    """
+    try:
+        response = DDGS().text(query, max_results=5)
+    except Exception as e:
+        return SimpleNamespace(error=f"An error occurred while searching: {e}.")
+
+    source_nodes = []
+    formatted_results = ""
+    for r in response:
+        content = extract_text_from_url(url=r["href"])
+        # Create the inner node with metadata.
+        inner_node = SimpleNamespace(metadata={
+            "Name": "Internet Search Tool-" + r["title"],
+            "Link": r["href"]
+        })
+        # Wrap in an outer node that includes a score attribute.
+        node_object = SimpleNamespace(node=inner_node, score=None)
+        source_nodes.append(node_object)
+        
+        formatted_results += f"Title: {r['title']}\n"
+        formatted_results += f"Content: {content}\n"
+        formatted_results += "----\n\n"
+
+    return SimpleNamespace(formatted_results=formatted_results, source_nodes=source_nodes)
