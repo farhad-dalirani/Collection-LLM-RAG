@@ -13,9 +13,7 @@ LLMCONFRAG/knowledgeBase/__pycache__
 
 Data/output-processed-sources/!.*
 Data/output-processed-sources/*
-Data/example-input-jsons/test*.json
-Data/query-engines/query_engines_list.json
-Data/query-engines/collections/*
-Data/query-engines/keyword-index/*
+
 
 Data copy
+Data/example-input-jsons/test.json

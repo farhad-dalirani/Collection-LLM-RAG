@@ -1,0 +1,2 @@
+Data/query-engines/keyword-index/Papers-Selected-2010-2024/docstore.json filter=lfs diff=lfs merge=lfs -text
+Data/query-engines/collections/chroma.sqlite3 filter=lfs diff=lfs merge=lfs -text
