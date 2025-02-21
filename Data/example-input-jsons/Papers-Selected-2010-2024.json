@@ -1,0 +1,2250 @@
+{
+  "description": "This contains a curated collection of most influential research papers from 2024 to 2010, covering cutting-edge advancements in AI, machine learning, deep learning, reinforcement learning, and related fields. This store is ideal for retrieving up-to-date academic insights, benchmarking studies, and foundational knowledge in AI. ",
+  "data": [
+    {
+      "Year": "2024",
+      "Name": "Mixtral of Experts",
+      "Link": "http://arxiv.org/pdf/2401.04088v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "KTO: Model Alignment As Prospect Theoretic Optimization",
+      "Link": "http://arxiv.org/pdf/2402.01306v4"
+    },
+    {
+      "Year": "2024",
+      "Name": "A Survey of Imitation Learning Methods, Environments and Metrics",
+      "Link": "http://arxiv.org/pdf/2404.19456v2"
+    },
+    {
+      "Year": "2024",
+      "Name": "Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models",
+      "Link": "http://arxiv.org/pdf/2401.01335v3"
+    },
+    {
+      "Year": "2024",
+      "Name": "Human Activity Recognition Using Smartphones",
+      "Link": "http://arxiv.org/pdf/2404.02869v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "KAN: Kolmogorov-Arnold Networks",
+      "Link": "http://arxiv.org/pdf/2404.19756v4"
+    },
+    {
+      "Year": "2024",
+      "Name": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
+      "Link": "http://arxiv.org/pdf/2402.04249v2"
+    },
+    {
+      "Year": "2024",
+      "Name": "Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Evaluators",
+      "Link": "http://arxiv.org/pdf/2404.04475v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads",
+      "Link": "http://arxiv.org/pdf/2401.10774v3"
+    },
+    {
+      "Year": "2024",
+      "Name": "Transformers Are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+      "Link": "http://arxiv.org/pdf/2405.21060v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "Sharing Knowledge in Multi-Task Deep Reinforcement Learning",
+      "Link": "http://arxiv.org/pdf/2401.09561v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "Multiclass Classification Procedure for Detecting Attacks on MQTT-IoT Protocol",
+      "Link": "http://arxiv.org/pdf/2402.03270v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "Parameter-Efficient Fine-Tuning for Large Models: A Comprehensive Survey",
+      "Link": "http://arxiv.org/pdf/2403.14608v7"
+    },
+    {
+      "Year": "2024",
+      "Name": "RewardBench: Evaluating Reward Models for Language Modeling",
+      "Link": "http://arxiv.org/pdf/2403.13787v2"
+    },
+    {
+      "Year": "2024",
+      "Name": "GaLore: Memory-Efficient LLM Training By Gradient Low-Rank Projection",
+      "Link": "http://arxiv.org/pdf/2403.03507v2"
+    },
+    {
+      "Year": "2024",
+      "Name": "AI and Memory Wall",
+      "Link": "http://arxiv.org/pdf/2403.14123v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "Break The Sequential Dependency of LLM Inference Using Lookahead Decoding",
+      "Link": "http://arxiv.org/pdf/2402.02057v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "Helping University Students to Choose Elective Courses By Using A Hybrid Multi-criteria Recommendation System with Genetic Optimization",
+      "Link": "http://arxiv.org/pdf/2402.08371v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization",
+      "Link": "http://arxiv.org/pdf/2401.18079v5"
+    },
+    {
+      "Year": "2024",
+      "Name": "Random Forest-Based Prediction of Stroke Outcome",
+      "Link": "http://arxiv.org/pdf/2402.00638v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "Griffin: Mixing Gated Linear Recurrences with Local Attention for Efficient Language Models",
+      "Link": "http://arxiv.org/pdf/2402.19427v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks",
+      "Link": "http://arxiv.org/pdf/2401.13649v2"
+    },
+    {
+      "Year": "2024",
+      "Name": "WARM: On The Benefits of Weight Averaged Reward Models",
+      "Link": "http://arxiv.org/pdf/2401.12187v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "LoRA+: Efficient Low Rank Adaptation of Large Models",
+      "Link": "http://arxiv.org/pdf/2402.12354v2"
+    },
+    {
+      "Year": "2024",
+      "Name": "Graph-Mamba: Towards Long-Range Graph Sequence Modeling with Selective State Spaces",
+      "Link": "http://arxiv.org/pdf/2402.00789v1"
+    },
+    {
+      "Year": "2024",
+      "Name": "From $r$ to $Q^*$: Your Language Model Is Secretly A Q-Function",
+      "Link": "http://arxiv.org/pdf/2404.12358v2"
+    },
+    {
+      "Year": "2024",
+      "Name": "SliceGPT: Compress Large Language Models By Deleting Rows and Columns",
+      "Link": "http://arxiv.org/pdf/2401.15024v2"
+    },
+    {
+      "Year": "2024",
+      "Name": "Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks",
+      "Link": "http://arxiv.org/pdf/2401.17263v5"
+    },
+    {
+      "Year": "2024",
+      "Name": "A Minimaximalist Approach to Reinforcement Learning from Human Feedback",
+      "Link": "http://arxiv.org/pdf/2401.04056v2"
+    },
+    {
+      "Year": "2024",
+      "Name": "Foundational Challenges in Assuring Alignment and Safety of Large Language Models",
+      "Link": "http://arxiv.org/pdf/2404.09932v2"
+    },
+    {
+      "Year": "2023",
+      "Name": "Direct Preference Optimization: Your Language Model Is Secretly A Reward Model",
+      "Link": "http://arxiv.org/pdf/2305.18290v3"
+    },
+    {
+      "Year": "2023",
+      "Name": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "Link": "http://arxiv.org/pdf/2305.14314v1"
+    },
+    {
+      "Year": "2023",
+      "Name": "PaLM-E: An Embodied Multimodal Language Model",
+      "Link": "http://arxiv.org/pdf/2303.03378v1"
+    },
+    {
+      "Year": "2023",
+      "Name": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+      "Link": "http://arxiv.org/pdf/2312.00752v2"
+    },
+    {
+      "Year": "2023",
+      "Name": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "Link": "http://arxiv.org/pdf/2309.06180v1"
+    },
+    {
+      "Year": "2023",
+      "Name": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+      "Link": "http://arxiv.org/pdf/2307.08691v1"
+    },
+    {
+      "Year": "2023",
+      "Name": "ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",
+      "Link": "http://arxiv.org/pdf/2305.16213v2"
+    },
+    {
+      "Year": "2023",
+      "Name": "BloombergGPT: A Large Language Model for Finance",
+      "Link": "http://arxiv.org/pdf/2303.17564v3"
+    },
+    {
+      "Year": "2023",
+      "Name": "Consistency Models",
+      "Link": "http://arxiv.org/pdf/2303.01469v2"
+    },
+    {
+      "Year": "2023",
+      "Name": "Jailbroken: How Does LLM Safety Training Fail?",
+      "Link": "http://arxiv.org/pdf/2307.02483v1"
+    },
+    {
+      "Year": "2023",
+      "Name": "SparseGPT: Massive Language Models Can Be Accurately Pruned in One-Shot",
+      "Link": "http://arxiv.org/pdf/2301.00774v3"
+    },
+    {
+      "Year": "2023",
+      "Name": "AlpacaFarm: A Simulation Framework for Methods That Learn from Human Feedback",
+      "Link": "http://arxiv.org/pdf/2305.14387v4"
+    },
+    {
+      "Year": "2023",
+      "Name": "Let’s Verify Step By Step",
+      "Link": "http://arxiv.org/pdf/2305.20050v1"
+    },
+    {
+      "Year": "2023",
+      "Name": "A Watermark for Large Language Models",
+      "Link": "http://arxiv.org/pdf/2301.10226v4"
+    },
+    {
+      "Year": "2023",
+      "Name": "Jailbreaking Black Box Large Language Models in Twenty Queries",
+      "Link": "http://arxiv.org/pdf/2310.08419v4"
+    },
+    {
+      "Year": "2023",
+      "Name": "Mathematical Capabilities of ChatGPT",
+      "Link": "http://arxiv.org/pdf/2301.13867v2"
+    },
+    {
+      "Year": "2023",
+      "Name": "A Comprehensive Survey of Continual Learning: Theory, Method and Application",
+      "Link": "http://arxiv.org/pdf/2302.00487v3"
+    },
+    {
+      "Year": "2023",
+      "Name": "Inference-Time Intervention: Eliciting Truthful Answers from A Language Model",
+      "Link": "http://arxiv.org/pdf/2306.03341v6"
+    },
+    {
+      "Year": "2023",
+      "Name": "RAFT: Reward RAnked FineTuning for Generative Foundation Model Alignment",
+      "Link": "http://arxiv.org/pdf/2304.06767v4"
+    },
+    {
+      "Year": "2023",
+      "Name": "Progress Measures for Grokking Via Mechanistic Interpretability",
+      "Link": "http://arxiv.org/pdf/2301.05217v3"
+    },
+    {
+      "Year": "2023",
+      "Name": "Habits and Goals in Synergy: A Variational Bayesian Framework for Behavior",
+      "Link": "http://arxiv.org/pdf/2304.05008v1"
+    },
+    {
+      "Year": "2023",
+      "Name": "Zephyr: Direct Distillation of LM Alignment",
+      "Link": "http://arxiv.org/pdf/2310.16944v1"
+    },
+    {
+      "Year": "2023",
+      "Name": "CodeGeeX: A Pre-Trained Model for Code Generation with Multilingual Benchmarking on HumanEval-X",
+      "Link": "http://arxiv.org/pdf/2303.17568v2"
+    },
+    {
+      "Year": "2023",
+      "Name": "Large Language Models As Optimizers",
+      "Link": "http://arxiv.org/pdf/2309.03409v3"
+    },
+    {
+      "Year": "2023",
+      "Name": "Symbolic Discovery of Optimization Algorithms",
+      "Link": "http://arxiv.org/pdf/2302.06675v4"
+    },
+    {
+      "Year": "2023",
+      "Name": "Principle-Driven Self-Alignment of Language Models from Scratch with Minimal Human Supervision",
+      "Link": "http://arxiv.org/pdf/2305.03047v2"
+    },
+    {
+      "Year": "2023",
+      "Name": "A Cookbook of Self-Supervised Learning",
+      "Link": "http://arxiv.org/pdf/2304.12210v2"
+    },
+    {
+      "Year": "2023",
+      "Name": "Scalable Extraction of Training Data from (Production) Language Models",
+      "Link": "http://arxiv.org/pdf/2311.17035v1"
+    },
+    {
+      "Year": "2023",
+      "Name": "Representation Engineering: A Top-Down Approach to AI Transparency",
+      "Link": "http://arxiv.org/pdf/2310.01405v3"
+    },
+    {
+      "Year": "2023",
+      "Name": "Baseline Defenses for Adversarial Attacks Against Aligned Language Models",
+      "Link": "http://arxiv.org/pdf/2309.00614v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "Classifier-Free Diffusion Guidance",
+      "Link": "http://arxiv.org/pdf/2207.12598v1"
+    },
+    {
+      "Year": "2022",
+      "Name": "Scaling Instruction-Finetuned Language Models",
+      "Link": "http://arxiv.org/pdf/2210.11416v5"
+    },
+    {
+      "Year": "2022",
+      "Name": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "Link": "http://arxiv.org/pdf/2205.14135v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps",
+      "Link": "http://arxiv.org/pdf/2206.00927v3"
+    },
+    {
+      "Year": "2022",
+      "Name": "Diffusion Models: A Comprehensive Survey of Methods and Applications",
+      "Link": "http://arxiv.org/pdf/2209.00796v14"
+    },
+    {
+      "Year": "2022",
+      "Name": "FEDformer: Frequency Enhanced Decomposed Transformer for Long-term Series Forecasting",
+      "Link": "http://arxiv.org/pdf/2201.12740v3"
+    },
+    {
+      "Year": "2022",
+      "Name": "Language Models As Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents",
+      "Link": "http://arxiv.org/pdf/2201.07207v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "CodeGen: An Open Large Language Model for Code with Multi-Turn Program Synthesis",
+      "Link": "http://arxiv.org/pdf/2203.13474v5"
+    },
+    {
+      "Year": "2022",
+      "Name": "Data2vec: A General Framework for Self-supervised Learning in Speech, Vision and Language",
+      "Link": "http://arxiv.org/pdf/2202.03555v3"
+    },
+    {
+      "Year": "2022",
+      "Name": "Model Soups: Averaging Weights of Multiple Fine-tuned Models Improves Accuracy Without Increasing Inference Time",
+      "Link": "http://arxiv.org/pdf/2203.05482v3"
+    },
+    {
+      "Year": "2022",
+      "Name": "Large Language Models Are Human-Level Prompt Engineers",
+      "Link": "http://arxiv.org/pdf/2211.01910v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "Few-Shot Parameter-Efficient Fine-Tuning Is Better and Cheaper Than In-Context Learning",
+      "Link": "http://arxiv.org/pdf/2205.05638v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "A Time Series Is Worth 64 Words: Long-term Forecasting with Transformers",
+      "Link": "http://arxiv.org/pdf/2211.14730v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers",
+      "Link": "http://arxiv.org/pdf/2210.17323v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "Transformers in Time Series: A Survey",
+      "Link": "http://arxiv.org/pdf/2202.07125v5"
+    },
+    {
+      "Year": "2022",
+      "Name": "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale",
+      "Link": "http://arxiv.org/pdf/2208.07339v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "Reproducible Scaling Laws for Contrastive Language-image Learning",
+      "Link": "http://arxiv.org/pdf/2212.07143v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "Quantifying Memorization Across Neural Language Models",
+      "Link": "http://arxiv.org/pdf/2202.07646v3"
+    },
+    {
+      "Year": "2022",
+      "Name": "Improving Alignment of Dialogue Agents Via Targeted Human Judgements",
+      "Link": "http://arxiv.org/pdf/2209.14375v1"
+    },
+    {
+      "Year": "2022",
+      "Name": "Equivariant Diffusion for Molecule Generation in 3D",
+      "Link": "http://arxiv.org/pdf/2203.17003v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "Flow Matching for Generative Modeling",
+      "Link": "http://arxiv.org/pdf/2210.02747v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "Planning with Diffusion for Flexible Behavior Synthesis",
+      "Link": "http://arxiv.org/pdf/2205.09991v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "StyleGAN-XL: Scaling StyleGAN to Large Diverse Datasets",
+      "Link": "http://arxiv.org/pdf/2202.00273v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "Recipe for A General, Powerful, Scalable Graph Transformer",
+      "Link": "http://arxiv.org/pdf/2205.12454v4"
+    },
+    {
+      "Year": "2022",
+      "Name": "TimesNet: Temporal 2D-Variation Modeling for General Time Series Analysis",
+      "Link": "http://arxiv.org/pdf/2210.02186v3"
+    },
+    {
+      "Year": "2022",
+      "Name": "CoST: Contrastive Learning of Disentangled Seasonal-Trend Representations for Time Series Forecasting",
+      "Link": "http://arxiv.org/pdf/2202.01575v3"
+    },
+    {
+      "Year": "2022",
+      "Name": "DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models",
+      "Link": "http://arxiv.org/pdf/2211.01095v2"
+    },
+    {
+      "Year": "2022",
+      "Name": "Out-of-Distribution Detection with Deep Nearest Neighbors",
+      "Link": "http://arxiv.org/pdf/2204.06507v3"
+    },
+    {
+      "Year": "2022",
+      "Name": "GraphMAE: Self-Supervised Masked Graph Autoencoders",
+      "Link": "http://arxiv.org/pdf/2205.10803v3"
+    },
+    {
+      "Year": "2022",
+      "Name": "Out of One, Many: Using Language Models to Simulate Human Samples",
+      "Link": "http://arxiv.org/pdf/2209.06899v1"
+    },
+    {
+      "Year": "2021",
+      "Name": "Diffusion Models Beat GANs on Image Synthesis",
+      "Link": "http://arxiv.org/pdf/2105.05233v4"
+    },
+    {
+      "Year": "2021",
+      "Name": "Evaluating Large Language Models Trained on Code",
+      "Link": "http://arxiv.org/pdf/2107.03374v2"
+    },
+    {
+      "Year": "2021",
+      "Name": "On The Opportunities and Risks of Foundation Models",
+      "Link": "http://arxiv.org/pdf/2108.07258v3"
+    },
+    {
+      "Year": "2021",
+      "Name": "Improved Denoising Diffusion Probabilistic Models",
+      "Link": "http://arxiv.org/pdf/2102.09672v1"
+    },
+    {
+      "Year": "2021",
+      "Name": "Training Verifiers to Solve Math Word Problems",
+      "Link": "http://arxiv.org/pdf/2110.14168v2"
+    },
+    {
+      "Year": "2021",
+      "Name": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+      "Link": "http://arxiv.org/pdf/2101.03961v3"
+    },
+    {
+      "Year": "2021",
+      "Name": "Multitask Prompted Training Enables Zero-Shot Task Generalization",
+      "Link": "http://arxiv.org/pdf/2110.08207v3"
+    },
+    {
+      "Year": "2021",
+      "Name": "Autoformer: Decomposition Transformers with Auto-Correlation for Long-Term Series Forecasting",
+      "Link": "http://arxiv.org/pdf/2106.13008v5"
+    },
+    {
+      "Year": "2021",
+      "Name": "Decision Transformer: Reinforcement Learning Via Sequence Modeling",
+      "Link": "http://arxiv.org/pdf/2106.01345v2"
+    },
+    {
+      "Year": "2021",
+      "Name": "Efficiently Modeling Long Sequences with Structured State Spaces",
+      "Link": "http://arxiv.org/pdf/2111.00396v3"
+    },
+    {
+      "Year": "2021",
+      "Name": "Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges",
+      "Link": "http://arxiv.org/pdf/2104.13478v2"
+    },
+    {
+      "Year": "2021",
+      "Name": "Measuring Mathematical Problem Solving With The MATH Dataset",
+      "Link": "http://arxiv.org/pdf/2103.03874v2"
+    },
+    {
+      "Year": "2021",
+      "Name": "Generalizing to Unseen Domains: A Survey on Domain Generalization",
+      "Link": "http://arxiv.org/pdf/2103.03097v7"
+    },
+    {
+      "Year": "2021",
+      "Name": "Ensemble Deep Learning: A Review",
+      "Link": "http://arxiv.org/pdf/2104.02395v3"
+    },
+    {
+      "Year": "2021",
+      "Name": "Tabular Data: Deep Learning Is Not All You Need",
+      "Link": "http://arxiv.org/pdf/2106.03253v2"
+    },
+    {
+      "Year": "2021",
+      "Name": "The Surprising Effectiveness of PPO in Cooperative, Multi-Agent Games",
+      "Link": "http://arxiv.org/pdf/2103.01955v4"
+    },
+    {
+      "Year": "2021",
+      "Name": "Variational Diffusion Models",
+      "Link": "http://arxiv.org/pdf/2107.00630v6"
+    },
+    {
+      "Year": "2021",
+      "Name": "A Survey of Uncertainty in Deep Neural Networks",
+      "Link": "http://arxiv.org/pdf/2107.03342v3"
+    },
+    {
+      "Year": "2021",
+      "Name": "A Survey of Transformers",
+      "Link": "http://arxiv.org/pdf/2106.04554v2"
+    },
+    {
+      "Year": "2021",
+      "Name": "How Attentive Are Graph Attention Networks?",
+      "Link": "http://arxiv.org/pdf/2105.14491v3"
+    },
+    {
+      "Year": "2021",
+      "Name": "E(n) Equivariant Graph Neural Networks",
+      "Link": "http://arxiv.org/pdf/2102.09844v3"
+    },
+    {
+      "Year": "2021",
+      "Name": "Model-Contrastive Federated Learning",
+      "Link": "http://arxiv.org/pdf/2103.16257v1"
+    },
+    {
+      "Year": "2021",
+      "Name": "Domain Generalization: A Survey",
+      "Link": "http://arxiv.org/pdf/2103.02503v7"
+    },
+    {
+      "Year": "2021",
+      "Name": "Federated Learning on Non-IID Data Silos: An Experimental Study",
+      "Link": "http://arxiv.org/pdf/2102.02079v4"
+    },
+    {
+      "Year": "2021",
+      "Name": "FlexMatch: Boosting Semi-Supervised Learning with Curriculum Pseudo Labeling",
+      "Link": "http://arxiv.org/pdf/2110.08263v3"
+    },
+    {
+      "Year": "2021",
+      "Name": "FedBN: Federated Learning on Non-IID Features Via Local Batch Normalization",
+      "Link": "http://arxiv.org/pdf/2102.07623v2"
+    },
+    {
+      "Year": "2021",
+      "Name": "Offline Reinforcement Learning with Implicit Q-Learning",
+      "Link": "http://arxiv.org/pdf/2110.06169v1"
+    },
+    {
+      "Year": "2021",
+      "Name": "Graph Neural Network-Based Anomaly Detection in Multivariate Time Series",
+      "Link": "http://arxiv.org/pdf/2106.06947v1"
+    },
+    {
+      "Year": "2021",
+      "Name": "A Minimalist Approach to Offline Reinforcement Learning",
+      "Link": "http://arxiv.org/pdf/2106.06860v2"
+    },
+    {
+      "Year": "2021",
+      "Name": "Towards Personalized Federated Learning",
+      "Link": "http://arxiv.org/pdf/2103.00710v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "A Simple Framework For Contrastive Learning Of Visual Representations",
+      "Link": "http://arxiv.org/pdf/2002.05709v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Denoising Diffusion Probabilistic Models",
+      "Link": "http://arxiv.org/pdf/2006.11239v2"
+    },
+    {
+      "Year": "2020",
+      "Name": "Bootstrap Your Own Latent: A New Approach To Self-supervised Learning",
+      "Link": "http://arxiv.org/pdf/2006.07733v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Denoising Diffusion Implicit Models",
+      "Link": "http://arxiv.org/pdf/2010.02502v4"
+    },
+    {
+      "Year": "2020",
+      "Name": "Score-Based Generative Modeling Through Stochastic Differential Equations",
+      "Link": "http://arxiv.org/pdf/2011.13456v2"
+    },
+    {
+      "Year": "2020",
+      "Name": "Supervised Contrastive Learning",
+      "Link": "http://arxiv.org/pdf/2004.11362v5"
+    },
+    {
+      "Year": "2020",
+      "Name": "A Tutorial on Learning With Bayesian Networks",
+      "Link": "http://arxiv.org/pdf/2002.00269v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Scaling Laws For Neural Language Models",
+      "Link": "http://arxiv.org/pdf/2001.08361v1"
+    },
+    {
+      "Year": "2020",
+      "Name": "FixMatch: Simplifying Semi-Supervised Learning With Consistency And Confidence",
+      "Link": "http://arxiv.org/pdf/2001.07685v2"
+    },
+    {
+      "Year": "2020",
+      "Name": "Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting",
+      "Link": "http://arxiv.org/pdf/2012.07436v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Open Graph Benchmark: Datasets for Machine Learning on Graphs",
+      "Link": "http://arxiv.org/pdf/2005.00687v7"
+    },
+    {
+      "Year": "2020",
+      "Name": "Knowledge Distillation: A Survey",
+      "Link": "http://arxiv.org/pdf/2006.05525v7"
+    },
+    {
+      "Year": "2020",
+      "Name": "Big Self-Supervised Models Are Strong Semi-Supervised Learners",
+      "Link": "http://arxiv.org/pdf/2006.10029v2"
+    },
+    {
+      "Year": "2020",
+      "Name": "Reformer: The Efficient Transformer",
+      "Link": "http://arxiv.org/pdf/2001.04451v2"
+    },
+    {
+      "Year": "2020",
+      "Name": "Fourier Neural Operator for Parametric Partial Differential Equations",
+      "Link": "http://arxiv.org/pdf/2010.08895v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Big Bird: Transformers for Longer Sequences",
+      "Link": "http://arxiv.org/pdf/2007.14062v2"
+    },
+    {
+      "Year": "2020",
+      "Name": "Offline Reinforcement Learning: Tutorial, Review, And Perspectives On Open Problems",
+      "Link": "http://arxiv.org/pdf/2005.01643v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Meta-Learning In Neural Networks: A Survey",
+      "Link": "http://arxiv.org/pdf/2004.05439v2"
+    },
+    {
+      "Year": "2020",
+      "Name": "Graph Contrastive Learning with Augmentations",
+      "Link": "http://arxiv.org/pdf/2010.13902v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Reliable Evaluation Of Adversarial Robustness With An Ensemble Of Diverse Parameter-free Attacks",
+      "Link": "http://arxiv.org/pdf/2003.01690v2"
+    },
+    {
+      "Year": "2020",
+      "Name": "Understanding Contrastive Representation Learning Through Alignment And Uniformity On The Hypersphere",
+      "Link": "http://arxiv.org/pdf/2005.10242v10"
+    },
+    {
+      "Year": "2020",
+      "Name": "A Review of Uncertainty Quantification in Deep Learning: Techniques, Applications and Challenges",
+      "Link": "http://arxiv.org/pdf/2011.06225v4"
+    },
+    {
+      "Year": "2020",
+      "Name": "On Hyperparameter Optimization of Machine Learning Algorithms: Theory and Practice",
+      "Link": "http://arxiv.org/pdf/2007.15745v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Conservative Q-Learning For Offline Reinforcement Learning",
+      "Link": "http://arxiv.org/pdf/2006.04779v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Linformer: Self-Attention With Linear Complexity",
+      "Link": "http://arxiv.org/pdf/2006.04768v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Deep Reinforcement Learning for Autonomous Driving: A Survey",
+      "Link": "http://arxiv.org/pdf/2002.00444v2"
+    },
+    {
+      "Year": "2020",
+      "Name": "Self-supervised Learning: Generative or Contrastive",
+      "Link": "http://arxiv.org/pdf/2006.08218v5"
+    },
+    {
+      "Year": "2020",
+      "Name": "Rethinking Attention with Performers",
+      "Link": "http://arxiv.org/pdf/2009.14794v4"
+    },
+    {
+      "Year": "2020",
+      "Name": "Transformers Are RNNs: Fast Autoregressive Transformers With Linear Attention",
+      "Link": "http://arxiv.org/pdf/2006.16236v3"
+    },
+    {
+      "Year": "2020",
+      "Name": "Can AI Help In Screening Viral And COVID-19 Pneumonia?",
+      "Link": "http://arxiv.org/pdf/2003.13145v3"
+    },
+    {
+      "Year": "2019",
+      "Name": "PyTorch: An Imperative Style, High-Performance Deep Learning Library",
+      "Link": "http://arxiv.org/pdf/1912.01703v1"
+    },
+    {
+      "Year": "2019",
+      "Name": "Exploring The Limits of Transfer Learning with A Unified Text-to-Text Transformer",
+      "Link": "http://arxiv.org/pdf/1910.10683v4"
+    },
+    {
+      "Year": "2019",
+      "Name": "EfficientNet: Rethinking Model Scaling For Convolutional Neural Networks",
+      "Link": "http://arxiv.org/pdf/1905.11946v5"
+    },
+    {
+      "Year": "2019",
+      "Name": "A Comprehensive Survey On Graph Neural Networks",
+      "Link": "http://arxiv.org/pdf/1901.00596v4"
+    },
+    {
+      "Year": "2019",
+      "Name": "Advances and Open Problems in Federated Learning",
+      "Link": "http://arxiv.org/pdf/1912.04977v3"
+    },
+    {
+      "Year": "2019",
+      "Name": "NuScenes: A Multimodal Dataset For Autonomous Driving",
+      "Link": "http://arxiv.org/pdf/1903.11027v5"
+    },
+    {
+      "Year": "2019",
+      "Name": "Optuna: A Next-generation Hyperparameter Optimization Framework",
+      "Link": "http://arxiv.org/pdf/1907.10902v1"
+    },
+    {
+      "Year": "2019",
+      "Name": "Federated Learning: Challenges, Methods, And Future Directions",
+      "Link": "http://arxiv.org/pdf/1908.07873v1"
+    },
+    {
+      "Year": "2019",
+      "Name": "Fast Graph Representation Learning With PyTorch Geometric",
+      "Link": "http://arxiv.org/pdf/1903.02428v3"
+    },
+    {
+      "Year": "2019",
+      "Name": "A Comprehensive Survey On Transfer Learning",
+      "Link": "http://arxiv.org/pdf/1911.02685v3"
+    },
+    {
+      "Year": "2019",
+      "Name": "Transformer-XL: Attentive Language Models Beyond A Fixed-Length Context",
+      "Link": "http://arxiv.org/pdf/1901.02860v3"
+    },
+    {
+      "Year": "2019",
+      "Name": "A Survey on Bias and Fairness in Machine Learning",
+      "Link": "http://arxiv.org/pdf/1908.09635v3"
+    },
+    {
+      "Year": "2019",
+      "Name": "Parameter-Efficient Transfer Learning For NLP",
+      "Link": "http://arxiv.org/pdf/1902.00751v2"
+    },
+    {
+      "Year": "2019",
+      "Name": "Benchmarking Neural Network Robustness To Common Corruptions And Perturbations",
+      "Link": "http://arxiv.org/pdf/1903.12261v1"
+    },
+    {
+      "Year": "2019",
+      "Name": "Generative Modeling By Estimating Gradients Of The Data Distribution",
+      "Link": "http://arxiv.org/pdf/1907.05600v3"
+    },
+    {
+      "Year": "2019",
+      "Name": "Simplifying Graph Convolutional Networks",
+      "Link": "http://arxiv.org/pdf/1902.07153v2"
+    },
+    {
+      "Year": "2019",
+      "Name": "MixMatch: A Holistic Approach To Semi-Supervised Learning",
+      "Link": "http://arxiv.org/pdf/1905.02249v2"
+    },
+    {
+      "Year": "2019",
+      "Name": "Towards Federated Learning At Scale: System Design",
+      "Link": "http://arxiv.org/pdf/1902.01046v2"
+    },
+    {
+      "Year": "2019",
+      "Name": "On The Convergence Of Adam And Beyond",
+      "Link": "http://arxiv.org/pdf/1904.09237v1"
+    },
+    {
+      "Year": "2019",
+      "Name": "Theoretically Principled Trade-off Between Robustness And Accuracy",
+      "Link": "http://arxiv.org/pdf/1901.08573v3"
+    },
+    {
+      "Year": "2019",
+      "Name": "Self-training With Noisy Student Improves ImageNet Classification",
+      "Link": "http://arxiv.org/pdf/1911.04252v4"
+    },
+    {
+      "Year": "2019",
+      "Name": "Unsupervised Data Augmentation For Consistency Training",
+      "Link": "http://arxiv.org/pdf/1904.12848v6"
+    },
+    {
+      "Year": "2019",
+      "Name": "SCAFFOLD: Stochastic Controlled Averaging for Federated Learning",
+      "Link": "http://arxiv.org/pdf/1910.06378v4"
+    },
+    {
+      "Year": "2019",
+      "Name": "An Introduction To Variational Autoencoders",
+      "Link": "http://arxiv.org/pdf/1906.02691v3"
+    },
+    {
+      "Year": "2019",
+      "Name": "RotatE: Knowledge Graph Embedding By Relational Rotation In Complex Space",
+      "Link": "http://arxiv.org/pdf/1902.10197v1"
+    },
+    {
+      "Year": "2019",
+      "Name": "Certified Adversarial Robustness Via Randomized Smoothing",
+      "Link": "http://arxiv.org/pdf/1902.02918v2"
+    },
+    {
+      "Year": "2019",
+      "Name": "Deep Leakage From Gradients",
+      "Link": "http://arxiv.org/pdf/1906.08935v2"
+    },
+    {
+      "Year": "2019",
+      "Name": "Introduction to Online Convex Optimization",
+      "Link": "http://arxiv.org/pdf/1909.05207v3"
+    },
+    {
+      "Year": "2019",
+      "Name": "Mastering Atari, Go, Chess And Shogi By Planning With A Learned Model",
+      "Link": "http://arxiv.org/pdf/1911.08265v2"
+    },
+    {
+      "Year": "2019",
+      "Name": "On The Variance of The Adaptive Learning Rate and Beyond",
+      "Link": "http://arxiv.org/pdf/1908.03265v4"
+    },
+    {
+      "Year": "2018",
+      "Name": "Representation Learning With Contrastive Predictive Coding",
+      "Link": "http://arxiv.org/pdf/1807.03748v2"
+    },
+    {
+      "Year": "2018",
+      "Name": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning With A Stochastic Actor",
+      "Link": "http://arxiv.org/pdf/1801.01290v2"
+    },
+    {
+      "Year": "2018",
+      "Name": "How Powerful Are Graph Neural Networks?",
+      "Link": "http://arxiv.org/pdf/1810.00826v3"
+    },
+    {
+      "Year": "2018",
+      "Name": "Large Scale GAN Training For High Fidelity Natural Image Synthesis",
+      "Link": "http://arxiv.org/pdf/1809.11096v2"
+    },
+    {
+      "Year": "2018",
+      "Name": "Graph Neural Networks: A Review of Methods and Applications",
+      "Link": "http://arxiv.org/pdf/1812.08434v6"
+    },
+    {
+      "Year": "2018",
+      "Name": "Neural Ordinary Differential Equations",
+      "Link": "http://arxiv.org/pdf/1806.07366v5"
+    },
+    {
+      "Year": "2018",
+      "Name": "Spectral Normalization For Generative Adversarial Networks",
+      "Link": "http://arxiv.org/pdf/1802.05957v1"
+    },
+    {
+      "Year": "2018",
+      "Name": "An Empirical Evaluation Of Generic Convolutional And Recurrent Networks For Sequence Modeling",
+      "Link": "http://arxiv.org/pdf/1803.01271v2"
+    },
+    {
+      "Year": "2018",
+      "Name": "DARTS: Differentiable Architecture Search",
+      "Link": "http://arxiv.org/pdf/1806.09055v2"
+    },
+    {
+      "Year": "2018",
+      "Name": "Federated Optimization In Heterogeneous Networks",
+      "Link": "http://arxiv.org/pdf/1812.06127v5"
+    },
+    {
+      "Year": "2018",
+      "Name": "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks",
+      "Link": "http://arxiv.org/pdf/1803.03635v5"
+    },
+    {
+      "Year": "2018",
+      "Name": "Obfuscated Gradients Give A False Sense Of Security: Circumventing Defenses To Adversarial Examples",
+      "Link": "http://arxiv.org/pdf/1802.00420v4"
+    },
+    {
+      "Year": "2018",
+      "Name": "PointPillars: Fast Encoders For Object Detection From Point Clouds",
+      "Link": "http://arxiv.org/pdf/1812.05784v2"
+    },
+    {
+      "Year": "2018",
+      "Name": "Relational Inductive Biases, Deep Learning, And Graph Networks",
+      "Link": "http://arxiv.org/pdf/1806.01261v3"
+    },
+    {
+      "Year": "2018",
+      "Name": "Fundamentals of Recurrent Neural Network (RNN) and Long Short-Term Memory (LSTM) Network",
+      "Link": "http://arxiv.org/pdf/1808.03314v10"
+    },
+    {
+      "Year": "2018",
+      "Name": "Neural Tangent Kernel: Convergence And Generalization In Neural Networks",
+      "Link": "http://arxiv.org/pdf/1806.07572v4"
+    },
+    {
+      "Year": "2018",
+      "Name": "Efficient Neural Architecture Search Via Parameter Sharing",
+      "Link": "http://arxiv.org/pdf/1802.03268v2"
+    },
+    {
+      "Year": "2018",
+      "Name": "Continual Lifelong Learning With Neural Networks: A Review",
+      "Link": "http://arxiv.org/pdf/1802.07569v4"
+    },
+    {
+      "Year": "2018",
+      "Name": "Deep Learning In Agriculture: A Survey",
+      "Link": "http://arxiv.org/pdf/1807.11809v1"
+    },
+    {
+      "Year": "2018",
+      "Name": "Deeper Insights Into Graph Convolutional Networks For Semi-Supervised Learning",
+      "Link": "http://arxiv.org/pdf/1801.07606v1"
+    },
+    {
+      "Year": "2018",
+      "Name": "A Survey On Deep Transfer Learning",
+      "Link": "http://arxiv.org/pdf/1808.01974v1"
+    },
+    {
+      "Year": "2018",
+      "Name": "Deep Learning For Time Series Classification: A Review",
+      "Link": "http://arxiv.org/pdf/1809.04356v4"
+    },
+    {
+      "Year": "2018",
+      "Name": "Generalized Cross Entropy Loss For Training Deep Neural Networks With Noisy Labels",
+      "Link": "http://arxiv.org/pdf/1805.07836v4"
+    },
+    {
+      "Year": "2018",
+      "Name": "Federated Learning with Non-IID Data",
+      "Link": "http://arxiv.org/pdf/1806.00582v2"
+    },
+    {
+      "Year": "2018",
+      "Name": "On First-Order Meta-Learning Algorithms",
+      "Link": "http://arxiv.org/pdf/1803.02999v3"
+    },
+    {
+      "Year": "2018",
+      "Name": "Soft Actor-Critic Algorithms And Applications",
+      "Link": "http://arxiv.org/pdf/1812.05905v2"
+    },
+    {
+      "Year": "2018",
+      "Name": "Hierarchical Graph Representation Learning With Differentiable Pooling",
+      "Link": "http://arxiv.org/pdf/1806.08804v4"
+    },
+    {
+      "Year": "2018",
+      "Name": "Co-teaching: Robust Training Of Deep Neural Networks With Extremely Noisy Labels",
+      "Link": "http://arxiv.org/pdf/1804.06872v3"
+    },
+    {
+      "Year": "2018",
+      "Name": "ProxylessNAS: Direct Neural Architecture Search On Target Task And Hardware",
+      "Link": "http://arxiv.org/pdf/1812.00332v2"
+    },
+    {
+      "Year": "2018",
+      "Name": "Representation Learning On Graphs With Jumping Knowledge Networks",
+      "Link": "http://arxiv.org/pdf/1806.03536v2"
+    },
+    {
+      "Year": "2017",
+      "Name": "Decoupled Weight Decay Regularization",
+      "Link": "http://arxiv.org/pdf/1711.05101v3"
+    },
+    {
+      "Year": "2017",
+      "Name": "Proximal Policy Optimization Algorithms",
+      "Link": "http://arxiv.org/pdf/1707.06347v2"
+    },
+    {
+      "Year": "2017",
+      "Name": "GANs Trained By A Two Time-Scale Update Rule Converge To A Local Nash Equilibrium",
+      "Link": "http://arxiv.org/pdf/1706.08500v6"
+    },
+    {
+      "Year": "2017",
+      "Name": "Model-Agnostic Meta-Learning For Fast Adaptation Of Deep Networks",
+      "Link": "http://arxiv.org/pdf/1703.03400v3"
+    },
+    {
+      "Year": "2017",
+      "Name": "Improved Training Of Wasserstein GANs",
+      "Link": "http://arxiv.org/pdf/1704.00028v3"
+    },
+    {
+      "Year": "2017",
+      "Name": "Mixup: Beyond Empirical Risk Minimization",
+      "Link": "http://arxiv.org/pdf/1710.09412v2"
+    },
+    {
+      "Year": "2017",
+      "Name": "Fashion-MNIST: A Novel Image Dataset For Benchmarking Machine Learning Algorithms",
+      "Link": "http://arxiv.org/pdf/1708.07747v2"
+    },
+    {
+      "Year": "2017",
+      "Name": "Prototypical Networks For Few-shot Learning",
+      "Link": "http://arxiv.org/pdf/1703.05175v2"
+    },
+    {
+      "Year": "2017",
+      "Name": "Neural Message Passing For Quantum Chemistry",
+      "Link": "http://arxiv.org/pdf/1704.01212v2"
+    },
+    {
+      "Year": "2017",
+      "Name": "Axiomatic Attribution For Deep Networks",
+      "Link": "http://arxiv.org/pdf/1703.01365v2"
+    },
+    {
+      "Year": "2017",
+      "Name": "On Calibration Of Modern Neural Networks",
+      "Link": "http://arxiv.org/pdf/1706.04599v2"
+    },
+    {
+      "Year": "2017",
+      "Name": "CARLA: An Open Urban Driving Simulator",
+      "Link": "http://arxiv.org/pdf/1711.03938v1"
+    },
+    {
+      "Year": "2017",
+      "Name": "Multi-Agent Actor-Critic For Mixed Cooperative-Competitive Environments",
+      "Link": "http://arxiv.org/pdf/1706.02275v4"
+    },
+    {
+      "Year": "2017",
+      "Name": "Neural Discrete Representation Learning",
+      "Link": "http://arxiv.org/pdf/1711.00937v2"
+    },
+    {
+      "Year": "2017",
+      "Name": "Quantization And Training Of Neural Networks For Efficient Integer-Arithmetic-Only Inference",
+      "Link": "http://arxiv.org/pdf/1712.05877v1"
+    },
+    {
+      "Year": "2017",
+      "Name": "An Overview Of Multi-Task Learning In Deep Neural Networks",
+      "Link": "http://arxiv.org/pdf/1706.05098v1"
+    },
+    {
+      "Year": "2017",
+      "Name": "Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting",
+      "Link": "http://arxiv.org/pdf/1707.01926v3"
+    },
+    {
+      "Year": "2017",
+      "Name": "Multimodal Machine Learning: A Survey And Taxonomy",
+      "Link": "http://arxiv.org/pdf/1705.09406v2"
+    },
+    {
+      "Year": "2017",
+      "Name": "Boosting Adversarial Attacks With Momentum",
+      "Link": "http://arxiv.org/pdf/1710.06081v3"
+    },
+    {
+      "Year": "2017",
+      "Name": "Gradient Episodic Memory for Continual Learning",
+      "Link": "http://arxiv.org/pdf/1706.08840v6"
+    },
+    {
+      "Year": "2017",
+      "Name": "Continual Learning Through Synaptic Intelligence",
+      "Link": "http://arxiv.org/pdf/1703.04200v3"
+    },
+    {
+      "Year": "2017",
+      "Name": "Convolutional 2D Knowledge Graph Embeddings",
+      "Link": "http://arxiv.org/pdf/1707.01476v6"
+    },
+    {
+      "Year": "2017",
+      "Name": "Deep Sets",
+      "Link": "http://arxiv.org/pdf/1703.06114v3"
+    },
+    {
+      "Year": "2017",
+      "Name": "Curiosity-driven Exploration By Self-supervised Prediction",
+      "Link": "http://arxiv.org/pdf/1705.05363v1"
+    },
+    {
+      "Year": "2017",
+      "Name": "One Pixel Attack For Fooling Deep Neural Networks",
+      "Link": "http://arxiv.org/pdf/1710.08864v7"
+    },
+    {
+      "Year": "2017",
+      "Name": "Hindsight Experience Replay",
+      "Link": "http://arxiv.org/pdf/1707.01495v3"
+    },
+    {
+      "Year": "2017",
+      "Name": "Methods For Interpreting And Understanding Deep Neural Networks",
+      "Link": "http://arxiv.org/pdf/1706.07979v1"
+    },
+    {
+      "Year": "2017",
+      "Name": "Conditional Adversarial Domain Adaptation",
+      "Link": "http://arxiv.org/pdf/1705.10667v4"
+    },
+    {
+      "Year": "2017",
+      "Name": "SmoothGrad: Removing Noise By Adding Noise",
+      "Link": "http://arxiv.org/pdf/1706.03825v1"
+    },
+    {
+      "Year": "2017",
+      "Name": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+      "Link": "http://arxiv.org/pdf/1701.06538v1"
+    },
+    {
+      "Year": "2016",
+      "Name": "XGBoost: A Scalable Tree Boosting System",
+      "Link": "http://arxiv.org/pdf/1603.02754v3"
+    },
+    {
+      "Year": "2016",
+      "Name": "Semi-Supervised Classification With Graph Convolutional Networks",
+      "Link": "http://arxiv.org/pdf/1609.02907v4"
+    },
+    {
+      "Year": "2016",
+      "Name": "Communication-Efficient Learning of Deep Networks from Decentralized Data",
+      "Link": "http://arxiv.org/pdf/1602.05629v4"
+    },
+    {
+      "Year": "2016",
+      "Name": "Why Should I Trust You?: Explaining The Predictions Of Any Classifier",
+      "Link": "http://arxiv.org/pdf/1602.04938v3"
+    },
+    {
+      "Year": "2016",
+      "Name": "Asynchronous Methods For Deep Reinforcement Learning",
+      "Link": "http://arxiv.org/pdf/1602.01783v2"
+    },
+    {
+      "Year": "2016",
+      "Name": "Convolutional Neural Networks On Graphs With Fast Localized Spectral Filtering",
+      "Link": "http://arxiv.org/pdf/1606.09375v3"
+    },
+    {
+      "Year": "2016",
+      "Name": "Matching Networks For One Shot Learning",
+      "Link": "http://arxiv.org/pdf/1606.04080v2"
+    },
+    {
+      "Year": "2016",
+      "Name": "Overcoming Catastrophic Forgetting In Neural Networks",
+      "Link": "http://arxiv.org/pdf/1612.00796v2"
+    },
+    {
+      "Year": "2016",
+      "Name": "An Overview Of Gradient Descent Optimization Algorithms",
+      "Link": "http://arxiv.org/pdf/1609.04747v2"
+    },
+    {
+      "Year": "2016",
+      "Name": "Neural Architecture Search With Reinforcement Learning",
+      "Link": "http://arxiv.org/pdf/1611.01578v2"
+    },
+    {
+      "Year": "2016",
+      "Name": "OpenAI Gym",
+      "Link": "http://arxiv.org/pdf/1606.01540v1"
+    },
+    {
+      "Year": "2016",
+      "Name": "Understanding Deep Learning Requires Rethinking Generalization",
+      "Link": "http://arxiv.org/pdf/1611.03530v2"
+    },
+    {
+      "Year": "2016",
+      "Name": "Federated Learning: Strategies For Improving Communication Efficiency",
+      "Link": "http://arxiv.org/pdf/1610.05492v2"
+    },
+    {
+      "Year": "2016",
+      "Name": "InfoGAN: Interpretable Representation Learning By Information Maximizing Generative Adversarial Nets",
+      "Link": "http://arxiv.org/pdf/1606.03657v1"
+    },
+    {
+      "Year": "2016",
+      "Name": "Gaussian Error Linear Units (GELUs)",
+      "Link": "http://arxiv.org/pdf/1606.08415v5"
+    },
+    {
+      "Year": "2016",
+      "Name": "Equality Of Opportunity In Supervised Learning",
+      "Link": "http://arxiv.org/pdf/1610.02413v1"
+    },
+    {
+      "Year": "2016",
+      "Name": "Wide & Deep Learning For Recommender Systems",
+      "Link": "http://arxiv.org/pdf/1606.07792v1"
+    },
+    {
+      "Year": "2016",
+      "Name": "Generative Adversarial Imitation Learning",
+      "Link": "http://arxiv.org/pdf/1606.03476v1"
+    },
+    {
+      "Year": "2016",
+      "Name": "On Large-Batch Training For Deep Learning: Generalization Gap And Sharp Minima",
+      "Link": "http://arxiv.org/pdf/1609.04836v2"
+    },
+    {
+      "Year": "2016",
+      "Name": "Automatic Chemical Design Using A Data-driven Continuous Representation Of Molecules",
+      "Link": "http://arxiv.org/pdf/1610.02415v3"
+    },
+    {
+      "Year": "2016",
+      "Name": "End-to-end Sequence Labeling Via Bi-directional LSTM-CNNs-CRF",
+      "Link": "http://arxiv.org/pdf/1603.01354v5"
+    },
+    {
+      "Year": "2016",
+      "Name": "The Concrete Distribution: A Continuous Relaxation Of Discrete Random Variables",
+      "Link": "http://arxiv.org/pdf/1611.00712v3"
+    },
+    {
+      "Year": "2016",
+      "Name": "SeqGAN: Sequence Generative Adversarial Nets With Policy Gradient",
+      "Link": "http://arxiv.org/pdf/1609.05473v6"
+    },
+    {
+      "Year": "2016",
+      "Name": "Deep Transfer Learning With Joint Adaptation Networks",
+      "Link": "http://arxiv.org/pdf/1605.06636v2"
+    },
+    {
+      "Year": "2016",
+      "Name": "Progressive Neural Networks",
+      "Link": "http://arxiv.org/pdf/1606.04671v4"
+    },
+    {
+      "Year": "2016",
+      "Name": "Deep Networks With Stochastic Depth",
+      "Link": "http://arxiv.org/pdf/1603.09382v3"
+    },
+    {
+      "Year": "2016",
+      "Name": "Binarized Neural Networks: Training Deep Neural Networks With Weights And Activations Constrained To +1 Or -1",
+      "Link": "http://arxiv.org/pdf/1602.02830v3"
+    },
+    {
+      "Year": "2016",
+      "Name": "Hyperband: A Novel Bandit-Based Approach To Hyperparameter Optimization",
+      "Link": "http://arxiv.org/pdf/1603.06560v4"
+    },
+    {
+      "Year": "2016",
+      "Name": "Learning Hand-Eye Coordination For Robotic Grasping With Deep Learning And Large-Scale Data Collection",
+      "Link": "http://arxiv.org/pdf/1603.02199v4"
+    },
+    {
+      "Year": "2016",
+      "Name": "Revisiting Semi-Supervised Learning With Graph Embeddings",
+      "Link": "http://arxiv.org/pdf/1603.08861v2"
+    },
+    {
+      "Year": "2015",
+      "Name": "Batch Normalization: Accelerating Deep Network Training By Reducing Internal Covariate Shift",
+      "Link": "http://arxiv.org/pdf/1502.03167v3"
+    },
+    {
+      "Year": "2015",
+      "Name": "Unsupervised Representation Learning With Deep Convolutional Generative Adversarial Networks",
+      "Link": "http://arxiv.org/pdf/1511.06434v2"
+    },
+    {
+      "Year": "2015",
+      "Name": "Continuous Control With Deep Reinforcement Learning",
+      "Link": "http://arxiv.org/pdf/1509.02971v6"
+    },
+    {
+      "Year": "2015",
+      "Name": "Show, Attend And Tell: Neural Image Caption Generation With Visual Attention",
+      "Link": "http://arxiv.org/pdf/1502.03044v3"
+    },
+    {
+      "Year": "2015",
+      "Name": "Deep Reinforcement Learning With Double Q-learning",
+      "Link": "http://arxiv.org/pdf/1509.06461v3"
+    },
+    {
+      "Year": "2015",
+      "Name": "Trust Region Policy Optimization",
+      "Link": "http://arxiv.org/pdf/1502.05477v5"
+    },
+    {
+      "Year": "2015",
+      "Name": "Character-level Convolutional Networks For Text Classification",
+      "Link": "http://arxiv.org/pdf/1509.01626v3"
+    },
+    {
+      "Year": "2015",
+      "Name": "Fast And Accurate Deep Network Learning By Exponential Linear Units (ELUs)",
+      "Link": "http://arxiv.org/pdf/1511.07289v5"
+    },
+    {
+      "Year": "2015",
+      "Name": "LINE: Large-scale Information Network Embedding",
+      "Link": "http://arxiv.org/pdf/1503.03578v1"
+    },
+    {
+      "Year": "2015",
+      "Name": "Deep Unsupervised Learning Using Nonequilibrium Thermodynamics",
+      "Link": "http://arxiv.org/pdf/1503.03585v8"
+    },
+    {
+      "Year": "2015",
+      "Name": "Learning Transferable Features With Deep Adaptation Networks",
+      "Link": "http://arxiv.org/pdf/1502.02791v2"
+    },
+    {
+      "Year": "2015",
+      "Name": "DeepFool: A Simple And Accurate Method To Fool Deep Neural Networks",
+      "Link": "http://arxiv.org/pdf/1511.04599v3"
+    },
+    {
+      "Year": "2015",
+      "Name": "Prioritized Experience Replay",
+      "Link": "http://arxiv.org/pdf/1511.05952v4"
+    },
+    {
+      "Year": "2015",
+      "Name": "Dueling Network Architectures For Deep Reinforcement Learning",
+      "Link": "http://arxiv.org/pdf/1511.06581v3"
+    },
+    {
+      "Year": "2015",
+      "Name": "End-to-End Training Of Deep Visuomotor Policies",
+      "Link": "http://arxiv.org/pdf/1504.00702v5"
+    },
+    {
+      "Year": "2015",
+      "Name": "Convolutional Networks On Graphs For Learning Molecular Fingerprints",
+      "Link": "http://arxiv.org/pdf/1509.09292v2"
+    },
+    {
+      "Year": "2015",
+      "Name": "Gated Graph Sequence Neural Networks",
+      "Link": "http://arxiv.org/pdf/1511.05493v4"
+    },
+    {
+      "Year": "2015",
+      "Name": "High-Dimensional Continuous Control Using Generalized Advantage Estimation",
+      "Link": "http://arxiv.org/pdf/1506.02438v6"
+    },
+    {
+      "Year": "2015",
+      "Name": "BinaryConnect: Training Deep Neural Networks With Binary Weights During Propagations",
+      "Link": "http://arxiv.org/pdf/1511.00363v3"
+    },
+    {
+      "Year": "2015",
+      "Name": "Empirical Evaluation Of Rectified Activations In Convolutional Network",
+      "Link": "http://arxiv.org/pdf/1505.00853v2"
+    },
+    {
+      "Year": "2015",
+      "Name": "Unsupervised Deep Embedding For Clustering Analysis",
+      "Link": "http://arxiv.org/pdf/1511.06335v2"
+    },
+    {
+      "Year": "2015",
+      "Name": "Unsupervised Learning Of Video Representations Using LSTMs",
+      "Link": "http://arxiv.org/pdf/1502.04681v3"
+    },
+    {
+      "Year": "2015",
+      "Name": "Generating Sentences From A Continuous Space",
+      "Link": "http://arxiv.org/pdf/1511.06349v4"
+    },
+    {
+      "Year": "2015",
+      "Name": "A Critical Review Of Recurrent Neural Networks For Sequence Learning",
+      "Link": "http://arxiv.org/pdf/1506.00019v4"
+    },
+    {
+      "Year": "2015",
+      "Name": "Adversarial Autoencoders",
+      "Link": "http://arxiv.org/pdf/1511.05644v2"
+    },
+    {
+      "Year": "2015",
+      "Name": "Deep Learning With Limited Numerical Precision",
+      "Link": "http://arxiv.org/pdf/1502.02551v1"
+    },
+    {
+      "Year": "2015",
+      "Name": "Scheduled Sampling For Sequence Prediction With Recurrent Neural Networks",
+      "Link": "http://arxiv.org/pdf/1506.03099v3"
+    },
+    {
+      "Year": "2015",
+      "Name": "Autoencoding Beyond Pixels Using A Learned Similarity Metric",
+      "Link": "http://arxiv.org/pdf/1512.09300v2"
+    },
+    {
+      "Year": "2015",
+      "Name": "Deep Multi-scale Video Prediction Beyond Mean Square Error",
+      "Link": "http://arxiv.org/pdf/1511.05440v6"
+    },
+    {
+      "Year": "2015",
+      "Name": "Stacked Attention Networks For Image Question Answering",
+      "Link": "http://arxiv.org/pdf/1511.02274v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "Adam: A Method For Stochastic Optimization",
+      "Link": "http://arxiv.org/pdf/1412.6980v9"
+    },
+    {
+      "Year": "2014",
+      "Name": "Conditional Generative Adversarial Nets",
+      "Link": "http://arxiv.org/pdf/1411.1784v1"
+    },
+    {
+      "Year": "2014",
+      "Name": "How Transferable Are Features In Deep Neural Networks?",
+      "Link": "http://arxiv.org/pdf/1411.1792v1"
+    },
+    {
+      "Year": "2014",
+      "Name": "FitNets: Hints For Thin Deep Nets",
+      "Link": "http://arxiv.org/pdf/1412.6550v4"
+    },
+    {
+      "Year": "2014",
+      "Name": "Semi-Supervised Learning With Deep Generative Models",
+      "Link": "http://arxiv.org/pdf/1406.5298v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "A Tutorial On Principal Component Analysis",
+      "Link": "http://arxiv.org/pdf/1404.1100v1"
+    },
+    {
+      "Year": "2014",
+      "Name": "NICE: Non-linear Independent Components Estimation",
+      "Link": "http://arxiv.org/pdf/1410.8516v6"
+    },
+    {
+      "Year": "2014",
+      "Name": "Deep Metric Learning Using Triplet Network",
+      "Link": "http://arxiv.org/pdf/1412.6622v4"
+    },
+    {
+      "Year": "2014",
+      "Name": "SAGA: A Fast Incremental Gradient Method With Support For Non-Strongly Convex Composite Objectives",
+      "Link": "http://arxiv.org/pdf/1407.0202v3"
+    },
+    {
+      "Year": "2014",
+      "Name": "Collaborative Deep Learning For Recommender Systems",
+      "Link": "http://arxiv.org/pdf/1409.2944v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "Unifying Visual-Semantic Embeddings With Multimodal Neural Language Models",
+      "Link": "http://arxiv.org/pdf/1411.2539v1"
+    },
+    {
+      "Year": "2014",
+      "Name": "OpenML: Networked Science In Machine Learning",
+      "Link": "http://arxiv.org/pdf/1407.7722v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "The Loss Surfaces Of Multilayer Networks",
+      "Link": "http://arxiv.org/pdf/1412.0233v3"
+    },
+    {
+      "Year": "2014",
+      "Name": "Multiple Object Recognition With Visual Attention",
+      "Link": "http://arxiv.org/pdf/1412.7755v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "Neural Variational Inference And Learning In Belief Networks",
+      "Link": "http://arxiv.org/pdf/1402.0030v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "Convolutional Neural Networks Over Tree Structures For Programming Language Processing",
+      "Link": "http://arxiv.org/pdf/1409.5718v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "Breaking The Curse Of Dimensionality With Convex Neural Networks",
+      "Link": "http://arxiv.org/pdf/1412.8690v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "Deep Learning With Elastic Averaging SGD",
+      "Link": "http://arxiv.org/pdf/1412.6651v8"
+    },
+    {
+      "Year": "2014",
+      "Name": "New Insights And Perspectives On The Natural Gradient Method",
+      "Link": "http://arxiv.org/pdf/1412.1193v11"
+    },
+    {
+      "Year": "2014",
+      "Name": "Taming The Monster: A Fast And Simple Algorithm For Contextual Bandits",
+      "Link": "http://arxiv.org/pdf/1402.0555v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "Label Distribution Learning",
+      "Link": "http://arxiv.org/pdf/1408.6027v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "Video (language) Modeling: A Baseline For Generative Models Of Natural Videos",
+      "Link": "http://arxiv.org/pdf/1412.6604v5"
+    },
+    {
+      "Year": "2014",
+      "Name": "On The Computational Efficiency Of Training Neural Networks",
+      "Link": "http://arxiv.org/pdf/1410.1141v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "Guaranteed Matrix Completion Via Non-convex Factorization",
+      "Link": "http://arxiv.org/pdf/1411.8003v3"
+    },
+    {
+      "Year": "2014",
+      "Name": "Fastfood: Approximate Kernel Expansions In Loglinear Time",
+      "Link": "http://arxiv.org/pdf/1408.3060v1"
+    },
+    {
+      "Year": "2014",
+      "Name": "Deep Unfolding: Model-Based Inspiration Of Novel Deep Architectures",
+      "Link": "http://arxiv.org/pdf/1409.2574v4"
+    },
+    {
+      "Year": "2014",
+      "Name": "An Information-Theoretic Analysis Of Thompson Sampling",
+      "Link": "http://arxiv.org/pdf/1403.5341v2"
+    },
+    {
+      "Year": "2014",
+      "Name": "Lazier Than Lazy Greedy",
+      "Link": "http://arxiv.org/pdf/1409.7938v3"
+    },
+    {
+      "Year": "2014",
+      "Name": "Differentially Private Empirical Risk Minimization: Efficient Algorithms And Tight Error Bounds",
+      "Link": "http://arxiv.org/pdf/1405.7085v2"
+    },
+    {
+      "Year": "2013",
+      "Name": "Playing Atari With Deep Reinforcement Learning",
+      "Link": "http://arxiv.org/pdf/1312.5602v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Spectral Networks And Locally Connected Networks On Graphs",
+      "Link": "http://arxiv.org/pdf/1312.6203v3"
+    },
+    {
+      "Year": "2013",
+      "Name": "Estimating Continuous Distributions In Bayesian Classifiers",
+      "Link": "http://arxiv.org/pdf/1302.4964v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Probabilistic Latent Semantic Analysis",
+      "Link": "http://arxiv.org/pdf/1301.6705v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Estimating Or Propagating Gradients Through Stochastic Neurons For Conditional Computation",
+      "Link": "http://arxiv.org/pdf/1308.3432v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Do Deep Nets Really Need To Be Deep?",
+      "Link": "http://arxiv.org/pdf/1312.6184v7"
+    },
+    {
+      "Year": "2013",
+      "Name": "Deep Learning For Detecting Robotic Grasps",
+      "Link": "http://arxiv.org/pdf/1301.3592v6"
+    },
+    {
+      "Year": "2013",
+      "Name": "Rao-Blackwellised Particle Filtering For Dynamic Bayesian Networks",
+      "Link": "http://arxiv.org/pdf/1301.3853v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Predicting Parameters In Deep Learning",
+      "Link": "http://arxiv.org/pdf/1306.0543v2"
+    },
+    {
+      "Year": "2013",
+      "Name": "Gaussian Processes For Big Data",
+      "Link": "http://arxiv.org/pdf/1309.6835v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "A Survey On Multi-view Learning",
+      "Link": "http://arxiv.org/pdf/1304.5634v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Stochastic Pooling For Regularization Of Deep Convolutional Neural Networks",
+      "Link": "http://arxiv.org/pdf/1301.3557v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Zero-Shot Learning By Convex Combination Of Semantic Embeddings",
+      "Link": "http://arxiv.org/pdf/1312.5650v3"
+    },
+    {
+      "Year": "2013",
+      "Name": "Deep Learning Using Linear Support Vector Machines",
+      "Link": "http://arxiv.org/pdf/1306.0239v4"
+    },
+    {
+      "Year": "2013",
+      "Name": "Induction Of Selective Bayesian Classifiers",
+      "Link": "http://arxiv.org/pdf/1302.6828v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "The Bayesian Structural EM Algorithm",
+      "Link": "http://arxiv.org/pdf/1301.7373v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "A Survey On Metric Learning For Feature Vectors And Structured Data",
+      "Link": "http://arxiv.org/pdf/1306.6709v4"
+    },
+    {
+      "Year": "2013",
+      "Name": "A Semantic Matching Energy Function For Learning With Multi-relational Data",
+      "Link": "http://arxiv.org/pdf/1301.3485v2"
+    },
+    {
+      "Year": "2013",
+      "Name": "Inferring Parameters And Structure Of Latent Variable Models By Variational Bayes",
+      "Link": "http://arxiv.org/pdf/1301.6676v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Deep Learning Of Representations: Looking Forward",
+      "Link": "http://arxiv.org/pdf/1305.0445v2"
+    },
+    {
+      "Year": "2013",
+      "Name": "Learning To Optimize Via Posterior Sampling",
+      "Link": "http://arxiv.org/pdf/1301.2609v5"
+    },
+    {
+      "Year": "2013",
+      "Name": "Learning Bayesian Network Structure From Massive Datasets: The Sparse Candidate Algorithm",
+      "Link": "http://arxiv.org/pdf/1301.6696v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "One-Class Classification: Taxonomy Of Study And Review Of Techniques",
+      "Link": "http://arxiv.org/pdf/1312.0049v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "An Introductory Study On Time Series Modeling And Forecasting",
+      "Link": "http://arxiv.org/pdf/1302.6613v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Class Imbalance Problem In Data Mining Review",
+      "Link": "http://arxiv.org/pdf/1305.1707v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Generalized Denoising Auto-Encoders As Generative Models",
+      "Link": "http://arxiv.org/pdf/1305.6663v4"
+    },
+    {
+      "Year": "2013",
+      "Name": "A Time Series Forest For Classification And Feature Extraction",
+      "Link": "http://arxiv.org/pdf/1302.2277v2"
+    },
+    {
+      "Year": "2013",
+      "Name": "Learning By Transduction",
+      "Link": "http://arxiv.org/pdf/1301.7375v1"
+    },
+    {
+      "Year": "2013",
+      "Name": "Large-scale Multi-label Learning With Missing Labels",
+      "Link": "http://arxiv.org/pdf/1307.5101v3"
+    },
+    {
+      "Year": "2013",
+      "Name": "Comparing Bayesian Network Classifiers",
+      "Link": "http://arxiv.org/pdf/1301.6684v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Scikit-learn: Machine Learning In Python",
+      "Link": "http://arxiv.org/pdf/1201.0490v4"
+    },
+    {
+      "Year": "2012",
+      "Name": "Representation Learning: A Review And New Perspectives",
+      "Link": "http://arxiv.org/pdf/1206.5538v3"
+    },
+    {
+      "Year": "2012",
+      "Name": "ADADELTA: An Adaptive Learning Rate Method",
+      "Link": "http://arxiv.org/pdf/1212.5701v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "On The Difficulty Of Training Recurrent Neural Networks",
+      "Link": "http://arxiv.org/pdf/1211.5063v2"
+    },
+    {
+      "Year": "2012",
+      "Name": "Practical Recommendations For Gradient-based Training Of Deep Architectures",
+      "Link": "http://arxiv.org/pdf/1206.5533v2"
+    },
+    {
+      "Year": "2012",
+      "Name": "Auto-WEKA: Combined Selection And Hyperparameter Optimization Of Classification Algorithms",
+      "Link": "http://arxiv.org/pdf/1208.3719v2"
+    },
+    {
+      "Year": "2012",
+      "Name": "Poisoning Attacks Against Support Vector Machines",
+      "Link": "http://arxiv.org/pdf/1206.6389v3"
+    },
+    {
+      "Year": "2012",
+      "Name": "Tensor Decompositions For Learning Latent Variable Models",
+      "Link": "http://arxiv.org/pdf/1210.7559v4"
+    },
+    {
+      "Year": "2012",
+      "Name": "A Comparative Study Of Efficient Initialization Methods For The K-Means Clustering Algorithm",
+      "Link": "http://arxiv.org/pdf/1209.1960v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Thompson Sampling For Contextual Bandits With Linear Payoffs",
+      "Link": "http://arxiv.org/pdf/1209.3352v4"
+    },
+    {
+      "Year": "2012",
+      "Name": "An MDP-based Recommender System",
+      "Link": "http://arxiv.org/pdf/1301.0600v2"
+    },
+    {
+      "Year": "2012",
+      "Name": "Discriminative Probabilistic Models For Relational Data",
+      "Link": "http://arxiv.org/pdf/1301.0604v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Marginalized Denoising Autoencoders For Domain Adaptation",
+      "Link": "http://arxiv.org/pdf/1206.4683v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Large-Sample Learning Of Bayesian Networks Is NP-Hard",
+      "Link": "http://arxiv.org/pdf/1212.2468v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Sum-Product Networks: A New Deep Architecture",
+      "Link": "http://arxiv.org/pdf/1202.3732v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Generalized Fisher Score For Feature Selection",
+      "Link": "http://arxiv.org/pdf/1202.3725v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "A Widely Applicable Bayesian Information Criterion",
+      "Link": "http://arxiv.org/pdf/1208.6338v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Modeling Temporal Dependencies In High-Dimensional Sequences: Application To Polyphonic Music Generation And Transcription",
+      "Link": "http://arxiv.org/pdf/1206.6392v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "On Smoothing And Inference For Topic Models",
+      "Link": "http://arxiv.org/pdf/1205.2662v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Expectation-Propogation For The Generative Aspect Model",
+      "Link": "http://arxiv.org/pdf/1301.0588v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Kernel-based Conditional Independence Test And Application In Causal Discovery",
+      "Link": "http://arxiv.org/pdf/1202.3775v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Stochastic Gradient Descent For Non-smooth Optimization: Convergence Results And Optimal Averaging Schemes",
+      "Link": "http://arxiv.org/pdf/1212.1824v2"
+    },
+    {
+      "Year": "2012",
+      "Name": "Algorithms For Learning Kernels Based On Centered Alignment",
+      "Link": "http://arxiv.org/pdf/1203.0550v3"
+    },
+    {
+      "Year": "2012",
+      "Name": "Advances In Optimizing Recurrent Networks",
+      "Link": "http://arxiv.org/pdf/1212.0901v2"
+    },
+    {
+      "Year": "2012",
+      "Name": "Learning Task Grouping And Overlap In Multi-task Learning",
+      "Link": "http://arxiv.org/pdf/1206.6417v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Efficiently Inducing Features Of Conditional Random Fields",
+      "Link": "http://arxiv.org/pdf/1212.2504v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "Parallelizing Exploration-Exploitation Tradeoffs With Gaussian Process Bandit Optimization",
+      "Link": "http://arxiv.org/pdf/1206.6402v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "A New Class Of Upper Bounds On The Log Partition Function",
+      "Link": "http://arxiv.org/pdf/1301.0610v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "A Convex Formulation For Learning Task Relationships In Multi-Task Learning",
+      "Link": "http://arxiv.org/pdf/1203.3536v1"
+    },
+    {
+      "Year": "2012",
+      "Name": "A Practical Algorithm For Topic Modeling With Provable Guarantees",
+      "Link": "http://arxiv.org/pdf/1212.4777v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Natural Language Processing (almost) From Scratch",
+      "Link": "http://arxiv.org/pdf/1103.0398v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Building High-level Features Using Large Scale Unsupervised Learning",
+      "Link": "http://arxiv.org/pdf/1112.6209v5"
+    },
+    {
+      "Year": "2011",
+      "Name": "Optimization With Sparsity-Inducing Penalties",
+      "Link": "http://arxiv.org/pdf/1108.0775v2"
+    },
+    {
+      "Year": "2011",
+      "Name": "Analysis Of Thompson Sampling For The Multi-armed Bandit Problem",
+      "Link": "http://arxiv.org/pdf/1111.1797v3"
+    },
+    {
+      "Year": "2011",
+      "Name": "Domain Adaptation For Statistical Classifiers",
+      "Link": "http://arxiv.org/pdf/1109.6341v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Making Gradient Descent Optimal For Strongly Convex Stochastic Optimization",
+      "Link": "http://arxiv.org/pdf/1109.5647v7"
+    },
+    {
+      "Year": "2011",
+      "Name": "Doubly Robust Policy Evaluation And Learning",
+      "Link": "http://arxiv.org/pdf/1103.4601v2"
+    },
+    {
+      "Year": "2011",
+      "Name": "Convergence Rates Of Inexact Proximal-Gradient Methods For Convex Optimization",
+      "Link": "http://arxiv.org/pdf/1109.2415v2"
+    },
+    {
+      "Year": "2011",
+      "Name": "Learning With Submodular Functions: A Convex Optimization Perspective",
+      "Link": "http://arxiv.org/pdf/1111.6453v2"
+    },
+    {
+      "Year": "2011",
+      "Name": "A Unified Framework For Approximating And Clustering Data",
+      "Link": "http://arxiv.org/pdf/1106.1379v4"
+    },
+    {
+      "Year": "2011",
+      "Name": "Optimizing Dialogue Management With Reinforcement Learning: Experiments With The NJFun System",
+      "Link": "http://arxiv.org/pdf/1106.0676v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "A Reliable Effective Terascale Linear Learning System",
+      "Link": "http://arxiv.org/pdf/1110.4198v3"
+    },
+    {
+      "Year": "2011",
+      "Name": "Evolutionary Algorithms For Reinforcement Learning",
+      "Link": "http://arxiv.org/pdf/1106.0221v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Revisiting K-means: New Algorithms Via Bayesian Nonparametrics",
+      "Link": "http://arxiv.org/pdf/1111.0352v2"
+    },
+    {
+      "Year": "2011",
+      "Name": "Budget-Optimal Task Allocation For Reliable Crowdsourcing Systems",
+      "Link": "http://arxiv.org/pdf/1110.3564v4"
+    },
+    {
+      "Year": "2011",
+      "Name": "Structured Sparsity Through Convex Optimization",
+      "Link": "http://arxiv.org/pdf/1109.2397v2"
+    },
+    {
+      "Year": "2011",
+      "Name": "Better Mini-Batch Algorithms Via Accelerated Gradient Methods",
+      "Link": "http://arxiv.org/pdf/1106.4574v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Parallel Coordinate Descent For L1-Regularized Loss Minimization",
+      "Link": "http://arxiv.org/pdf/1105.5379v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Risk-Sensitive Reinforcement Learning Applied To Control Under Constraints",
+      "Link": "http://arxiv.org/pdf/1109.2147v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Learning To Order Things",
+      "Link": "http://arxiv.org/pdf/1105.5464v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Efficient Optimal Learning For Contextual Bandits",
+      "Link": "http://arxiv.org/pdf/1106.2369v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Noise Tolerance Under Risk Minimization",
+      "Link": "http://arxiv.org/pdf/1109.5231v4"
+    },
+    {
+      "Year": "2011",
+      "Name": "Active Ranking Using Pairwise Comparisons",
+      "Link": "http://arxiv.org/pdf/1109.3701v2"
+    },
+    {
+      "Year": "2011",
+      "Name": "Active Learning With Multiple Views",
+      "Link": "http://arxiv.org/pdf/1110.1073v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Trading Regret For Efficiency: Online Convex Optimization With Long Term Constraints",
+      "Link": "http://arxiv.org/pdf/1111.6082v3"
+    },
+    {
+      "Year": "2011",
+      "Name": "Learning Symbolic Models Of Stochastic Domains",
+      "Link": "http://arxiv.org/pdf/1110.2211v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "From Bandits To Experts: On The Value Of Side-Observations",
+      "Link": "http://arxiv.org/pdf/1106.2436v3"
+    },
+    {
+      "Year": "2011",
+      "Name": "Accelerating Reinforcement Learning Through Implicit Imitation",
+      "Link": "http://arxiv.org/pdf/1106.0681v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Trace Lasso: A Trace Norm Regularization For Correlated Designs",
+      "Link": "http://arxiv.org/pdf/1109.1990v1"
+    },
+    {
+      "Year": "2011",
+      "Name": "Learning From Labeled And Unlabeled Data: An Empirical Study Across Techniques And Domains",
+      "Link": "http://arxiv.org/pdf/1109.2047v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "A Reduction Of Imitation Learning And Structured Prediction To No-Regret Online Learning",
+      "Link": "http://arxiv.org/pdf/1011.0686v3"
+    },
+    {
+      "Year": "2010",
+      "Name": "A Contextual-Bandit Approach To Personalized News Article Recommendation",
+      "Link": "http://arxiv.org/pdf/1003.0146v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "A Tutorial On Bayesian Optimization Of Expensive Cost Functions, With Application To Active User Modeling And Hierarchical Reinforcement Learning",
+      "Link": "http://arxiv.org/pdf/1012.2599v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "Asymptotic Equivalence Of Bayes Cross Validation And Widely Applicable Information Criterion In Singular Learning Theory",
+      "Link": "http://arxiv.org/pdf/1004.2316v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "GraphLab: A New Framework For Parallel Machine Learning",
+      "Link": "http://arxiv.org/pdf/1006.4990v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "Robust PCA Via Outlier Pursuit",
+      "Link": "http://arxiv.org/pdf/1010.4237v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "Optimal Distributed Online Prediction Using Mini-Batches",
+      "Link": "http://arxiv.org/pdf/1012.1367v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "Adaptive Submodularity: Theory And Applications In Active Learning And Stochastic Optimization",
+      "Link": "http://arxiv.org/pdf/1003.3967v5"
+    },
+    {
+      "Year": "2010",
+      "Name": "Unbiased Offline Evaluation Of Contextual-bandit-based News Article Recommendation Algorithms",
+      "Link": "http://arxiv.org/pdf/1003.5956v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "Robustness And Generalization",
+      "Link": "http://arxiv.org/pdf/1005.2243v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "X-Armed Bandits",
+      "Link": "http://arxiv.org/pdf/1001.4475v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "Adaptive Bound Optimization For Online Convex Optimization",
+      "Link": "http://arxiv.org/pdf/1002.4908v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "Settling The Polynomial Learnability Of Mixtures Of Gaussians",
+      "Link": "http://arxiv.org/pdf/1004.4223v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "Contextual Bandit Algorithms With Supervised Learning Guarantees",
+      "Link": "http://arxiv.org/pdf/1002.4058v3"
+    },
+    {
+      "Year": "2010",
+      "Name": "Application Of K Means Clustering Algorithm For Prediction Of Students Academic Performance",
+      "Link": "http://arxiv.org/pdf/1002.2425v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "Trajectory Clustering And An Application To Airspace Monitoring",
+      "Link": "http://arxiv.org/pdf/1001.5007v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "Portfolio Allocation For Bayesian Optimization",
+      "Link": "http://arxiv.org/pdf/1009.5419v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "Distributed Autonomous Online Learning: Regrets And Intrinsic Privacy-Preserving Properties",
+      "Link": "http://arxiv.org/pdf/1006.4039v3"
+    },
+    {
+      "Year": "2010",
+      "Name": "Learning From Logged Implicit Exploration Data",
+      "Link": "http://arxiv.org/pdf/1003.0120v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "Collaborative Filtering In A Non-Uniform World: Learning With The Weighted Trace Norm",
+      "Link": "http://arxiv.org/pdf/1002.2780v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "Safe Feature Elimination In Sparse Supervised Learning",
+      "Link": "http://arxiv.org/pdf/1009.3515v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "Polynomial Learning Of Distribution Families",
+      "Link": "http://arxiv.org/pdf/1004.4864v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "An Inverse Power Method For Nonlinear Eigenproblems With Applications In 1-Spectral Clustering And Sparse PCA",
+      "Link": "http://arxiv.org/pdf/1012.0774v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "Near-Optimal Bayesian Active Learning With Noisy Observations",
+      "Link": "http://arxiv.org/pdf/1010.3091v2"
+    },
+    {
+      "Year": "2010",
+      "Name": "A CHAID Based Performance Prediction Model In Educational Data Mining",
+      "Link": "http://arxiv.org/pdf/1002.1144v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "Manifold Elastic Net: A Unified Framework For Sparse Dimension Reduction",
+      "Link": "http://arxiv.org/pdf/1007.3564v3"
+    },
+    {
+      "Year": "2010",
+      "Name": "Sparse Inverse Covariance Selection Via Alternating Linearization Methods",
+      "Link": "http://arxiv.org/pdf/1011.0097v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "Supervised Classification Performance Of Multispectral Images",
+      "Link": "http://arxiv.org/pdf/1002.4046v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "Agnostic Active Learning Without Constraints",
+      "Link": "http://arxiv.org/pdf/1006.2588v1"
+    },
+    {
+      "Year": "2010",
+      "Name": "Network Flow Algorithms For Structured Sparsity",
+      "Link": "http://arxiv.org/pdf/1008.5209v1"
+    }
+  ]
+}
