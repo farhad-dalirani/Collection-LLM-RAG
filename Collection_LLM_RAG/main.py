@@ -23,7 +23,7 @@ def ai_response(user_message, chat_interface, user_models, selected_query_engine
         return "", chat_interface
 
     # Check if the user has selected a query engine in case of Router-Based Query Engines mode
-    if user_models.mode == "Router-Based Query Engines" and len(selected_query_engines) == 0:
+    if (user_models.mode in ["Router-Based Query Engines", "SubQuestion-Based Query Engines"]) and (len(selected_query_engines) == 0):
         chat_interface.append({"role": "user", "content": user_message})
         chat_interface.append({"role": "assistant", "content": "Please select one or more query engines to answer your queries."})
         return "", chat_interface

@@ -1,5 +1,5 @@
 {
-    "Modes": ["ReAct-Powered Query Engines", "Router-Based Query Engines"],
+    "Modes": ["ReAct: Query Engines & Internet", "Router-Based Query Engines"],
     "LLMs": {"local": [], "API": ["OpenAI GPT-4o mini", "OpenAI GPT-4o"]},
     "Embedding": {"local": [], "API": ["OpenAI text-embedding-3-small"]},   
     "QueryEngine-creation-input-type": ["Webpages", "PDFs"]

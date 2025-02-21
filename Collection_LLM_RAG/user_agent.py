@@ -75,12 +75,12 @@ class UserAgent:
         Raises:
         ValueError: If the selected mode is not supported.
         The function operates in two modes:
-        1. "ReAct-Powered Query Engines": Sends the user's message to the AI agent and collects article names and links from the sources.
+        1. "ReAct: Query Engines & Internet": Sends the user's message to the AI agent and collects article names and links from the sources.
         2. "Router-Based Query Engines": Sends the user's message to the Router Query Engine and collects article names and links from the source nodes.
         The collected references are formatted and appended to the bot's message, which is then added to the chat history.
         """
         references = {}
-        if self.mode == "ReAct-Powered Query Engines":
+        if self.mode == "ReAct: Query Engines & Internet":
             # Send the user's message to the AI agent 
             try:
                 ai_answer = self.agent.chat(message)
@@ -223,7 +223,7 @@ class UserAgent:
         """
         Set up the agent with the provided query engines details.
         This method initializes and configures the agent based on the provided query engines details.
-        It supports two modes: "ReAct-Powered Query Engines" and "Router-Based Query Engines".
+        It supports two modes: "ReAct: Query Engines & Internet" and "Router-Based Query Engines".
         Args:
             query_engines_details (list): A list of dictionaries, each containing details of a query engine.
                 Each dictionary should have the following keys:
@@ -257,7 +257,7 @@ class UserAgent:
                 )
                 qs_list.append(qs_i_tool)
 
-        if self.mode == "ReAct-Powered Query Engines":
+        if self.mode == "ReAct: Query Engines & Internet":
             # Initialize a ChatMemoryBuffer with a token limit
             self.memory = ChatMemoryBuffer.from_defaults(token_limit=1500)
 
@@ -305,7 +305,7 @@ class UserAgent:
         """
         Sets the mode of the agent.
         Args:
-            mode (str): The mode of the agent. Supported values are 'ReAct-Powered Query Engines' and 'Router-Based Query Engines'.
+            mode (str): The mode of the agent. Supported values are 'ReAct: Query Engines & Internet' and 'Router-Based Query Engines'.
         """
         self.mode = mode
         self.set_agent(query_engines_details=self.query_engines_details)
