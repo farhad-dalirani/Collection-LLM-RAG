@@ -1,15 +1,3 @@
----
-title: Collection LLM RAG
-emoji: 🚀
-colorFrom: yellow
-colorTo: indigo
-sdk: gradio
-sdk_version: 5.17.1
-app_file: app.py
-pinned: false
-license: mit
-short_description: Collection-LLM-RAG is a Retrieval-Augmented Generation (RAG)
----
 # Collection LLM RAG
 
 
