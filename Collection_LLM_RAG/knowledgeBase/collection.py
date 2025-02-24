@@ -1,4 +1,5 @@
 import os
+import shutil
 import json
 import logging
 from openai import AuthenticationError
@@ -129,10 +130,12 @@ class CollectionManager:
         Raises:
             ValueError: If an authentication error occurs or any other unexpected error is encountered.
         """
-        
+        # Path to save collection
+        collection_path = os.path.join(self.vector_index_save_path, collection_name)
+
         #Vector based database to store docs, their embeddings, ...
         logging.info(">    Creating {} Vector Index ...".format(collection_name))
-        chroma_client = chromadb.PersistentClient(path=self.vector_index_save_path)
+        chroma_client = chromadb.PersistentClient(path=collection_path)
         chroma_collection = chroma_client.create_collection(name=collection_name)
         # Define a storage context object using the created vector database.
         vector_store = ChromaVectorStore(chroma_collection=chroma_collection)    
@@ -225,9 +228,15 @@ class CollectionManager:
             json.JSONDecodeError: If the query engines info JSON file contains invalid JSON.
         """
 
+        # Path to save collection
+        collection_path = os.path.join(self.vector_index_save_path, name)
+        
         # Delete the vector store
-        chroma_client = chromadb.PersistentClient(path=self.vector_index_save_path)
-        chroma_client.delete_collection(name)
+        if os.path.exists(collection_path):
+            shutil.rmtree(collection_path)
+            print("The folder has been deleted successfully!")
+        else:
+            print("The folder does not exist.")
 
         # Delete the keyword index
         directory_path = self.keyword_index_save_path
@@ -262,8 +271,11 @@ class CollectionManager:
         if loc == -1:
             return None
 
+        # Path to save collection
+        collection_path = os.path.join(self.vector_index_save_path, query_engine_name)
+
         # Load query engine from database
-        chroma_client = chromadb.PersistentClient(path=self.vector_index_save_path)
+        chroma_client = chromadb.PersistentClient(path=collection_path)
         chroma_collection = chroma_client.get_collection(name=query_engine_name)
         vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
         vector_store_index = VectorStoreIndex.from_vector_store(vector_store, embed_model=model_embd)
