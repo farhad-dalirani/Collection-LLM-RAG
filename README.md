@@ -1,3 +1,6 @@
+[![Run Demo](https://img.shields.io/badge/Run-Demo-blue?logo=huggingface)](https://huggingface.co/spaces/Farhaddlrn/Collection-LLM-RAG)
+
+
 # Collection LLM RAG
 
 
@@ -38,14 +41,37 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+
 ## Usage
 
 To run the main application, use the following command:
 
 ```bash
-python main.py
+python ./Collection_LLM_RAG/main.py
 ```
 After running the command, a Gradio link will appear in your terminal. Open this link in your browser to access and use the app.
+
+A Hugging Face demo is also available here: [![Run Demo](https://img.shields.io/badge/Run-Demo-blue?logo=huggingface)](https://huggingface.co/spaces/Farhaddlrn/Collection-LLM-RAG)
+
+## Code Struture
+```
+├── Collection_LLM_RAG
+│   ├── application.py
+│   ├── __int__.py
+│   ├── knowledgeBase
+│   │   ├── collection.py
+│   │   ├── hybrid_query_engine.py
+│   │   ├── __int__.py
+│   │   └── text_extraction_webpages.py
+│   ├── limited-HF-demo.py
+│   ├── main.py
+│   ├── program_init_config.json
+│   ├── prompts.py
+│   ├── user_agent.py
+│   └── utils.py
+├── Data
+...
+```
 
 ## Notice
 The source code for this project is released under the `MIT License`. See the LICENSE file for details.
